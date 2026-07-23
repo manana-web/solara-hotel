@@ -1,1 +1,1391 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About SOLARA HOTEL</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+
+  <style>
+
+    /* =====================================================
+       GLOBAL STYLES
+    ===================================================== */
+
+    :root {
+
+      --gold: #f4c85b;
+      --yellow: #ffd96b;
+      --cream: #fff8e9;
+      --blue: #05617b;
+      --deep-blue: #022b3a;
+      --dark: #061d28;
+      --white: #ffffff;
+
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+
+    }
+
+
+    * {
+
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+    }
+
+
+    html {
+
+      scroll-behavior: smooth;
+
+    }
+
+
+    body {
+
+      overflow-x: hidden;
+
+      background: var(--cream);
+
+      color: var(--dark);
+
+      font-family: var(--sans);
+
+    }
+
+
+    a {
+
+      color: inherit;
+
+      text-decoration: none;
+
+    }
+
+
+    img {
+
+      display: block;
+
+      width: 100%;
+
+      object-fit: cover;
+
+    }
+
+
+    .container {
+
+      width: min(1300px, calc(100% - 80px));
+
+      margin: auto;
+
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    .site-header {
+
+      position: absolute;
+
+      z-index: 20;
+
+      top: 0;
+
+      left: 0;
+
+      width: 100%;
+
+      padding-top: 22px;
+
+    }
+
+
+    .navbar {
+
+      height: 76px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      padding: 0 25px;
+
+      color: white;
+
+      border: 1px solid rgba(255,255,255,.35);
+
+      background: rgba(3,31,43,.35);
+
+      backdrop-filter: blur(20px);
+
+    }
+
+
+    .logo {
+
+      font-family: var(--serif);
+
+      font-size: 25px;
+
+      letter-spacing: .1em;
+
+      white-space: nowrap;
+
+      transition: color .3s ease;
+
+    }
+
+
+    .logo:hover {
+
+      color: var(--yellow);
+
+    }
+
+
+    .nav-links {
+
+      display: flex;
+
+      gap: 38px;
+
+      font-size: 12px;
+
+    }
+
+
+    .nav-links a {
+
+      position: relative;
+
+    }
+
+
+    .nav-links a::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+
+      bottom: -8px;
+
+      width: 0;
+
+      height: 2px;
+
+      background: var(--yellow);
+
+      transition: width .3s ease;
+
+    }
+
+
+    .nav-links a:hover::after {
+
+      width: 100%;
+
+    }
+
+
+    .book-button {
+
+      padding: 14px 21px;
+
+      border: 1px solid rgba(255,255,255,.8);
+
+      font-size: 10px;
+
+      letter-spacing: .16em;
+
+      text-transform: uppercase;
+
+      transition: all .3s ease;
+
+    }
+
+
+    .book-button:hover {
+
+      background: var(--yellow);
+
+      color: var(--dark);
+
+      border-color: var(--yellow);
+
+    }
+
+
+    /* =====================================================
+       ABOUT HERO
+    ===================================================== */
+
+    .about-hero {
+
+      min-height: 720px;
+
+      display: flex;
+
+      align-items: center;
+
+      color: white;
+
+      background:
+
+        linear-gradient(
+
+          90deg,
+
+          rgba(2,31,43,.78),
+
+          rgba(2,31,43,.18)
+
+        ),
+
+        url("https://cdn.shopify.com/s/files/1/1048/2286/6080/files/pexels-svh-manali-1801124329-28347478.jpg?v=1784824423")
+
+        center / cover;
+
+    }
+
+
+    .eyebrow {
+
+      margin-bottom: 22px;
+
+      color: var(--yellow);
+
+      font-size: 10px;
+
+      font-weight: 600;
+
+      letter-spacing: .28em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .about-hero h1 {
+
+      max-width: 900px;
+
+      font-family: var(--serif);
+
+      font-size: clamp(70px, 11vw, 150px);
+
+      font-weight: 400;
+
+      line-height: .88;
+
+      letter-spacing: -.07em;
+
+    }
+
+
+    .about-hero h1 em {
+
+      color: var(--yellow);
+
+      font-style: italic;
+
+    }
+
+
+    /* =====================================================
+       MAIN ABOUT SECTION
+    ===================================================== */
+
+    .about-main {
+
+      padding: 150px 0;
+
+    }
+
+
+    .about-grid {
+
+      display: grid;
+
+      grid-template-columns: 1.05fr .95fr;
+
+      gap: 90px;
+
+      align-items: center;
+
+    }
+
+
+    .about-images {
+
+      position: relative;
+
+      min-height: 700px;
+
+    }
+
+
+    .main-image {
+
+      width: 85%;
+
+      height: 650px;
+
+    }
+
+
+    .small-image {
+
+      position: absolute;
+
+      right: 0;
+
+      bottom: 0;
+
+      width: 43%;
+
+      height: 320px;
+
+      border: 12px solid var(--cream);
+
+    }
+
+
+    .about-copy h2 {
+
+      margin-bottom: 30px;
+
+      font-family: var(--serif);
+
+      font-size: clamp(55px, 7vw, 100px);
+
+      font-weight: 400;
+
+      line-height: .93;
+
+      letter-spacing: -.06em;
+
+    }
+
+
+    .about-copy h2 em {
+
+      color: var(--blue);
+
+      font-style: italic;
+
+    }
+
+
+    .about-copy p {
+
+      margin-bottom: 22px;
+
+      color: #6c6960;
+
+      font-size: 16px;
+
+      line-height: 1.9;
+
+    }
+
+
+    /* =====================================================
+       SOLARA PHILOSOPHY
+    ===================================================== */
+
+    .philosophy {
+
+      padding: 140px 0;
+
+      background: var(--deep-blue);
+
+      color: white;
+
+    }
+
+
+    .philosophy-heading {
+
+      max-width: 900px;
+
+      margin-bottom: 75px;
+
+    }
+
+
+    .philosophy-heading h2 {
+
+      font-family: var(--serif);
+
+      font-size: clamp(60px, 8vw, 120px);
+
+      font-weight: 400;
+
+      line-height: .9;
+
+      letter-spacing: -.06em;
+
+    }
+
+
+    .philosophy-heading h2 em {
+
+      color: var(--yellow);
+
+      font-style: italic;
+
+    }
+
+
+    .philosophy-grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 20px;
+
+    }
+
+
+    .philosophy-card {
+
+      min-height: 280px;
+
+      padding: 35px 30px;
+
+      border: 1px solid rgba(255,255,255,.2);
+
+      transition: all .4s ease;
+
+    }
+
+
+    .philosophy-card:hover {
+
+      transform: translateY(-10px);
+
+      border-color: var(--yellow);
+
+      background: rgba(255,255,255,.05);
+
+    }
+
+
+    .philosophy-number {
+
+      margin-bottom: 45px;
+
+      color: var(--yellow);
+
+      font-size: 11px;
+
+      letter-spacing: .15em;
+
+    }
+
+
+    .philosophy-card h3 {
+
+      margin-bottom: 18px;
+
+      font-family: var(--serif);
+
+      font-size: 34px;
+
+      font-weight: 400;
+
+    }
+
+
+    .philosophy-card p {
+
+      color: rgba(255,255,255,.65);
+
+      line-height: 1.8;
+
+    }
+
+
+    /* =====================================================
+       VISUAL STORY SECTION
+    ===================================================== */
+
+    .visual-story {
+
+      min-height: 750px;
+
+      display: flex;
+
+      align-items: center;
+
+      color: white;
+
+      background:
+
+        linear-gradient(
+
+          90deg,
+
+          rgba(2,31,43,.75),
+
+          rgba(2,31,43,.15)
+
+        ),
+
+        url("https://cdn.shopify.com/videos/c/o/v/ae0dee2a46324cd1973b89aed6066a88.mp4")
+
+        center / cover;
+
+    }
+
+
+    .visual-story-content {
+
+      max-width: 700px;
+
+    }
+
+
+    .visual-story h2 {
+
+      margin-bottom: 25px;
+
+      font-family: var(--serif);
+
+      font-size: clamp(65px, 9vw, 130px);
+
+      font-weight: 400;
+
+      line-height: .88;
+
+      letter-spacing: -.07em;
+
+    }
+
+
+    .visual-story h2 em {
+
+      color: var(--yellow);
+
+    }
+
+
+    .visual-story p {
+
+      max-width: 450px;
+
+      color: rgba(255,255,255,.75);
+
+      line-height: 1.8;
+
+    }
+
+
+    /* =====================================================
+       CTA
+    ===================================================== */
+
+    .cta {
+
+      min-height: 650px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      text-align: center;
+
+      color: white;
+
+      background:
+
+        linear-gradient(
+
+          rgba(2,31,43,.5),
+
+          rgba(2,31,43,.8)
+
+        ),
+
+        url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2200&q=95")
+
+        center / cover;
+
+    }
+
+
+    .cta h2 {
+
+      margin-bottom: 35px;
+
+      font-family: var(--serif);
+
+      font-size: clamp(60px, 9vw, 125px);
+
+      font-weight: 400;
+
+      line-height: .9;
+
+      letter-spacing: -.06em;
+
+    }
+
+
+    .cta h2 em {
+
+      color: var(--yellow);
+
+    }
+
+
+    .cta-button {
+
+      display: inline-block;
+
+      padding: 18px 30px;
+
+      background: var(--yellow);
+
+      color: var(--dark);
+
+      font-size: 10px;
+
+      font-weight: 600;
+
+      letter-spacing: .16em;
+
+      text-transform: uppercase;
+
+      transition: all .3s ease;
+
+    }
+
+
+    .cta-button:hover {
+
+      background: white;
+
+      transform: translateY(-5px);
+
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    footer {
+
+      padding: 70px 0 25px;
+
+      background: var(--dark);
+
+      color: white;
+
+    }
+
+
+    .footer-top {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 40px;
+
+      padding-bottom: 50px;
+
+      border-bottom: 1px solid rgba(255,255,255,.15);
+
+    }
+
+
+    .footer-description {
+
+      max-width: 300px;
+
+      margin-top: 15px;
+
+      color: rgba(255,255,255,.55);
+
+      line-height: 1.8;
+
+    }
+
+
+    .footer-links {
+
+      display: flex;
+
+      gap: 25px;
+
+      color: rgba(255,255,255,.65);
+
+      font-size: 12px;
+
+    }
+
+
+    .footer-links a:hover {
+
+      color: var(--yellow);
+
+    }
+
+
+    .footer-bottom {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      padding-top: 25px;
+
+      color: rgba(255,255,255,.4);
+
+      font-size: 10px;
+
+    }
+
+
+    /* =====================================================
+       RESPONSIVE
+    ===================================================== */
+
+    @media (max-width: 900px) {
+
+      .container {
+
+        width: calc(100% - 45px);
+
+      }
+
+
+      .about-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .philosophy-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .container {
+
+        width: calc(100% - 32px);
+
+      }
+
+
+      .navbar {
+
+        height: 65px;
+
+        padding: 0 14px;
+
+      }
+
+
+      .logo {
+
+        font-size: 17px;
+
+      }
+
+
+      .nav-links {
+
+        gap: 13px;
+
+        font-size: 9px;
+
+      }
+
+
+      .nav-links a:nth-child(3),
+
+      .nav-links a:nth-child(4) {
+
+        display: none;
+
+      }
+
+
+      .book-button {
+
+        display: none;
+
+      }
+
+
+      .about-images {
+
+        min-height: 500px;
+
+      }
+
+
+      .main-image {
+
+        height: 460px;
+
+      }
+
+
+      .small-image {
+
+        height: 210px;
+
+      }
+
+
+      .footer-top,
+
+      .footer-bottom {
+
+        flex-direction: column;
+
+        gap: 25px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       HEADER
+  ===================================================== -->
+
+  <header class="site-header">
+
+    <div class="container">
+
+      <nav class="navbar">
+
+
+        <a
+          href="index.html"
+          class="logo"
+        >
+
+          SOLARA HOTEL
+
+        </a>
+
+
+        <div class="nav-links">
+
+
+          <a href="rooms.html">
+            Stay
+          </a>
+
+
+          <a href="experiences.html">
+            Experience
+          </a>
+
+
+          <a href="about.html">
+            About
+          </a>
+
+
+          <a href="contact.html">
+            Contact
+          </a>
+
+
+        </div>
+
+
+        <a
+          href="contact.html"
+          class="book-button"
+        >
+
+          Book Your Stay
+
+        </a>
+
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       HERO
+  ===================================================== -->
+
+  <section class="about-hero">
+
+    <div class="container">
+
+
+      <div>
+
+
+        <div class="eyebrow">
+
+          The story of SOLARA
+
+        </div>
+
+
+        <h1>
+
+          Created for
+
+          <em>
+            sunlight.
+          </em>
+
+        </h1>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       MAIN ABOUT SECTION
+  ===================================================== -->
+
+  <section class="about-main">
+
+    <div class="container">
+
+
+      <div class="about-grid">
+
+
+        <div class="about-images">
+
+
+          <img
+            class="main-image"
+            src="https://cdn.shopify.com/s/files/1/1048/2286/6080/files/pexels-svh-manali-1801124329-28347478.jpg?v=1784824423"
+            alt="SOLARA hotel overlooking the sea"
+          >
+
+
+          <img
+            class="small-image"
+            src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1000&q=95"
+            alt="Luxury resort pool"
+          >
+
+
+        </div>
+
+
+        <div class="about-copy">
+
+
+          <div class="eyebrow">
+
+            More than a destination
+
+          </div>
+
+
+          <h2>
+
+            Life feels different
+
+            in the
+
+            <em>
+              sunlight.
+            </em>
+
+          </h2>
+
+
+          <p>
+
+            SOLARA is a destination shaped by the relationship between architecture, nature, ocean, and light.
+
+          </p>
+
+
+          <p>
+
+            Every space has been designed to bring you closer to the natural world. Morning light fills the rooms. The sea stretches beyond the horizon. Evenings unfold slowly beneath a golden sky.
+
+          </p>
+
+
+          <p>
+
+            This is a place designed for people who want more than a hotel.
+
+            They want a feeling.
+
+          </p>
+
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       PHILOSOPHY
+  ===================================================== -->
+
+  <section class="philosophy">
+
+    <div class="container">
+
+
+      <div class="philosophy-heading">
+
+
+        <div class="eyebrow">
+
+          The SOLARA philosophy
+
+        </div>
+
+
+        <h2>
+
+          The luxury of
+
+          <em>
+            feeling alive.
+          </em>
+
+        </h2>
+
+
+      </div>
+
+
+      <div class="philosophy-grid">
+
+
+        <article class="philosophy-card">
+
+
+          <div class="philosophy-number">
+            01
+          </div>
+
+
+          <h3>
+            Light
+          </h3>
+
+
+          <p>
+
+            We follow the sun. From the first morning glow to the final golden hour, light shapes the experience.
+
+          </p>
+
+
+        </article>
+
+
+        <article class="philosophy-card">
+
+
+          <div class="philosophy-number">
+            02
+          </div>
+
+
+          <h3>
+            Place
+          </h3>
+
+
+          <p>
+
+            The sea, the landscape, and the culture around us are not simply a backdrop. They are part of SOLARA.
+
+          </p>
+
+
+        </article>
+
+
+        <article class="philosophy-card">
+
+
+          <div class="philosophy-number">
+            03
+          </div>
+
+
+          <h3>
+            Moments
+          </h3>
+
+
+          <p>
+
+            The most unforgettable luxury is often the simplest moment: a quiet morning, warm sunlight, and nowhere else to be.
+
+          </p>
+
+
+        </article>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       VISUAL STORY
+  ===================================================== -->
+
+  <section class="visual-story">
+
+
+    <div class="container">
+
+
+      <div class="visual-story-content">
+
+
+        <div class="eyebrow">
+
+          A different way to stay
+
+        </div>
+
+
+        <h2>
+
+          Chase the
+
+          <em>
+            light.
+          </em>
+
+        </h2>
+
+
+        <p>
+
+          Let the days move at their own pace.
+
+          Swim in the blue.
+
+          Dine beneath the stars.
+
+          Follow the sun until it disappears beyond the horizon.
+
+        </p>
+
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+  <!-- =====================================================
+       CTA
+  ===================================================== -->
+
+  <section class="cta">
+
+
+    <div>
+
+
+      <div class="eyebrow">
+
+        Your escape begins here
+
+      </div>
+
+
+      <h2>
+
+        Your golden hour
+
+        <em>
+          awaits.
+        </em>
+
+      </h2>
+
+
+      <a
+        href="contact.html"
+        class="cta-button"
+      >
+
+        Book Your Stay
+
+      </a>
+
+
+    </div>
+
+
+  </section>
+
+
+  <!-- =====================================================
+       FOOTER
+  ===================================================== -->
+
+  <footer>
+
+
+    <div class="container">
+
+
+      <div class="footer-top">
+
+
+        <div>
+
+
+          <a
+            href="index.html"
+            class="logo"
+          >
+
+            SOLARA HOTEL
+
+          </a>
+
+
+          <p class="footer-description">
+
+            Where sunlight meets the sea.
+
+            A world-class escape designed for unforgettable moments.
+
+          </p>
+
+
+        </div>
+
+
+        <div class="footer-links">
+
+
+          <a href="index.html">
+            Home
+          </a>
+
+
+          <a href="rooms.html">
+            Rooms
+          </a>
+
+
+          <a href="experiences.html">
+            Experience
+          </a>
+
+
+          <a href="about.html">
+            About
+          </a>
+
+
+          <a href="contact.html">
+            Contact
+          </a>
+
+
+        </div>
+
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+
+        <span>
+          © 2026 SOLARA HOTEL
+        </span>
+
+
+        <span>
+          Where sunlight meets the sea.
+        </span>
+
+
+      </div>
+
+
+    </div>
+
+
+  </footer>
+
+
+</body>
+
+</html>
