@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -15,7 +14,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
@@ -123,13 +124,13 @@
 
       gap: 25px;
 
-      padding: 0 26px;
+      padding: 15px 26px;
 
       color: var(--white);
 
       border: 1px solid rgba(255,255,255,.35);
 
-      background: rgba(2, 31, 43, .34);
+      background: rgba(2,31,43,.34);
 
       backdrop-filter: blur(22px);
       -webkit-backdrop-filter: blur(22px);
@@ -138,6 +139,8 @@
 
 
     .logo {
+
+      flex-shrink: 0;
 
       font-family: var(--serif);
 
@@ -149,8 +152,6 @@
 
       transition: color .3s ease;
 
-      flex-shrink: 0;
-
     }
 
 
@@ -161,6 +162,12 @@
     }
 
 
+    /* =====================================================
+       NAVIGATION
+       IMPORTANT:
+       ALL FOUR LINKS REMAIN VISIBLE ON MOBILE
+    ====================================================== */
+
     .nav-links {
 
       display: flex;
@@ -169,11 +176,13 @@
 
       justify-content: center;
 
-      gap: 38px;
+      gap: 34px;
+
+      flex: 1;
 
       font-size: 12px;
 
-      flex: 1;
+      white-space: nowrap;
 
     }
 
@@ -181,8 +190,6 @@
     .nav-links a {
 
       position: relative;
-
-      white-space: nowrap;
 
       transition: color .3s ease;
 
@@ -226,6 +233,8 @@
 
     .book-button {
 
+      flex-shrink: 0;
+
       padding: 14px 22px;
 
       border: 1px solid rgba(255,255,255,.85);
@@ -236,9 +245,9 @@
 
       text-transform: uppercase;
 
-      white-space: nowrap;
-
       transition: all .3s ease;
+
+      white-space: nowrap;
 
     }
 
@@ -257,7 +266,7 @@
 
 
     /* =====================================================
-       HERO SECTION
+       HERO
     ====================================================== */
 
     .hero {
@@ -327,11 +336,11 @@
 
           90deg,
 
-          rgba(2, 26, 38, .72),
+          rgba(2,26,38,.72),
 
-          rgba(2, 26, 38, .16) 70%,
+          rgba(2,26,38,.16) 70%,
 
-          rgba(2, 26, 38, .2)
+          rgba(2,26,38,.2)
 
         ),
 
@@ -339,11 +348,11 @@
 
           180deg,
 
-          rgba(2, 26, 38, .3),
+          rgba(2,26,38,.3),
 
           transparent 40%,
 
-          rgba(2, 26, 38, .55)
+          rgba(2,26,38,.55)
 
         );
 
@@ -366,7 +375,7 @@
 
       border-radius: 50%;
 
-      background: rgba(255, 210, 91, .28);
+      background: rgba(255,210,91,.28);
 
       filter: blur(70px);
 
@@ -381,7 +390,7 @@
 
       from {
 
-        transform: translate(0, 0) scale(1);
+        transform: translate(0,0) scale(1);
 
         opacity: .5;
 
@@ -389,7 +398,7 @@
 
       to {
 
-        transform: translate(-100px, 50px) scale(1.35);
+        transform: translate(-100px,50px) scale(1.35);
 
         opacity: .9;
 
@@ -455,7 +464,7 @@
 
       font-family: var(--serif);
 
-      font-size: clamp(68px, 10vw, 150px);
+      font-size: clamp(68px,10vw,150px);
 
       font-weight: 400;
 
@@ -566,6 +575,10 @@
     }
 
 
+    /* =====================================================
+       SCROLL INDICATOR
+    ====================================================== */
+
     .scroll-indicator {
 
       position: absolute;
@@ -614,7 +627,7 @@
 
     @keyframes scrollLine {
 
-      0%, 100% {
+      0%,100% {
 
         transform: scaleY(.5);
 
@@ -638,7 +651,7 @@
 
 
     /* =====================================================
-       INTRODUCTION SECTION
+       INTRODUCTION
     ====================================================== */
 
     .intro {
@@ -667,7 +680,7 @@
 
       font-family: var(--serif);
 
-      font-size: clamp(55px, 7vw, 105px);
+      font-size: clamp(55px,7vw,105px);
 
       font-weight: 400;
 
@@ -701,7 +714,7 @@
 
 
     /* =====================================================
-       ABOUT VISUAL SECTION
+       ABOUT VISUAL
     ====================================================== */
 
     .about-visual {
@@ -819,7 +832,7 @@
 
 
     /* =====================================================
-       GOLDEN HOUR VIDEO SECTION
+       GOLDEN HOUR
     ====================================================== */
 
     .golden-hour {
@@ -889,9 +902,9 @@
 
           90deg,
 
-          rgba(2, 25, 36, .78),
+          rgba(2,25,36,.78),
 
-          rgba(2, 25, 36, .13)
+          rgba(2,25,36,.13)
 
         ),
 
@@ -899,9 +912,9 @@
 
           180deg,
 
-          rgba(244, 185, 58, .1),
+          rgba(244,185,58,.1),
 
-          rgba(2, 25, 36, .5)
+          rgba(2,25,36,.5)
 
         );
 
@@ -914,7 +927,7 @@
 
       z-index: 2;
 
-      width: min(1320px, calc(100% - 80px));
+      width: min(1320px,calc(100% - 80px));
 
       margin: auto;
 
@@ -927,7 +940,7 @@
 
       font-family: var(--serif);
 
-      font-size: clamp(70px, 11vw, 160px);
+      font-size: clamp(70px,11vw,160px);
 
       font-weight: 400;
 
@@ -963,7 +976,7 @@
 
 
     /* =====================================================
-       EXPERIENCES SECTION
+       EXPERIENCES
     ====================================================== */
 
     .experiences {
@@ -996,7 +1009,7 @@
 
       font-family: var(--serif);
 
-      font-size: clamp(60px, 8vw, 115px);
+      font-size: clamp(60px,8vw,115px);
 
       font-weight: 400;
 
@@ -1031,7 +1044,7 @@
 
       display: grid;
 
-      grid-template-columns: repeat(12, 1fr);
+      grid-template-columns: repeat(12,1fr);
 
       gap: 18px;
 
@@ -1106,7 +1119,7 @@
 
         to top,
 
-        rgba(2, 25, 36, .82),
+        rgba(2,25,36,.82),
 
         transparent 70%
 
@@ -1160,7 +1173,7 @@
 
 
     /* =====================================================
-       ROOMS PREVIEW
+       ROOMS
     ====================================================== */
 
     .rooms-preview {
@@ -1191,7 +1204,7 @@
 
       font-family: var(--serif);
 
-      font-size: clamp(60px, 8vw, 110px);
+      font-size: clamp(60px,8vw,110px);
 
       font-weight: 400;
 
@@ -1211,11 +1224,28 @@
     }
 
 
+    .rooms-link {
+
+      padding-bottom: 9px;
+
+      border-bottom: 1px solid var(--yellow);
+
+      color: var(--yellow);
+
+      font-size: 10px;
+
+      letter-spacing: .15em;
+
+      text-transform: uppercase;
+
+    }
+
+
     .rooms-grid {
 
       display: grid;
 
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3,1fr);
 
       gap: 18px;
 
@@ -1278,6 +1308,8 @@
 
     .room-info p {
 
+      margin-bottom: 20px;
+
       color: rgba(255,255,255,.62);
 
       line-height: 1.7;
@@ -1286,7 +1318,7 @@
 
 
     /* =====================================================
-       FULL WIDTH CTA
+       FINAL CTA
     ====================================================== */
 
     .final-cta {
@@ -1307,9 +1339,9 @@
 
         linear-gradient(
 
-          rgba(2, 25, 36, .45),
+          rgba(2,25,36,.45),
 
-          rgba(2, 25, 36, .82)
+          rgba(2,25,36,.82)
 
         ),
 
@@ -1328,7 +1360,7 @@
 
       font-family: var(--serif);
 
-      font-size: clamp(65px, 9vw, 135px);
+      font-size: clamp(65px,9vw,135px);
 
       font-weight: 400;
 
@@ -1406,13 +1438,6 @@
     }
 
 
-    .footer-links a {
-
-      transition: color .3s ease;
-
-    }
-
-
     .footer-links a:hover {
 
       color: var(--yellow);
@@ -1436,7 +1461,7 @@
 
 
     /* =====================================================
-       TABLET RESPONSIVE DESIGN
+       TABLET
     ====================================================== */
 
     @media (max-width: 950px) {
@@ -1500,41 +1525,62 @@
 
       }
 
-    }
 
+      .navbar {
 
-    /* =====================================================
-       MOBILE RESPONSIVE DESIGN
-    ====================================================== */
-
-    @media (max-width: 650px) {
-
-
-      .container {
-
-        width: calc(100% - 32px);
+        gap: 15px;
 
       }
 
 
-      /* MOBILE HEADER */
+      .nav-links {
+
+        gap: 18px;
+
+      }
+
+
+      .book-button {
+
+        padding: 12px 14px;
+
+        font-size: 9px;
+
+      }
+
+    }
+
+
+    /* =====================================================
+       MOBILE
+       ALL NAVIGATION LINKS STAY VISIBLE
+    ====================================================== */
+
+    @media (max-width: 650px) {
+
+      .container {
+
+        width: calc(100% - 24px);
+
+      }
+
 
       .site-header {
 
-        padding-top: 14px;
+        padding-top: 10px;
 
       }
 
 
       .navbar {
 
-        min-height: 65px;
+        min-height: auto;
 
-        height: auto;
+        padding: 14px 10px;
 
-        padding: 12px 10px;
+        gap: 8px;
 
-        gap: 10px;
+        align-items: center;
 
       }
 
@@ -1543,52 +1589,49 @@
 
         font-size: 14px;
 
-        letter-spacing: .04em;
+        letter-spacing: .06em;
 
       }
 
 
-      /* IMPORTANT:
-         ALL FOUR NAVIGATION LINKS STAY VISIBLE
+      /*
+         IMPORTANT:
+         No links are hidden here.
+         Stay, Experience, About, Contact
+         remain visible all the time.
       */
 
       .nav-links {
 
         display: flex;
 
-        align-items: center;
-
-        justify-content: flex-end;
-
-        gap: 9px;
-
         flex: 1;
+
+        justify-content: space-between;
+
+        gap: 7px;
 
         min-width: 0;
 
         font-size: 8px;
-
-        white-space: nowrap;
 
       }
 
 
       .nav-links a {
 
-        display: inline-block !important;
+        display: block;
+
+        white-space: nowrap;
 
       }
 
 
-      .nav-links a:nth-child(1),
+      .nav-links a::after {
 
-      .nav-links a:nth-child(2),
+        bottom: -5px;
 
-      .nav-links a:nth-child(3),
-
-      .nav-links a:nth-child(4) {
-
-        display: inline-block !important;
+        height: 1px;
 
       }
 
@@ -1600,27 +1643,16 @@
       }
 
 
-      /* HERO */
-
-      .hero {
-
-        min-height: 100svh;
-
-      }
-
-
       .hero-content {
 
         padding-top: 100px;
-
-        padding-bottom: 120px;
 
       }
 
 
       .hero h1 {
 
-        font-size: clamp(58px, 17vw, 90px);
+        font-size: clamp(56px,16vw,88px);
 
       }
 
@@ -1640,8 +1672,6 @@
 
         align-items: flex-start;
 
-        gap: 12px;
-
       }
 
 
@@ -1654,25 +1684,28 @@
       }
 
 
-      /* SCROLL INDICATOR */
+      /*
+         Scroll indicator moved lower
+         so it never covers the buttons.
+      */
 
       .scroll-indicator {
 
-        bottom: 22px;
+        bottom: 18px;
 
-        font-size: 8px;
+        font-size: 7px;
+
+        gap: 8px;
 
       }
 
 
       .scroll-line {
 
-        height: 35px;
+        height: 32px;
 
       }
 
-
-      /* INTRODUCTION */
 
       .intro {
 
@@ -1681,18 +1714,9 @@
       }
 
 
-      .intro-grid {
-
-        grid-template-columns: 1fr;
-
-        gap: 35px;
-
-      }
-
-
       .intro h2 {
 
-        font-size: clamp(52px, 15vw, 80px);
+        font-size: 58px;
 
       }
 
@@ -1704,8 +1728,6 @@
       }
 
 
-      /* ABOUT */
-
       .about-visual {
 
         padding-bottom: 90px;
@@ -1713,23 +1735,16 @@
       }
 
 
-      .about-grid {
-
-        grid-template-columns: 1fr;
-
-      }
-
-
       .about-main-image {
 
-        height: 480px;
+        height: 430px;
 
       }
 
 
       .about-small-image {
 
-        height: 330px;
+        height: 300px;
 
       }
 
@@ -1748,8 +1763,6 @@
       }
 
 
-      /* GOLDEN HOUR */
-
       .golden-hour {
 
         min-height: 650px;
@@ -1759,14 +1772,14 @@
 
       .golden-hour-content {
 
-        width: calc(100% - 32px);
+        width: calc(100% - 24px);
 
       }
 
 
       .golden-hour h2 {
 
-        font-size: clamp(65px, 18vw, 100px);
+        font-size: 72px;
 
       }
 
@@ -1778,31 +1791,9 @@
       }
 
 
-      /* EXPERIENCES */
-
       .experiences {
 
         padding: 90px 0;
-
-      }
-
-
-      .section-heading {
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 25px;
-
-        margin-bottom: 40px;
-
-      }
-
-
-      .section-heading h2 {
-
-        font-size: clamp(55px, 16vw, 90px);
 
       }
 
@@ -1813,37 +1804,33 @@
 
         flex-direction: column;
 
-        gap: 15px;
-
       }
 
 
       .experience-card {
 
-        min-height: 400px;
+        min-height: 360px;
 
       }
 
 
       .experience-content {
 
-        right: 22px;
+        right: 20px;
 
-        bottom: 22px;
+        bottom: 20px;
 
-        left: 22px;
+        left: 20px;
 
       }
 
 
       .experience-content h3 {
 
-        font-size: 42px;
+        font-size: 40px;
 
       }
 
-
-      /* ROOMS */
 
       .rooms-preview {
 
@@ -1858,25 +1845,7 @@
 
         align-items: flex-start;
 
-        gap: 25px;
-
-        margin-bottom: 40px;
-
-      }
-
-
-      .rooms-preview-heading h2 {
-
-        font-size: clamp(55px, 16vw, 90px);
-
-      }
-
-
-      .rooms-grid {
-
-        grid-template-columns: 1fr;
-
-        gap: 20px;
+        gap: 30px;
 
       }
 
@@ -1888,25 +1857,19 @@
       }
 
 
-      /* FINAL CTA */
-
       .final-cta {
 
-        min-height: 600px;
-
-        padding: 80px 0;
+        min-height: 560px;
 
       }
 
 
       .final-cta h2 {
 
-        font-size: clamp(58px, 17vw, 95px);
+        font-size: 70px;
 
       }
 
-
-      /* FOOTER */
 
       .footer-top,
 
@@ -1921,7 +1884,45 @@
 
       .footer-links {
 
-        gap: 18px;
+        gap: 15px;
+
+      }
+
+    }
+
+
+    /* =====================================================
+       EXTRA SMALL PHONES
+    ====================================================== */
+
+    @media (max-width: 390px) {
+
+      .logo {
+
+        font-size: 12px;
+
+      }
+
+
+      .nav-links {
+
+        font-size: 7px;
+
+        gap: 4px;
+
+      }
+
+
+      .hero h1 {
+
+        font-size: 54px;
+
+      }
+
+
+      .scroll-indicator {
+
+        display: none;
 
       }
 
@@ -1931,7 +1932,9 @@
 
 </head>
 
+
 <body>
+
 
   <!-- =====================================================
        HEADER
@@ -1939,188 +1942,146 @@
 
   <header class="site-header">
 
-```
-<div class="container">
+    <div class="container">
 
-  <nav class="navbar">
+      <nav class="navbar">
 
-
-    <a
-      href="index.html"
-      class="logo"
-    >
-
-      SOLARA HOTEL
-
-    </a>
+        <a href="index.html" class="logo">
+          SOLARA HOTEL
+        </a>
 
 
-    <!-- ALL FOUR LINKS REMAIN VISIBLE ON MOBILE -->
+        <!-- ALL FOUR LINKS ARE ALWAYS VISIBLE -->
 
-    <div class="nav-links">
+        <div class="nav-links">
 
+          <a href="rooms.html">
+            Stay
+          </a>
 
-      <a href="rooms.html">
+          <a href="experiences.html">
+            Experience
+          </a>
 
-        Stay
+          <a href="about.html">
+            About
+          </a>
 
-      </a>
+          <a href="contact.html">
+            Contact
+          </a>
 
-
-      <a href="experiences.html">
-
-        Experience
-
-      </a>
-
-
-      <a href="about.html">
-
-        About
-
-      </a>
+        </div>
 
 
-      <a href="contact.html">
+        <a
+          href="contact.html"
+          class="book-button"
+        >
+          Book Your Stay
+        </a>
 
-        Contact
-
-      </a>
-
+      </nav>
 
     </div>
 
-
-    <a
-      href="contact.html"
-      class="book-button"
-    >
-
-      Book Your Stay
-
-    </a>
-
-
-  </nav>
-
-</div>
-```
-
   </header>
 
+
   <!-- =====================================================
-       HERO SECTION
+       HERO
   ====================================================== -->
 
   <section class="hero">
 
-```
-<video
-  class="hero-video"
-  autoplay
-  muted
-  loop
-  playsinline
->
+    <video
+      class="hero-video"
+      autoplay
+      muted
+      loop
+      playsinline
+    >
 
-  <source
-    src="https://cdn.shopify.com/videos/c/o/v/5517bd692618406dade5cb41a548fc17.mp4"
-    type="video/mp4"
-  >
+      <source
+        src="https://cdn.shopify.com/videos/c/o/v/5517bd692618406dade5cb41a548fc17.mp4"
+        type="video/mp4"
+      >
 
-</video>
-
-
-<div class="hero-overlay"></div>
+    </video>
 
 
-<div class="sun-glow"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="sun-glow"></div>
 
 
-<div class="container">
+    <div class="container">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+
+          SOLARA HOTEL — WHERE SUNLIGHT MEETS THE SEA
+
+        </div>
 
 
-  <div class="hero-content">
+        <h1>
+
+          Where the sun
+
+          meets the
+
+          <em>
+            sea.
+          </em>
+
+        </h1>
 
 
-    <div class="eyebrow">
+        <p class="hero-description">
 
-      SOLARA HOTEL — WHERE SUNLIGHT MEETS THE SEA
+          A world-class escape shaped by golden light, endless horizons, and unforgettable moments.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+          <a
+            href="rooms.html"
+            class="btn btn-gold"
+          >
+            Explore Rooms
+          </a>
+
+
+          <a
+            href="about.html"
+            class="btn btn-glass"
+          >
+            Discover SOLARA
+          </a>
+
+        </div>
+
+      </div>
 
     </div>
 
 
-    <h1>
+    <div class="scroll-indicator">
 
-      Where the sun
+      <span>
+        Scroll to explore
+      </span>
 
-      meets the
-
-      <em>
-
-        sea.
-
-      </em>
-
-    </h1>
-
-
-    <p class="hero-description">
-
-      A world-class escape shaped by golden light, endless horizons, and unforgettable moments.
-
-    </p>
-
-
-    <div class="hero-buttons">
-
-
-      <a
-        href="rooms.html"
-        class="btn btn-gold"
-      >
-
-        Explore Rooms
-
-      </a>
-
-
-      <a
-        href="about.html"
-        class="btn btn-glass"
-      >
-
-        Discover SOLARA
-
-      </a>
-
+      <div class="scroll-line"></div>
 
     </div>
-
-
-  </div>
-
-
-</div>
-
-
-<div class="scroll-indicator">
-
-
-  <span>
-
-    Scroll to explore
-
-  </span>
-
-
-  <div class="scroll-line"></div>
-
-
-</div>
-```
 
   </section>
+
 
   <!-- =====================================================
        INTRODUCTION
@@ -2128,182 +2089,155 @@
 
   <section class="intro">
 
-```
-<div class="container">
+    <div class="container">
+
+      <div class="intro-grid">
+
+        <h2>
+
+          Life feels
+
+          different in
+
+          the
+
+          <em>
+            sunlight.
+          </em>
+
+        </h2>
 
 
-  <div class="intro-grid">
+        <p class="intro-text">
 
+          SOLARA is more than a hotel.
 
-    <h2>
+          It is a destination where architecture, nature, ocean, and sunlight come together.
 
-      Life feels
+          From sunrise swims to long evenings beneath the stars, every detail is designed to make your escape unforgettable.
 
-      different in
+        </p>
 
-      the
+      </div>
 
-      <em>
-
-        sunlight.
-
-      </em>
-
-    </h2>
-
-
-    <p class="intro-text">
-
-      SOLARA is more than a hotel.
-
-      It is a destination where architecture, nature, ocean, and sunlight come together.
-
-      From sunrise swims to long evenings beneath the stars, every detail is designed to make your escape unforgettable.
-
-    </p>
-
-
-  </div>
-
-
-</div>
-```
+    </div>
 
   </section>
 
+
   <!-- =====================================================
-       ABOUT VISUAL SECTION
+       ABOUT VISUAL
   ====================================================== -->
 
   <section class="about-visual">
 
-```
-<div class="container">
+    <div class="container">
+
+      <div class="about-grid">
+
+        <div class="about-main-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=2200&q=95"
+            alt="Luxury hotel overlooking the sea"
+          >
+
+        </div>
 
 
-  <div class="about-grid">
+        <div class="about-side">
+
+          <div class="about-small-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1600&q=95"
+              alt="Luxury resort pool"
+            >
+
+          </div>
 
 
-    <div class="about-main-image">
+          <div class="about-caption">
+
+            <h3>
+              A world of its own.
+            </h3>
 
 
-      <img
-        src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=2200&q=95"
-        alt="Luxury hotel overlooking the sea"
-      >
+            <p>
 
+              A destination built for those who believe the best moments are measured in sunlight, sea, and time.
 
-    </div>
+            </p>
 
+          </div>
 
-    <div class="about-side">
-
-
-      <div class="about-small-image">
-
-
-        <img
-          src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1600&q=95"
-          alt="Luxury resort pool"
-        >
-
-
-      </div>
-
-
-      <div class="about-caption">
-
-
-        <h3>
-
-          A world of its own.
-
-        </h3>
-
-
-        <p>
-
-          A destination built for those who believe the best moments are measured in sunlight, sea, and time.
-
-        </p>
-
+        </div>
 
       </div>
 
-
     </div>
-
-
-  </div>
-
-
-</div>
-```
 
   </section>
 
+
   <!-- =====================================================
-       GOLDEN HOUR VIDEO
+       GOLDEN HOUR
   ====================================================== -->
 
   <section class="golden-hour">
 
-```
-<video
-  class="golden-hour-video"
-  autoplay
-  muted
-  loop
-  playsinline
->
+    <video
+      class="golden-hour-video"
+      autoplay
+      muted
+      loop
+      playsinline
+    >
 
-  <source
-    src="https://cdn.shopify.com/videos/c/o/v/ae0dee2a46324cd1973b89aed6066a88.mp4"
-    type="video/mp4"
-  >
+      <source
+        src="https://cdn.shopify.com/videos/c/o/v/ae0dee2a46324cd1973b89aed6066a88.mp4"
+        type="video/mp4"
+      >
 
-</video>
-
-
-<div class="golden-hour-overlay"></div>
+    </video>
 
 
-<div class="golden-hour-content">
+    <div class="golden-hour-overlay"></div>
 
 
-  <div class="eyebrow">
+    <div class="golden-hour-content">
 
-    THE MOMENT YOU WILL REMEMBER
+      <div class="eyebrow">
 
-  </div>
+        THE MOMENT YOU WILL REMEMBER
 
-
-  <h2>
-
-    Chase the
-
-    <em>
-
-      light.
-
-    </em>
-
-  </h2>
+      </div>
 
 
-  <p>
+      <h2>
 
-    There is a moment every evening when the world becomes gold.
+        Chase the
 
-    At SOLARA, we believe those moments are worth travelling for.
+        <em>
+          light.
+        </em>
 
-  </p>
+      </h2>
 
 
-</div>
-```
+      <p>
+
+        There is a moment every evening when the world becomes gold.
+
+        At SOLARA, we believe those moments are worth travelling for.
+
+      </p>
+
+    </div>
 
   </section>
+
 
   <!-- =====================================================
        EXPERIENCES
@@ -2311,330 +2245,278 @@
 
   <section class="experiences">
 
-```
-<div class="container">
+    <div class="container">
 
+      <div class="section-heading">
 
-  <div class="section-heading">
+        <h2>
 
+          Moments made
 
-    <h2>
+          to be
 
-      Moments made
+          <em>
+            remembered.
+          </em>
 
-      to be
-
-      <em>
-
-        remembered.
-
-      </em>
-
-    </h2>
-
-
-    <p>
-
-      From the ocean to the table, discover the experiences that make SOLARA more than a destination.
-
-    </p>
-
-
-  </div>
-
-
-  <div class="experience-grid">
-
-
-    <article class="experience-card">
-
-
-      <img
-        src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=95"
-        alt="Ocean experience"
-      >
-
-
-      <div class="experience-content">
-
-
-        <h3>
-
-          Ocean
-
-        </h3>
+        </h2>
 
 
         <p>
 
-          Endless blue. Warm sand. Nowhere else to be.
+          From the ocean to the table, discover the experiences that make SOLARA more than a destination.
 
         </p>
-
 
       </div>
 
 
-    </article>
+      <div class="experience-grid">
 
 
-    <article class="experience-card">
+        <article class="experience-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=95"
+            alt="Ocean experience"
+          >
 
 
-      <img
-        src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1600&q=95"
-        alt="Luxury spa experience"
-      >
+          <div class="experience-content">
+
+            <h3>
+              Ocean
+            </h3>
 
 
-      <div class="experience-content">
+            <p>
+
+              Endless blue. Warm sand. Nowhere else to be.
+
+            </p>
+
+          </div>
+
+        </article>
 
 
-        <h3>
+        <article class="experience-card">
 
-          Spa
+          <img
+            src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1600&q=95"
+            alt="Luxury spa experience"
+          >
 
-        </h3>
+
+          <div class="experience-content">
+
+            <h3>
+              Spa
+            </h3>
 
 
-        <p>
+            <p>
 
-          Time slows down here.
+              Time slows down here.
 
-        </p>
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="experience-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1600&q=95"
+            alt="Fine dining experience"
+          >
+
+
+          <div class="experience-content">
+
+            <h3>
+              Dining
+            </h3>
+
+
+            <p>
+
+              Taste the place.
+
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="experience-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1800&q=95"
+            alt="Golden sunset experience"
+          >
+
+
+          <div class="experience-content">
+
+            <h3>
+              Sunset
+            </h3>
+
+
+            <p>
+
+              Every evening becomes gold.
+
+            </p>
+
+          </div>
+
+        </article>
 
 
       </div>
 
-
-    </article>
-
-
-    <article class="experience-card">
-
-
-      <img
-        src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1600&q=95"
-        alt="Fine dining experience"
-      >
-
-
-      <div class="experience-content">
-
-
-        <h3>
-
-          Dining
-
-        </h3>
-
-
-        <p>
-
-          Taste the place.
-
-        </p>
-
-
-      </div>
-
-
-    </article>
-
-
-    <article class="experience-card">
-
-
-      <img
-        src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1800&q=95"
-        alt="Golden sunset experience"
-      >
-
-
-      <div class="experience-content">
-
-
-        <h3>
-
-          Sunset
-
-        </h3>
-
-
-        <p>
-
-          Every evening becomes gold.
-
-        </p>
-
-
-      </div>
-
-
-    </article>
-
-
-  </div>
-
-
-</div>
-```
+    </div>
 
   </section>
 
+
   <!-- =====================================================
-       ROOMS PREVIEW
+       ROOMS
   ====================================================== -->
 
   <section class="rooms-preview">
 
-```
-<div class="container">
+    <div class="container">
+
+      <div class="rooms-preview-heading">
+
+        <h2>
+
+          Stay somewhere
+
+          <em>
+            unforgettable.
+          </em>
+
+        </h2>
 
 
-  <div class="rooms-preview-heading">
-
-
-    <h2>
-
-      Stay somewhere
-
-      <em>
-
-        unforgettable.
-
-      </em>
-
-    </h2>
-
-
-  </div>
-
-
-  <div class="rooms-grid">
-
-
-    <article class="room-card">
-
-
-      <div class="room-image">
-
-
-        <img
-          src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=95"
-          alt="The Solara Suite"
+        <a
+          href="rooms.html"
+          class="rooms-link"
         >
 
+          View all rooms
+
+        </a>
 
       </div>
 
 
-      <div class="room-info">
+      <div class="rooms-grid">
 
 
-        <h3>
+        <article class="room-card">
 
-          The Solara Suite
+          <div class="room-image">
 
-        </h3>
+            <img
+              src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=95"
+              alt="The Solara Suite"
+            >
+
+          </div>
 
 
-        <p>
+          <div class="room-info">
 
-          Expansive spaces, endless ocean views, and golden light.
+            <h3>
+              The Solara Suite
+            </h3>
 
-        </p>
+
+            <p>
+
+              Expansive spaces, endless ocean views, and golden light.
+
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="room-card">
+
+          <div class="room-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1800&q=95"
+              alt="Ocean Horizon Room"
+            >
+
+          </div>
+
+
+          <div class="room-info">
+
+            <h3>
+              Ocean Horizon Room
+            </h3>
+
+
+            <p>
+
+              Wake up to the sea and fall asleep beneath the stars.
+
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="room-card">
+
+          <div class="room-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=95"
+              alt="Sun Garden Villa"
+            >
+
+          </div>
+
+
+          <div class="room-info">
+
+            <h3>
+              Sun Garden Villa
+            </h3>
+
+
+            <p>
+
+              A private sanctuary surrounded by nature and sunlight.
+
+            </p>
+
+          </div>
+
+        </article>
 
 
       </div>
 
-
-    </article>
-
-
-    <article class="room-card">
-
-
-      <div class="room-image">
-
-
-        <img
-          src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1800&q=95"
-          alt="Ocean Horizon Room"
-        >
-
-
-      </div>
-
-
-      <div class="room-info">
-
-
-        <h3>
-
-          Ocean Horizon Room
-
-        </h3>
-
-
-        <p>
-
-          Wake up to the sea and fall asleep beneath the stars.
-
-        </p>
-
-
-      </div>
-
-
-    </article>
-
-
-    <article class="room-card">
-
-
-      <div class="room-image">
-
-
-        <img
-          src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=95"
-          alt="Sun Garden Villa"
-        >
-
-
-      </div>
-
-
-      <div class="room-info">
-
-
-        <h3>
-
-          Sun Garden Villa
-
-        </h3>
-
-
-        <p>
-
-          A private sanctuary surrounded by nature and sunlight.
-
-        </p>
-
-
-      </div>
-
-
-    </article>
-
-
-  </div>
-
-
-</div>
-```
+    </div>
 
   </section>
+
 
   <!-- =====================================================
        FINAL CTA
@@ -2642,44 +2524,39 @@
 
   <section class="final-cta">
 
-```
-<div class="container">
+    <div class="container">
+
+      <div class="eyebrow">
+
+        YOUR NEXT ESCAPE
+
+      </div>
 
 
-  <div class="eyebrow">
+      <h2>
 
-    YOUR NEXT ESCAPE
+        Your golden hour
 
-  </div>
+        <em>
+          awaits.
+        </em>
 
-
-  <h2>
-
-    Your golden hour
-
-    <em>
-
-      awaits.
-
-    </em>
-
-  </h2>
+      </h2>
 
 
-  <a
-    href="contact.html"
-    class="btn btn-gold"
-  >
+      <a
+        href="contact.html"
+        class="btn btn-gold"
+      >
 
-    Book Your Stay
+        Book Your Stay
 
-  </a>
+      </a>
 
-
-</div>
-```
+    </div>
 
   </section>
+
 
   <!-- =====================================================
        FOOTER
@@ -2687,106 +2564,77 @@
 
   <footer>
 
-```
-<div class="container">
+    <div class="container">
+
+      <div class="footer-top">
+
+        <div>
+
+          <a
+            href="index.html"
+            class="logo"
+          >
+
+            SOLARA HOTEL
+
+          </a>
 
 
-  <div class="footer-top">
+          <p class="footer-description">
+
+            Where sunlight meets the sea.
+
+            A world-class escape designed for unforgettable moments.
+
+          </p>
+
+        </div>
 
 
-    <div>
+        <div class="footer-links">
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="rooms.html">
+            Stay
+          </a>
+
+          <a href="experiences.html">
+            Experience
+          </a>
+
+          <a href="about.html">
+            About
+          </a>
+
+          <a href="contact.html">
+            Contact
+          </a>
+
+        </div>
+
+      </div>
 
 
-      <a
-        href="index.html"
-        class="logo"
-      >
+      <div class="footer-bottom">
 
-        SOLARA HOTEL
-
-      </a>
+        <span>
+          © 2026 SOLARA HOTEL
+        </span>
 
 
-      <p class="footer-description">
+        <span>
+          Where sunlight meets the sea.
+        </span>
 
-        Where sunlight meets the sea.
-
-        A world-class escape designed for unforgettable moments.
-
-      </p>
-
-
-    </div>
-
-
-    <div class="footer-links">
-
-
-      <a href="index.html">
-
-        Home
-
-      </a>
-
-
-      <a href="rooms.html">
-
-        Stay
-
-      </a>
-
-
-      <a href="experiences.html">
-
-        Experience
-
-      </a>
-
-
-      <a href="about.html">
-
-        About
-
-      </a>
-
-
-      <a href="contact.html">
-
-        Contact
-
-      </a>
-
+      </div>
 
     </div>
-
-
-  </div>
-
-
-  <div class="footer-bottom">
-
-
-    <span>
-
-      © 2026 SOLARA HOTEL
-
-    </span>
-
-
-    <span>
-
-      Where sunlight meets the sea.
-
-    </span>
-
-
-  </div>
-
-
-</div>
-```
 
   </footer>
+
 
 </body>
 
