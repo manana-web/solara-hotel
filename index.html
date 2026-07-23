@@ -65,12 +65,19 @@
     body {
 
       overflow-x: hidden;
-
       background: var(--cream);
-
       color: var(--dark);
-
       font-family: var(--sans);
+
+    }
+
+
+    /* Remove unwanted dots / bullets */
+
+    ul,
+    ol {
+
+      list-style: none;
 
     }
 
@@ -78,7 +85,6 @@
     a {
 
       color: inherit;
-
       text-decoration: none;
 
     }
@@ -87,10 +93,17 @@
     img {
 
       display: block;
-
       width: 100%;
-
       object-fit: cover;
+
+    }
+
+
+    button,
+    input,
+    textarea {
+
+      font-family: inherit;
 
     }
 
@@ -98,7 +111,6 @@
     .container {
 
       width: min(1320px, calc(100% - 80px));
-
       margin: auto;
 
     }
@@ -111,15 +123,10 @@
     .site-header {
 
       position: absolute;
-
       z-index: 30;
-
       top: 0;
-
       left: 0;
-
       width: 100%;
-
       padding-top: 24px;
 
     }
@@ -127,12 +134,10 @@
 
     .navbar {
 
-      height: 78px;
+      min-height: 78px;
 
       display: flex;
-
       align-items: center;
-
       justify-content: space-between;
 
       padding: 0 26px;
@@ -144,7 +149,6 @@
       background: rgba(2, 31, 43, .34);
 
       backdrop-filter: blur(22px);
-
       -webkit-backdrop-filter: blur(22px);
 
     }
@@ -153,11 +157,8 @@
     .logo {
 
       font-family: var(--serif);
-
       font-size: 25px;
-
       letter-spacing: .1em;
-
       white-space: nowrap;
 
       transition: color .3s ease;
@@ -175,7 +176,7 @@
     .nav-links {
 
       display: flex;
-
+      align-items: center;
       gap: 38px;
 
       font-size: 12px;
@@ -186,6 +187,7 @@
     .nav-links a {
 
       position: relative;
+      white-space: nowrap;
 
       transition: color .3s ease;
 
@@ -199,11 +201,9 @@
       position: absolute;
 
       left: 0;
-
       bottom: -9px;
 
       width: 0;
-
       height: 2px;
 
       background: var(--yellow);
@@ -234,10 +234,10 @@
       border: 1px solid rgba(255,255,255,.85);
 
       font-size: 10px;
-
       letter-spacing: .16em;
-
       text-transform: uppercase;
+
+      white-space: nowrap;
 
       transition: all .3s ease;
 
@@ -247,9 +247,7 @@
     .book-button:hover {
 
       background: var(--yellow);
-
       color: var(--dark);
-
       border-color: var(--yellow);
 
       transform: translateY(-2px);
@@ -265,10 +263,9 @@
 
       position: relative;
 
-      min-height: 100vh;
+      min-height: 100svh;
 
       display: flex;
-
       align-items: center;
 
       overflow: hidden;
@@ -281,13 +278,11 @@
     .hero-video {
 
       position: absolute;
-
       z-index: 0;
 
       inset: 0;
 
       width: 100%;
-
       height: 100%;
 
       object-fit: cover;
@@ -300,15 +295,11 @@
     @keyframes heroZoom {
 
       from {
-
         transform: scale(1);
-
       }
 
       to {
-
         transform: scale(1.08);
-
       }
 
     }
@@ -317,7 +308,6 @@
     .hero-overlay {
 
       position: absolute;
-
       z-index: 1;
 
       inset: 0;
@@ -325,27 +315,17 @@
       background:
 
         linear-gradient(
-
           90deg,
-
           rgba(2, 26, 38, .72),
-
           rgba(2, 26, 38, .16) 70%,
-
           rgba(2, 26, 38, .2)
-
         ),
 
         linear-gradient(
-
           180deg,
-
           rgba(2, 26, 38, .3),
-
           transparent 40%,
-
           rgba(2, 26, 38, .55)
-
         );
 
     }
@@ -354,15 +334,12 @@
     .sun-glow {
 
       position: absolute;
-
       z-index: 2;
 
       top: 20%;
-
       right: 10%;
 
       width: 300px;
-
       height: 300px;
 
       border-radius: 50%;
@@ -383,7 +360,6 @@
       from {
 
         transform: translate(0, 0) scale(1);
-
         opacity: .5;
 
       }
@@ -391,7 +367,6 @@
       to {
 
         transform: translate(-100px, 50px) scale(1.35);
-
         opacity: .9;
 
       }
@@ -402,10 +377,10 @@
     .hero-content {
 
       position: relative;
-
       z-index: 3;
 
       padding-top: 100px;
+      padding-bottom: 150px;
 
       animation: heroText 1.2s ease forwards;
 
@@ -417,7 +392,6 @@
       from {
 
         opacity: 0;
-
         transform: translateY(35px);
 
       }
@@ -425,7 +399,6 @@
       to {
 
         opacity: 1;
-
         transform: translateY(0);
 
       }
@@ -440,11 +413,9 @@
       color: var(--yellow);
 
       font-size: 10px;
-
       font-weight: 600;
 
       letter-spacing: .3em;
-
       text-transform: uppercase;
 
     }
@@ -470,7 +441,6 @@
     .hero h1 em {
 
       color: var(--yellow);
-
       font-style: italic;
 
     }
@@ -485,7 +455,6 @@
       color: rgba(255,255,255,.78);
 
       font-size: 16px;
-
       line-height: 1.8;
 
     }
@@ -494,7 +463,6 @@
     .hero-buttons {
 
       display: flex;
-
       gap: 15px;
 
       margin-top: 40px;
@@ -509,17 +477,14 @@
       display: inline-flex;
 
       align-items: center;
-
       justify-content: center;
 
       padding: 17px 26px;
 
       font-size: 10px;
-
       font-weight: 600;
 
       letter-spacing: .15em;
-
       text-transform: uppercase;
 
       transition: all .35s ease;
@@ -530,7 +495,6 @@
     .btn-gold {
 
       background: var(--yellow);
-
       color: var(--dark);
 
     }
@@ -559,7 +523,6 @@
     .btn-glass:hover {
 
       background: var(--white);
-
       color: var(--dark);
 
       transform: translateY(-5px);
@@ -567,33 +530,36 @@
     }
 
 
+    /* =====================================================
+       SCROLL INDICATOR
+    ====================================================== */
+
     .scroll-indicator {
 
       position: absolute;
 
       z-index: 4;
 
-      bottom: 30px;
-
+      bottom: 28px;
       left: 50%;
 
       display: flex;
 
       flex-direction: column;
-
       align-items: center;
 
-      gap: 12px;
+      gap: 10px;
 
       color: rgba(255,255,255,.7);
 
       font-size: 9px;
 
       letter-spacing: .2em;
-
       text-transform: uppercase;
 
       transform: translateX(-50%);
+
+      white-space: nowrap;
 
     }
 
@@ -601,8 +567,7 @@
     .scroll-line {
 
       width: 1px;
-
-      height: 50px;
+      height: 45px;
 
       background: rgba(255,255,255,.7);
 
@@ -613,12 +578,11 @@
 
     @keyframes scrollLine {
 
-      0%, 100% {
+      0%,
+      100% {
 
         transform: scaleY(.5);
-
         transform-origin: top;
-
         opacity: .4;
 
       }
@@ -626,9 +590,7 @@
       50% {
 
         transform: scaleY(1);
-
         transform-origin: top;
-
         opacity: 1;
 
       }
@@ -643,7 +605,6 @@
     .intro {
 
       padding: 150px 0;
-
       background: var(--cream);
 
     }
@@ -680,7 +641,6 @@
     .intro h2 em {
 
       color: var(--blue);
-
       font-style: italic;
 
     }
@@ -828,7 +788,6 @@
       min-height: 820px;
 
       display: flex;
-
       align-items: center;
 
       overflow: hidden;
@@ -841,13 +800,11 @@
     .golden-hour-video {
 
       position: absolute;
-
       z-index: 0;
 
       inset: 0;
 
       width: 100%;
-
       height: 100%;
 
       object-fit: cover;
@@ -860,15 +817,11 @@
     @keyframes goldenZoom {
 
       from {
-
         transform: scale(1);
-
       }
 
       to {
-
         transform: scale(1.07);
-
       }
 
     }
@@ -877,7 +830,6 @@
     .golden-hour-overlay {
 
       position: absolute;
-
       z-index: 1;
 
       inset: 0;
@@ -885,23 +837,15 @@
       background:
 
         linear-gradient(
-
           90deg,
-
           rgba(2, 25, 36, .78),
-
           rgba(2, 25, 36, .13)
-
         ),
 
         linear-gradient(
-
           180deg,
-
           rgba(244, 185, 58, .1),
-
           rgba(2, 25, 36, .5)
-
         );
 
     }
@@ -910,7 +854,6 @@
     .golden-hour-content {
 
       position: relative;
-
       z-index: 2;
 
       width: min(1320px, calc(100% - 80px));
@@ -940,7 +883,6 @@
     .golden-hour h2 em {
 
       color: var(--yellow);
-
       font-style: italic;
 
     }
@@ -963,7 +905,6 @@
 
     /* =====================================================
        EXPERIENCES SECTION
-       NO 404 BUTTONS
     ====================================================== */
 
     .experiences {
@@ -980,7 +921,6 @@
       display: flex;
 
       justify-content: space-between;
-
       align-items: end;
 
       gap: 40px;
@@ -1010,7 +950,6 @@
     .section-heading h2 em {
 
       color: var(--blue);
-
       font-style: italic;
 
     }
@@ -1086,7 +1025,6 @@
       inset: 0;
 
       width: 100%;
-
       height: 100%;
 
       transition: transform 1s ease;
@@ -1103,13 +1041,9 @@
       inset: 0;
 
       background: linear-gradient(
-
         to top,
-
         rgba(2, 25, 36, .82),
-
         transparent 70%
-
       );
 
     }
@@ -1125,13 +1059,10 @@
     .experience-content {
 
       position: absolute;
-
       z-index: 2;
 
       right: 30px;
-
       bottom: 30px;
-
       left: 30px;
 
     }
@@ -1161,7 +1092,6 @@
 
     /* =====================================================
        ROOMS PREVIEW
-       NO 404 BUTTONS
     ====================================================== */
 
     .rooms-preview {
@@ -1176,6 +1106,11 @@
 
 
     .rooms-preview-heading {
+
+      display: flex;
+
+      justify-content: space-between;
+      align-items: end;
 
       margin-bottom: 60px;
 
@@ -1200,8 +1135,24 @@
     .rooms-preview-heading h2 em {
 
       color: var(--yellow);
-
       font-style: italic;
+
+    }
+
+
+    .rooms-link {
+
+      padding-bottom: 9px;
+
+      border-bottom: 1px solid var(--yellow);
+
+      color: var(--yellow);
+
+      font-size: 10px;
+
+      letter-spacing: .15em;
+
+      text-transform: uppercase;
 
     }
 
@@ -1273,9 +1224,24 @@
 
     .room-info p {
 
+      margin-bottom: 20px;
+
       color: rgba(255,255,255,.62);
 
       line-height: 1.7;
+
+    }
+
+
+    .room-info a {
+
+      color: var(--yellow);
+
+      font-size: 10px;
+
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
 
     }
 
@@ -1291,7 +1257,6 @@
       display: flex;
 
       align-items: center;
-
       justify-content: center;
 
       text-align: center;
@@ -1301,11 +1266,8 @@
       background:
 
         linear-gradient(
-
           rgba(2, 25, 36, .45),
-
           rgba(2, 25, 36, .82)
-
         ),
 
         url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2400&q=95")
@@ -1337,7 +1299,6 @@
     .final-cta h2 em {
 
       color: var(--yellow);
-
       font-style: italic;
 
     }
@@ -1424,7 +1385,7 @@
 
 
     /* =====================================================
-       RESPONSIVE DESIGN
+       TABLET RESPONSIVE
     ====================================================== */
 
     @media (max-width: 950px) {
@@ -1488,8 +1449,26 @@
 
       }
 
+
+      .nav-links {
+
+        gap: 18px;
+
+      }
+
+
+      .book-button {
+
+        padding: 12px 15px;
+
+      }
+
     }
 
+
+    /* =====================================================
+       MOBILE RESPONSIVE
+    ====================================================== */
 
     @media (max-width: 650px) {
 
@@ -1500,41 +1479,67 @@
       }
 
 
+      /* MOBILE HEADER */
+
       .site-header {
 
-        padding-top: 14px;
+        padding-top: 12px;
 
       }
 
 
       .navbar {
 
-        height: 65px;
+        min-height: 64px;
 
-        padding: 0 14px;
+        padding: 0 13px;
+
+        gap: 10px;
 
       }
 
 
       .logo {
 
-        font-size: 17px;
+        font-size: 15px;
+
+        letter-spacing: .06em;
 
       }
 
+
+      /* Keep Contact visible */
 
       .nav-links {
 
-        gap: 13px;
+        display: flex;
 
-        font-size: 9px;
+        gap: 10px;
+
+        margin-left: auto;
+
+        font-size: 8px;
 
       }
 
 
-      .nav-links a:nth-child(3),
+      .nav-links a {
 
-      .nav-links a:nth-child(4) {
+        display: block;
+
+      }
+
+
+      .nav-links a::after {
+
+        bottom: -6px;
+
+      }
+
+
+      /* Hide only Experience on very small screens */
+
+      .nav-links a:nth-child(2) {
 
         display: none;
 
@@ -1548,25 +1553,72 @@
       }
 
 
+      /* MOBILE HERO */
+
+      .hero {
+
+        min-height: 100svh;
+
+      }
+
+
       .hero-content {
 
-        padding-top: 70px;
+        padding-top: 110px;
+
+        padding-bottom: 190px;
+
+      }
+
+
+      .eyebrow {
+
+        margin-bottom: 18px;
+
+        font-size: 8px;
+
+        letter-spacing: .2em;
+
+        line-height: 1.6;
 
       }
 
 
       .hero h1 {
 
-        font-size: clamp(58px, 17vw, 90px);
+        max-width: 100%;
+
+        font-size: clamp(56px, 16vw, 88px);
+
+        line-height: .88;
+
+      }
+
+
+      .hero-description {
+
+        max-width: 330px;
+
+        margin-top: 25px;
+
+        font-size: 14px;
+
+        line-height: 1.7;
 
       }
 
 
       .hero-buttons {
 
+        display: flex;
+
         flex-direction: column;
 
-        align-items: flex-start;
+        align-items: stretch;
+
+        gap: 10px;
+
+        margin-top: 30px;
 
       }
 
@@ -1575,7 +1627,112 @@
 
         width: 100%;
 
-        max-width: 260px;
+        max-width: 280px;
+
+        padding: 16px 20px;
+
+      }
+
+
+      /* Scroll indicator moved lower and separated */
+
+      .scroll-indicator {
+
+        bottom: 22px;
+
+        gap: 8px;
+
+        font-size: 8px;
+
+      }
+
+
+      .scroll-line {
+
+        height: 32px;
+
+      }
+
+
+      /* MOBILE INTRO */
+
+      .intro {
+
+        padding: 90px 0;
+
+      }
+
+
+      .intro-grid {
+
+        gap: 35px;
+
+      }
+
+
+      .intro h2 {
+
+        font-size: clamp(50px, 15vw, 75px);
+
+      }
+
+
+      .intro-text {
+
+        font-size: 15px;
+
+      }
+
+
+      /* MOBILE ABOUT */
+
+      .about-visual {
+
+        padding-bottom: 90px;
+
+      }
+
+
+      .about-grid {
+
+        gap: 16px;
+
+      }
+
+
+      .about-main-image {
+
+        height: 430px;
+
+      }
+
+
+      .about-small-image {
+
+        height: 280px;
+
+      }
+
+
+      .about-caption {
+
+        padding: 25px;
+
+      }
+
+
+      .about-caption h3 {
+
+        font-size: 32px;
+
+      }
+
+
+      /* MOBILE GOLDEN HOUR */
+
+      .golden-hour {
+
+        min-height: 650px;
 
       }
 
@@ -1587,32 +1744,154 @@
       }
 
 
-      .experience-grid {
+      .golden-hour h2 {
 
-        display: flex;
-
-        flex-direction: column;
+        font-size: clamp(65px, 18vw, 100px);
 
       }
 
 
-      .experience-card {
+      .golden-hour p {
 
-        min-height: 420px;
+        font-size: 15px;
 
       }
 
 
-      .rooms-preview-heading {
+      /* MOBILE EXPERIENCES */
+
+      .experiences {
+
+        padding: 90px 0;
+
+      }
+
+
+      .section-heading {
+
+        gap: 25px;
 
         margin-bottom: 40px;
 
       }
 
 
+      .section-heading h2 {
+
+        font-size: clamp(55px, 16vw, 85px);
+
+      }
+
+
+      .experience-grid {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 16px;
+
+      }
+
+
+      .experience-card {
+
+        min-height: 380px;
+
+      }
+
+
+      .experience-content {
+
+        right: 22px;
+        bottom: 22px;
+        left: 22px;
+
+      }
+
+
+      .experience-content h3 {
+
+        font-size: 42px;
+
+      }
+
+
+      /* MOBILE ROOMS */
+
+      .rooms-preview {
+
+        padding: 90px 0;
+
+      }
+
+
+      .rooms-preview-heading {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 28px;
+
+        margin-bottom: 40px;
+
+      }
+
+
+      .rooms-preview-heading h2 {
+
+        font-size: clamp(55px, 16vw, 85px);
+
+      }
+
+
+      .rooms-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+      }
+
+
       .room-image {
 
-        height: 400px;
+        height: 390px;
+
+      }
+
+
+      .room-info {
+
+        padding: 24px;
+
+      }
+
+
+      /* MOBILE CTA */
+
+      .final-cta {
+
+        min-height: 600px;
+
+        padding: 80px 20px;
+
+      }
+
+
+      .final-cta h2 {
+
+        font-size: clamp(58px, 16vw, 90px);
+
+      }
+
+
+      /* MOBILE FOOTER */
+
+      footer {
+
+        padding: 55px 0 25px;
 
       }
 
@@ -1623,7 +1902,65 @@
 
         flex-direction: column;
 
-        gap: 25px;
+        gap: 28px;
+
+      }
+
+
+      .footer-links {
+
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 18px;
+
+      }
+
+
+      .footer-bottom {
+
+        gap: 10px;
+
+      }
+
+    }
+
+
+    /* =====================================================
+       EXTRA SMALL MOBILE
+    ====================================================== */
+
+    @media (max-width: 390px) {
+
+      .logo {
+
+        font-size: 13px;
+
+      }
+
+
+      .nav-links {
+
+        gap: 7px;
+
+        font-size: 7px;
+
+      }
+
+
+      .hero h1 {
+
+        font-size: 54px;
+
+      }
+
+
+      .hero-content {
+
+        padding-top: 105px;
+
+        padding-bottom: 175px;
 
       }
 
@@ -1646,58 +1983,41 @@
 
   <nav class="navbar">
 
-
-    <!-- LOGO -->
-
     <a
       href="index.html"
       class="logo"
     >
-
       SOLARA HOTEL
-
     </a>
 
 
-    <!-- NAVIGATION -->
-
     <div class="nav-links">
-
 
       <a href="rooms.html">
         Stay
       </a>
 
-
-      <a href="index.html#experiences">
+      <a href="experiences.html">
         Experience
       </a>
-
 
       <a href="about.html">
         About
       </a>
 
-
       <a href="contact.html">
         Contact
       </a>
 
-
     </div>
 
-
-    <!-- BOOKING BUTTON -->
 
     <a
       href="contact.html"
       class="book-button"
     >
-
       Book Your Stay
-
     </a>
-
 
   </nav>
 
@@ -1731,15 +2051,12 @@
 
 <div class="hero-overlay"></div>
 
-
 <div class="sun-glow"></div>
 
 
 <div class="container">
 
-
   <div class="hero-content">
-
 
     <div class="eyebrow">
 
@@ -1770,14 +2087,11 @@
 
     <div class="hero-buttons">
 
-
       <a
         href="rooms.html"
         class="btn btn-gold"
       >
-
         Explore Rooms
-
       </a>
 
 
@@ -1785,31 +2099,23 @@
         href="about.html"
         class="btn btn-glass"
       >
-
         Discover SOLARA
-
       </a>
-
 
     </div>
 
-
   </div>
-
 
 </div>
 
 
 <div class="scroll-indicator">
 
-
   <span>
     Scroll to explore
   </span>
 
-
   <div class="scroll-line"></div>
-
 
 </div>
 ```
@@ -1825,9 +2131,7 @@
 ```
 <div class="container">
 
-
   <div class="intro-grid">
-
 
     <h2>
 
@@ -1854,9 +2158,7 @@
 
     </p>
 
-
   </div>
-
 
 </div>
 ```
@@ -1872,39 +2174,31 @@
 ```
 <div class="container">
 
-
   <div class="about-grid">
 
-
     <div class="about-main-image">
-
 
       <img
         src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=2200&q=95"
         alt="Luxury hotel overlooking the sea"
       >
 
-
     </div>
 
 
     <div class="about-side">
 
-
       <div class="about-small-image">
-
 
         <img
           src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1600&q=95"
           alt="Luxury resort pool"
         >
 
-
       </div>
 
 
       <div class="about-caption">
-
 
         <h3>
           A world of its own.
@@ -1917,15 +2211,11 @@
 
         </p>
 
-
       </div>
-
 
     </div>
 
-
   </div>
-
 
 </div>
 ```
@@ -1933,7 +2223,7 @@
   </section>
 
   <!-- =====================================================
-       GOLDEN HOUR VIDEO SECTION
+       GOLDEN HOUR
   ====================================================== -->
 
   <section class="golden-hour">
@@ -1959,7 +2249,6 @@
 
 
 <div class="golden-hour-content">
-
 
   <div class="eyebrow">
 
@@ -1987,25 +2276,21 @@
 
   </p>
 
-
 </div>
 ```
 
   </section>
 
   <!-- =====================================================
-       EXPERIENCES SECTION
-       CARDS WITHOUT 404 LINKS
+       EXPERIENCES
   ====================================================== -->
 
-  <section class="experiences" id="experiences">
+  <section class="experiences">
 
 ```
 <div class="container">
 
-
   <div class="section-heading">
-
 
     <h2>
 
@@ -2026,7 +2311,6 @@
 
     </p>
 
-
   </div>
 
 
@@ -2037,7 +2321,6 @@
 
     <article class="experience-card">
 
-
       <img
         src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=95"
         alt="Ocean experience"
@@ -2045,7 +2328,6 @@
 
 
       <div class="experience-content">
-
 
         <h3>
           Ocean
@@ -2058,9 +2340,7 @@
 
         </p>
 
-
       </div>
-
 
     </article>
 
@@ -2069,7 +2349,6 @@
 
     <article class="experience-card">
 
-
       <img
         src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1600&q=95"
         alt="Luxury spa experience"
@@ -2077,7 +2356,6 @@
 
 
       <div class="experience-content">
-
 
         <h3>
           Spa
@@ -2090,9 +2368,7 @@
 
         </p>
 
-
       </div>
-
 
     </article>
 
@@ -2101,7 +2377,6 @@
 
     <article class="experience-card">
 
-
       <img
         src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1600&q=95"
         alt="Fine dining experience"
@@ -2109,7 +2384,6 @@
 
 
       <div class="experience-content">
-
 
         <h3>
           Dining
@@ -2122,9 +2396,7 @@
 
         </p>
 
-
       </div>
-
 
     </article>
 
@@ -2133,7 +2405,6 @@
 
     <article class="experience-card">
 
-
       <img
         src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1800&q=95"
         alt="Golden sunset experience"
@@ -2141,7 +2412,6 @@
 
 
       <div class="experience-content">
-
 
         <h3>
           Sunset
@@ -2154,15 +2424,12 @@
 
         </p>
 
-
       </div>
-
 
     </article>
 
 
   </div>
-
 
 </div>
 ```
@@ -2171,7 +2438,6 @@
 
   <!-- =====================================================
        ROOMS PREVIEW
-       ROOM CARDS WITHOUT 404 LINKS
   ====================================================== -->
 
   <section class="rooms-preview">
@@ -2179,9 +2445,7 @@
 ```
 <div class="container">
 
-
   <div class="rooms-preview-heading">
-
 
     <h2>
 
@@ -2194,6 +2458,15 @@
     </h2>
 
 
+    <a
+      href="rooms.html"
+      class="rooms-link"
+    >
+
+      View all rooms →
+
+    </a>
+
   </div>
 
 
@@ -2204,21 +2477,17 @@
 
     <article class="room-card">
 
-
       <div class="room-image">
-
 
         <img
           src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=95"
           alt="The Solara Suite"
         >
 
-
       </div>
 
 
       <div class="room-info">
-
 
         <h3>
           The Solara Suite
@@ -2232,8 +2501,13 @@
         </p>
 
 
-      </div>
+        <a href="rooms.html">
 
+          Explore Room →
+
+        </a>
+
+      </div>
 
     </article>
 
@@ -2242,21 +2516,17 @@
 
     <article class="room-card">
 
-
       <div class="room-image">
-
 
         <img
           src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1800&q=95"
           alt="Ocean Horizon Room"
         >
 
-
       </div>
 
 
       <div class="room-info">
-
 
         <h3>
           Ocean Horizon Room
@@ -2270,8 +2540,13 @@
         </p>
 
 
-      </div>
+        <a href="rooms.html">
 
+          Explore Room →
+
+        </a>
+
+      </div>
 
     </article>
 
@@ -2280,21 +2555,17 @@
 
     <article class="room-card">
 
-
       <div class="room-image">
-
 
         <img
           src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=95"
           alt="Sun Garden Villa"
         >
 
-
       </div>
 
 
       <div class="room-info">
-
 
         <h3>
           Sun Garden Villa
@@ -2308,14 +2579,18 @@
         </p>
 
 
-      </div>
+        <a href="rooms.html">
 
+          Explore Room →
+
+        </a>
+
+      </div>
 
     </article>
 
 
   </div>
-
 
 </div>
 ```
@@ -2330,7 +2605,6 @@
 
 ```
 <div class="container">
-
 
   <div class="eyebrow">
 
@@ -2359,7 +2633,6 @@
 
   </a>
 
-
 </div>
 ```
 
@@ -2374,12 +2647,9 @@
 ```
 <div class="container">
 
-
   <div class="footer-top">
 
-
     <div>
-
 
       <a
         href="index.html"
@@ -2399,12 +2669,10 @@
 
       </p>
 
-
     </div>
 
 
     <div class="footer-links">
-
 
       <a href="index.html">
         Home
@@ -2416,7 +2684,7 @@
       </a>
 
 
-      <a href="index.html#experiences">
+      <a href="experiences.html">
         Experience
       </a>
 
@@ -2430,15 +2698,12 @@
         Contact
       </a>
 
-
     </div>
-
 
   </div>
 
 
   <div class="footer-bottom">
-
 
     <span>
 
@@ -2453,9 +2718,7 @@
 
     </span>
 
-
   </div>
-
 
 </div>
 ```
