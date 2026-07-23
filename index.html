@@ -1,2629 +1,1502 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>SOLARA HOTEL — Where Sunlight Meets The Sea</title>
-
-  <!-- =====================================================
-       GOOGLE FONTS
-  ====================================================== -->
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
-    rel="stylesheet"
-  >
-
-
-  <style>
-
-    /* =====================================================
-       GLOBAL STYLES
-    ====================================================== */
-
-    :root {
-
-      --gold: #f3bd45;
-
-      --yellow: #ffd96b;
-
-      --cream: #fff8e9;
-
-      --sand: #ead9bd;
-
-      --blue: #05627e;
-
-      --ocean: #087d98;
-
-      --deep-blue: #022b3a;
-
-      --dark: #061d28;
-
-      --white: #ffffff;
-
-      --serif: "Playfair Display", Georgia, serif;
-
-      --sans: "DM Sans", Arial, sans-serif;
-
-    }
-
-
-    * {
-
-      margin: 0;
-
-      padding: 0;
-
-      box-sizing: border-box;
-
-    }
-
-
-    html {
-
-      scroll-behavior: smooth;
-
-    }
-
-
-    body {
-
-      overflow-x: hidden;
-
-      background: var(--cream);
-
-      color: var(--dark);
-
-      font-family: var(--sans);
-
-    }
-
-
-    a {
-
-      color: inherit;
-
-      text-decoration: none;
-
-    }
-
-
-    img {
-
-      display: block;
-
-      width: 100%;
-
-      object-fit: cover;
-
-    }
-
-
-    .container {
-
-      width: min(1320px, calc(100% - 80px));
-
-      margin: auto;
-
-    }
-
-
-    /* =====================================================
-       HEADER
-    ====================================================== */
-
-    .site-header {
-
-      position: absolute;
-
-      z-index: 30;
-
-      top: 0;
-
-      left: 0;
-
-      width: 100%;
-
-      padding-top: 24px;
-
-    }
-
-
-    .navbar {
-
-      height: 78px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-
-      padding: 0 26px;
-
-      color: var(--white);
-
-      border: 1px solid rgba(255,255,255,.35);
-
-      background: rgba(2, 31, 43, .34);
-
-      backdrop-filter: blur(22px);
-
-      -webkit-backdrop-filter: blur(22px);
-
-    }
-
-
-    .logo {
-
-      font-family: var(--serif);
-
-      font-size: 25px;
-
-      letter-spacing: .1em;
-
-      white-space: nowrap;
-
-      transition: color .3s ease;
-
-    }
-
-
-    .logo:hover {
-
-      color: var(--yellow);
-
-    }
-
-
-    .nav-links {
-
-      display: flex;
-
-      gap: 38px;
-
-      font-size: 12px;
-
-    }
-
-
-    .nav-links a {
-
-      position: relative;
-
-      transition: color .3s ease;
-
-    }
-
-
-    .nav-links a::after {
-
-      content: "";
-
-      position: absolute;
-
-      left: 0;
-
-      bottom: -9px;
-
-      width: 0;
-
-      height: 2px;
-
-      background: var(--yellow);
-
-      transition: width .3s ease;
-
-    }
-
-
-    .nav-links a:hover {
-
-      color: var(--yellow);
-
-    }
-
-
-    .nav-links a:hover::after {
-
-      width: 100%;
-
-    }
-
-
-    .book-button {
-
-      padding: 14px 22px;
-
-      border: 1px solid rgba(255,255,255,.85);
-
-      font-size: 10px;
-
-      letter-spacing: .16em;
-
-      text-transform: uppercase;
-
-      transition: all .3s ease;
-
-    }
-
-
-    .book-button:hover {
-
-      background: var(--yellow);
-
-      color: var(--dark);
-
-      border-color: var(--yellow);
-
-      transform: translateY(-2px);
-
-    }
-
-
-    /* =====================================================
-       HERO SECTION
-    ====================================================== */
-
-    .hero {
-
-      position: relative;
-
-      min-height: 100vh;
-
-      display: flex;
-
-      align-items: center;
-
-      overflow: hidden;
-
-      color: var(--white);
-
-    }
-
-
-    .hero-video {
-
-      position: absolute;
-
-      z-index: 0;
-
-      inset: 0;
-
-      width: 100%;
-
-      height: 100%;
-
-      object-fit: cover;
-
-      animation: heroZoom 18s ease-in-out infinite alternate;
-
-    }
-
-
-    @keyframes heroZoom {
-
-      from {
-
-        transform: scale(1);
-
-      }
-
-      to {
-
-        transform: scale(1.08);
-
-      }
-
-    }
-
-
-    .hero-overlay {
-
-      position: absolute;
-
-      z-index: 1;
-
-      inset: 0;
-
-      background:
-
-        linear-gradient(
-
-          90deg,
-
-          rgba(2, 26, 38, .72),
-
-          rgba(2, 26, 38, .16) 70%,
-
-          rgba(2, 26, 38, .2)
-
-        ),
-
-        linear-gradient(
-
-          180deg,
-
-          rgba(2, 26, 38, .3),
-
-          transparent 40%,
-
-          rgba(2, 26, 38, .55)
-
-        );
-
-    }
-
-
-    .sun-glow {
-
-      position: absolute;
-
-      z-index: 2;
-
-      top: 20%;
-
-      right: 10%;
-
-      width: 300px;
-
-      height: 300px;
-
-      border-radius: 50%;
-
-      background: rgba(255, 210, 91, .28);
-
-      filter: blur(70px);
-
-      animation: glowMove 8s ease-in-out infinite alternate;
-
-      pointer-events: none;
-
-    }
-
-
-    @keyframes glowMove {
-
-      from {
-
-        transform: translate(0, 0) scale(1);
-
-        opacity: .5;
-
-      }
-
-      to {
-
-        transform: translate(-100px, 50px) scale(1.35);
-
-        opacity: .9;
-
-      }
-
-    }
-
-
-    .hero-content {
-
-      position: relative;
-
-      z-index: 3;
-
-      padding-top: 100px;
-
-      animation: heroText 1.2s ease forwards;
-
-    }
-
-
-    @keyframes heroText {
-
-      from {
-
-        opacity: 0;
-
-        transform: translateY(35px);
-
-      }
-
-      to {
-
-        opacity: 1;
-
-        transform: translateY(0);
-
-      }
-
-    }
-
-
-    .eyebrow {
-
-      margin-bottom: 24px;
-
-      color: var(--yellow);
-
-      font-size: 10px;
-
-      font-weight: 600;
-
-      letter-spacing: .3em;
-
-      text-transform: uppercase;
-
-    }
-
-
-    .hero h1 {
-
-      max-width: 1000px;
-
-      font-family: var(--serif);
-
-      font-size: clamp(68px, 10vw, 150px);
-
-      font-weight: 400;
-
-      line-height: .86;
-
-      letter-spacing: -.07em;
-
-    }
-
-
-    .hero h1 em {
-
-      color: var(--yellow);
-
-      font-style: italic;
-
-    }
-
-
-    .hero-description {
-
-      max-width: 500px;
-
-      margin-top: 35px;
-
-      color: rgba(255,255,255,.78);
-
-      font-size: 16px;
-
-      line-height: 1.8;
-
-    }
-
-
-    .hero-buttons {
-
-      display: flex;
-
-      gap: 15px;
-
-      margin-top: 40px;
-
-      flex-wrap: wrap;
-
-    }
-
-
-    .btn {
-
-      display: inline-flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      padding: 17px 26px;
-
-      font-size: 10px;
-
-      font-weight: 600;
-
-      letter-spacing: .15em;
-
-      text-transform: uppercase;
-
-      transition: all .35s ease;
-
-    }
-
-
-    .btn-gold {
-
-      background: var(--yellow);
-
-      color: var(--dark);
-
-    }
-
-
-    .btn-gold:hover {
-
-      background: var(--white);
-
-      transform: translateY(-5px);
-
-    }
-
-
-    .btn-glass {
-
-      border: 1px solid rgba(255,255,255,.7);
-
-      background: rgba(255,255,255,.08);
-
-      backdrop-filter: blur(10px);
-
-    }
-
-
-    .btn-glass:hover {
-
-      background: var(--white);
-
-      color: var(--dark);
-
-      transform: translateY(-5px);
-
-    }
-
-
-    .scroll-indicator {
-
-      position: absolute;
-
-      z-index: 4;
-
-      bottom: 30px;
-
-      left: 50%;
-
-      display: flex;
-
-      flex-direction: column;
-
-      align-items: center;
-
-      gap: 12px;
-
-      color: rgba(255,255,255,.7);
-
-      font-size: 9px;
-
-      letter-spacing: .2em;
-
-      text-transform: uppercase;
-
-      transform: translateX(-50%);
-
-    }
-
-
-    .scroll-line {
-
-      width: 1px;
-
-      height: 50px;
-
-      background: rgba(255,255,255,.7);
-
-      animation: scrollLine 2s ease-in-out infinite;
-
-    }
-
-
-    @keyframes scrollLine {
-
-      0%, 100% {
-
-        transform: scaleY(.5);
-
-        transform-origin: top;
-
-        opacity: .4;
-
-      }
-
-      50% {
-
-        transform: scaleY(1);
-
-        transform-origin: top;
-
-        opacity: 1;
-
-      }
-
-    }
-
-
-    /* =====================================================
-       INTRODUCTION SECTION
-    ====================================================== */
-
-    .intro {
-
-      padding: 150px 0;
-
-      background: var(--cream);
-
-    }
-
-
-    .intro-grid {
-
-      display: grid;
-
-      grid-template-columns: .85fr 1.15fr;
-
-      gap: 100px;
-
-      align-items: end;
-
-    }
-
-
-    .intro h2 {
-
-      font-family: var(--serif);
-
-      font-size: clamp(55px, 7vw, 105px);
-
-      font-weight: 400;
-
-      line-height: .9;
-
-      letter-spacing: -.06em;
-
-    }
-
-
-    .intro h2 em {
-
-      color: var(--blue);
-
-      font-style: italic;
-
-    }
-
-
-    .intro-text {
-
-      max-width: 560px;
-
-      color: #6d685f;
-
-      font-size: 17px;
-
-      line-height: 1.9;
-
-    }
-
-
-    /* =====================================================
-       ABOUT VISUAL SECTION
-    ====================================================== */
-
-    .about-visual {
-
-      padding-bottom: 150px;
-
-    }
-
-
-    .about-grid {
-
-      display: grid;
-
-      grid-template-columns: 1.2fr .8fr;
-
-      gap: 22px;
-
-      align-items: end;
-
-    }
-
-
-    .about-main-image {
-
-      height: 700px;
-
-      overflow: hidden;
-
-    }
-
-
-    .about-main-image img {
-
-      height: 100%;
-
-      transition: transform 1s ease;
-
-    }
-
-
-    .about-main-image:hover img {
-
-      transform: scale(1.06);
-
-    }
-
-
-    .about-side {
-
-      display: flex;
-
-      flex-direction: column;
-
-      gap: 22px;
-
-    }
-
-
-    .about-small-image {
-
-      height: 390px;
-
-      overflow: hidden;
-
-    }
-
-
-    .about-small-image img {
-
-      height: 100%;
-
-      transition: transform 1s ease;
-
-    }
-
-
-    .about-small-image:hover img {
-
-      transform: scale(1.08);
-
-    }
-
-
-    .about-caption {
-
-      padding: 32px;
-
-      background: var(--deep-blue);
-
-      color: var(--white);
-
-    }
-
-
-    .about-caption h3 {
-
-      margin-bottom: 15px;
-
-      font-family: var(--serif);
-
-      font-size: 38px;
-
-      font-weight: 400;
-
-    }
-
-
-    .about-caption p {
-
-      color: rgba(255,255,255,.65);
-
-      line-height: 1.8;
-
-    }
-
-
-    /* =====================================================
-       GOLDEN HOUR VIDEO SECTION
-    ====================================================== */
-
-    .golden-hour {
-
-      position: relative;
-
-      min-height: 820px;
-
-      display: flex;
-
-      align-items: center;
-
-      overflow: hidden;
-
-      color: var(--white);
-
-    }
-
-
-    .golden-hour-video {
-
-      position: absolute;
-
-      z-index: 0;
-
-      inset: 0;
-
-      width: 100%;
-
-      height: 100%;
-
-      object-fit: cover;
-
-      animation: goldenZoom 18s ease-in-out infinite alternate;
-
-    }
-
-
-    @keyframes goldenZoom {
-
-      from {
-
-        transform: scale(1);
-
-      }
-
-      to {
-
-        transform: scale(1.07);
-
-      }
-
-    }
-
-
-    .golden-hour-overlay {
-
-      position: absolute;
-
-      z-index: 1;
-
-      inset: 0;
-
-      background:
-
-        linear-gradient(
-
-          90deg,
-
-          rgba(2, 25, 36, .78),
-
-          rgba(2, 25, 36, .13)
-
-        ),
-
-        linear-gradient(
-
-          180deg,
-
-          rgba(244, 185, 58, .1),
-
-          rgba(2, 25, 36, .5)
-
-        );
-
-    }
-
-
-    .golden-hour-content {
-
-      position: relative;
-
-      z-index: 2;
-
-      width: min(1320px, calc(100% - 80px));
-
-      margin: auto;
-
-    }
-
-
-    .golden-hour h2 {
-
-      max-width: 900px;
-
-      font-family: var(--serif);
-
-      font-size: clamp(70px, 11vw, 160px);
-
-      font-weight: 400;
-
-      line-height: .84;
-
-      letter-spacing: -.07em;
-
-    }
-
-
-    .golden-hour h2 em {
-
-      color: var(--yellow);
-
-      font-style: italic;
-
-    }
-
-
-    .golden-hour p {
-
-      max-width: 500px;
-
-      margin-top: 35px;
-
-      color: rgba(255,255,255,.75);
-
-      font-size: 17px;
-
-      line-height: 1.8;
-
-    }
-
-
-    /* =====================================================
-       EXPERIENCES SECTION
-    ====================================================== */
-
-    .experiences {
-
-      padding: 150px 0;
-
-      background: var(--cream);
-
-    }
-
-
-    .section-heading {
-
-      display: flex;
-
-      justify-content: space-between;
-
-      align-items: end;
-
-      gap: 40px;
-
-      margin-bottom: 65px;
-
-    }
-
-
-    .section-heading h2 {
-
-      max-width: 700px;
-
-      font-family: var(--serif);
-
-      font-size: clamp(60px, 8vw, 115px);
-
-      font-weight: 400;
-
-      line-height: .88;
-
-      letter-spacing: -.06em;
-
-    }
-
-
-    .section-heading h2 em {
-
-      color: var(--blue);
-
-      font-style: italic;
-
-    }
-
-
-    .section-heading p {
-
-      max-width: 300px;
-
-      color: #77736a;
-
-      line-height: 1.7;
-
-    }
-
-
-    .experience-grid {
-
-      display: grid;
-
-      grid-template-columns: repeat(12, 1fr);
-
-      gap: 18px;
-
-    }
-
-
-    .experience-card {
-
-      position: relative;
-
-      min-height: 450px;
-
-      overflow: hidden;
-
-      color: var(--white);
-
-    }
-
-
-    .experience-card:nth-child(1) {
-
-      grid-column: span 7;
-
-    }
-
-
-    .experience-card:nth-child(2) {
-
-      grid-column: span 5;
-
-    }
-
-
-    .experience-card:nth-child(3) {
-
-      grid-column: span 5;
-
-    }
-
-
-    .experience-card:nth-child(4) {
-
-      grid-column: span 7;
-
-    }
-
-
-    .experience-card img {
-
-      position: absolute;
-
-      inset: 0;
-
-      width: 100%;
-
-      height: 100%;
-
-      transition: transform 1s ease;
-
-    }
-
-
-    .experience-card::after {
-
-      content: "";
-
-      position: absolute;
-
-      inset: 0;
-
-      background: linear-gradient(
-
-        to top,
-
-        rgba(2, 25, 36, .82),
-
-        transparent 70%
-
-      );
-
-    }
-
-
-    .experience-card:hover img {
-
-      transform: scale(1.08);
-
-    }
-
-
-    .experience-content {
-
-      position: absolute;
-
-      z-index: 2;
-
-      right: 30px;
-
-      bottom: 30px;
-
-      left: 30px;
-
-    }
-
-
-    .experience-content h3 {
-
-      margin-bottom: 10px;
-
-      font-family: var(--serif);
-
-      font-size: 48px;
-
-      font-weight: 400;
-
-    }
-
-
-    .experience-content p {
-
-      color: rgba(255,255,255,.72);
-
-      line-height: 1.6;
-
-    }
-
-
-    .experience-link {
-
-      display: inline-block;
-
-      margin-top: 18px;
-
-      padding-bottom: 7px;
-
-      border-bottom: 1px solid var(--yellow);
-
-      color: var(--yellow);
-
-      font-size: 10px;
-
-      letter-spacing: .14em;
-
-      text-transform: uppercase;
-
-    }
-
-
-    /* =====================================================
-       ROOMS PREVIEW
-    ====================================================== */
-
-    .rooms-preview {
-
-      padding: 150px 0;
-
-      background: var(--deep-blue);
-
-      color: var(--white);
-
-    }
-
-
-    .rooms-preview-heading {
-
-      display: flex;
-
-      justify-content: space-between;
-
-      align-items: end;
-
-      margin-bottom: 60px;
-
-    }
-
-
-    .rooms-preview-heading h2 {
-
-      font-family: var(--serif);
-
-      font-size: clamp(60px, 8vw, 110px);
-
-      font-weight: 400;
-
-      line-height: .88;
-
-      letter-spacing: -.06em;
-
-    }
-
-
-    .rooms-preview-heading h2 em {
-
-      color: var(--yellow);
-
-      font-style: italic;
-
-    }
-
-
-    .rooms-link {
-
-      padding-bottom: 9px;
-
-      border-bottom: 1px solid var(--yellow);
-
-      color: var(--yellow);
-
-      font-size: 10px;
-
-      letter-spacing: .15em;
-
-      text-transform: uppercase;
-
-    }
-
-
-    .rooms-grid {
-
-      display: grid;
-
-      grid-template-columns: repeat(3, 1fr);
-
-      gap: 18px;
-
-    }
-
-
-    .room-card {
-
-      overflow: hidden;
-
-      background: rgba(255,255,255,.06);
-
-    }
-
-
-    .room-image {
-
-      height: 430px;
-
-      overflow: hidden;
-
-    }
-
-
-    .room-image img {
-
-      height: 100%;
-
-      transition: transform 1s ease;
-
-    }
-
-
-    .room-card:hover .room-image img {
-
-      transform: scale(1.08);
-
-    }
-
-
-    .room-info {
-
-      padding: 28px;
-
-    }
-
-
-    .room-info h3 {
-
-      margin-bottom: 12px;
-
-      font-family: var(--serif);
-
-      font-size: 34px;
-
-      font-weight: 400;
-
-    }
-
-
-    .room-info p {
-
-      margin-bottom: 20px;
-
-      color: rgba(255,255,255,.62);
-
-      line-height: 1.7;
-
-    }
-
-
-    .room-info a {
-
-      color: var(--yellow);
-
-      font-size: 10px;
-
-      letter-spacing: .14em;
-
-      text-transform: uppercase;
-
-    }
-
-
-    /* =====================================================
-       FULL WIDTH CTA
-    ====================================================== */
-
-    .final-cta {
-
-      min-height: 700px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      text-align: center;
-
-      color: var(--white);
-
-      background:
-
-        linear-gradient(
-
-          rgba(2, 25, 36, .45),
-
-          rgba(2, 25, 36, .82)
-
-        ),
-
-        url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2400&q=95")
-
-        center / cover;
-
-    }
-
-
-    .final-cta h2 {
-
-      max-width: 900px;
-
-      margin: auto;
-
-      font-family: var(--serif);
-
-      font-size: clamp(65px, 9vw, 135px);
-
-      font-weight: 400;
-
-      line-height: .87;
-
-      letter-spacing: -.06em;
-
-    }
-
-
-    .final-cta h2 em {
-
-      color: var(--yellow);
-
-      font-style: italic;
-
-    }
-
-
-    /* =====================================================
-       FOOTER
-    ====================================================== */
-
-    footer {
-
-      padding: 70px 0 25px;
-
-      background: var(--dark);
-
-      color: var(--white);
-
-    }
-
-
-    .footer-top {
-
-      display: flex;
-
-      justify-content: space-between;
-
-      gap: 40px;
-
-      padding-bottom: 50px;
-
-      border-bottom: 1px solid rgba(255,255,255,.15);
-
-    }
-
-
-    .footer-description {
-
-      max-width: 320px;
-
-      margin-top: 15px;
-
-      color: rgba(255,255,255,.55);
-
-      line-height: 1.8;
-
-    }
-
-
-    .footer-links {
-
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 25px;
-
-      color: rgba(255,255,255,.65);
-
-      font-size: 12px;
-
-    }
-
-
-    .footer-links a:hover {
-
-      color: var(--yellow);
-
-    }
-
-
-    .footer-bottom {
-
-      display: flex;
-
-      justify-content: space-between;
-
-      padding-top: 25px;
-
-      color: rgba(255,255,255,.4);
-
-      font-size: 10px;
-
-    }
-
-
-    /* =====================================================
-       RESPONSIVE DESIGN
-    ====================================================== */
-
-    @media (max-width: 950px) {
-
-      .container {
-
-        width: calc(100% - 50px);
-
-      }
-
-
-      .intro-grid {
-
-        grid-template-columns: 1fr;
-
-        gap: 40px;
-
-      }
-
-
-      .about-grid {
-
-        grid-template-columns: 1fr;
-
-      }
-
-
-      .about-main-image {
-
-        height: 550px;
-
-      }
-
-
-      .about-small-image {
-
-        height: 420px;
-
-      }
-
-
-      .rooms-grid {
-
-        grid-template-columns: 1fr;
-
-      }
-
-
-      .room-image {
-
-        height: 500px;
-
-      }
-
-
-      .section-heading {
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-      }
-
-    }
-
-
-    @media (max-width: 650px) {
-
-      .container {
-
-        width: calc(100% - 32px);
-
-      }
-
-
-      .site-header {
-
-        padding-top: 14px;
-
-      }
-
-
-      .navbar {
-
-        height: 65px;
-
-        padding: 0 14px;
-
-      }
-
-
-      .logo {
-
-        font-size: 17px;
-
-      }
-
-
-      .nav-links {
-
-        gap: 13px;
-
-        font-size: 9px;
-
-      }
-
-
-      .nav-links a:nth-child(3),
-
-      .nav-links a:nth-child(4) {
-
-        display: none;
-
-      }
-
-
-      .book-button {
-
-        display: none;
-
-      }
-
-
-      .hero-content {
-
-        padding-top: 70px;
-
-      }
-
-
-      .hero h1 {
-
-        font-size: clamp(58px, 17vw, 90px);
-
-      }
-
-
-      .hero-buttons {
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-      }
-
-
-      .btn {
-
-        width: 100%;
-
-        max-width: 260px;
-
-      }
-
-
-      .golden-hour-content {
-
-        width: calc(100% - 32px);
-
-      }
-
-
-      .experience-grid {
-
-        display: flex;
-
-        flex-direction: column;
-
-      }
-
-
-      .experience-card {
-
-        min-height: 420px;
-
-      }
-
-
-      .rooms-preview-heading {
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 30px;
-
-      }
-
-
-      .room-image {
-
-        height: 400px;
-
-      }
-
-
-      .footer-top,
-
-      .footer-bottom {
-
-        flex-direction: column;
-
-        gap: 25px;
-
-      }
-
-    }
-
-  </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SOLARA HOTEL — Where Sunlight Meets The Sea</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================================================
+   GLOBAL STYLES
+===================================================== */
+
+:root {
+  --gold: #f3bd45;
+  --yellow: #ffd96b;
+  --cream: #fff8e9;
+  --sand: #ead9bd;
+  --blue: #05627e;
+  --ocean: #087d98;
+  --deep-blue: #022b3a;
+  --dark: #061d28;
+  --white: #ffffff;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "DM Sans", Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background: var(--cream);
+  color: var(--dark);
+  font-family: var(--sans);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.container {
+  width: min(1320px, calc(100% - 80px));
+  margin: auto;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.site-header {
+  position: absolute;
+  z-index: 30;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 24px;
+}
+
+.navbar {
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 26px;
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,.35);
+  background: rgba(2, 31, 43, .34);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+
+.logo {
+  font-family: var(--serif);
+  font-size: 25px;
+  letter-spacing: .1em;
+  white-space: nowrap;
+  transition: color .3s ease;
+}
+
+.logo:hover {
+  color: var(--yellow);
+}
+
+.nav-links {
+  display: flex;
+  gap: 38px;
+  font-size: 12px;
+}
+
+.nav-links a {
+  position: relative;
+  transition: color .3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -9px;
+  width: 0;
+  height: 2px;
+  background: var(--yellow);
+  transition: width .3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--yellow);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.book-button {
+  padding: 14px 22px;
+  border: 1px solid rgba(255,255,255,.85);
+  font-size: 10px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  transition: all .3s ease;
+}
+
+.book-button:hover {
+  background: var(--yellow);
+  color: var(--dark);
+  border-color: var(--yellow);
+  transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   HERO SECTION
+===================================================== */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: var(--white);
+}
+
+.hero-video {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: heroZoom 18s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.hero-overlay {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 26, 38, .72),
+      rgba(2, 26, 38, .16) 70%,
+      rgba(2, 26, 38, .2)
+    ),
+    linear-gradient(
+      180deg,
+      rgba(2, 26, 38, .3),
+      transparent 40%,
+      rgba(2, 26, 38, .55)
+    );
+}
+
+.sun-glow {
+  position: absolute;
+  z-index: 2;
+  top: 20%;
+  right: 10%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(255, 210, 91, .28);
+  filter: blur(70px);
+  animation: glowMove 8s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes glowMove {
+  from {
+    transform: translate(0, 0) scale(1);
+    opacity: .5;
+  }
+
+  to {
+    transform: translate(-100px, 50px) scale(1.35);
+    opacity: .9;
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  padding-top: 100px;
+  animation: heroText 1.2s ease forwards;
+}
+
+@keyframes heroText {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.eyebrow {
+  margin-bottom: 24px;
+  color: var(--yellow);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 1000px;
+  font-family: var(--serif);
+  font-size: clamp(68px, 10vw, 150px);
+  font-weight: 400;
+  line-height: .86;
+  letter-spacing: -.07em;
+}
+
+.hero h1 em {
+  color: var(--yellow);
+  font-style: italic;
+}
+
+.hero-description {
+  max-width: 500px;
+  margin-top: 35px;
+  color: rgba(255,255,255,.78);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 17px 26px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  transition: all .35s ease;
+}
+
+.btn-gold {
+  background: var(--yellow);
+  color: var(--dark);
+}
+
+.btn-gold:hover {
+  background: var(--white);
+  transform: translateY(-5px);
+}
+
+.btn-glass {
+  border: 1px solid rgba(255,255,255,.7);
+  background: rgba(255,255,255,.08);
+  backdrop-filter: blur(10px);
+}
+
+.btn-glass:hover {
+  background: var(--white);
+  color: var(--dark);
+  transform: translateY(-5px);
+}
+
+.scroll-indicator {
+  position: absolute;
+  z-index: 4;
+  bottom: 30px;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255,255,255,.7);
+  font-size: 9px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+}
+
+.scroll-line {
+  width: 1px;
+  height: 50px;
+  background: rgba(255,255,255,.7);
+  animation: scrollLine 2s ease-in-out infinite;
+}
+
+@keyframes scrollLine {
+  0%, 100% {
+    transform: scaleY(.5);
+    transform-origin: top;
+    opacity: .4;
+  }
+
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+    opacity: 1;
+  }
+}
+
+
+/* =====================================================
+   INTRODUCTION
+===================================================== */
+
+.intro {
+  padding: 150px 0;
+  background: var(--cream);
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 100px;
+  align-items: end;
+}
+
+.intro h2 {
+  font-family: var(--serif);
+  font-size: clamp(55px, 7vw, 105px);
+  font-weight: 400;
+  line-height: .9;
+  letter-spacing: -.06em;
+}
+
+.intro h2 em {
+  color: var(--blue);
+  font-style: italic;
+}
+
+.intro-text {
+  max-width: 560px;
+  color: #6d685f;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+
+/* =====================================================
+   ABOUT VISUAL SECTION
+===================================================== */
+
+.about-visual {
+  padding-bottom: 150px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 22px;
+  align-items: end;
+}
+
+.about-main-image {
+  height: 700px;
+  overflow: hidden;
+}
+
+.about-main-image img {
+  height: 100%;
+  transition: transform 1s ease;
+}
+
+.about-main-image:hover img {
+  transform: scale(1.06);
+}
+
+.about-side {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.about-small-image {
+  height: 390px;
+  overflow: hidden;
+}
+
+.about-small-image img {
+  height: 100%;
+  transition: transform 1s ease;
+}
+
+.about-small-image:hover img {
+  transform: scale(1.08);
+}
+
+.about-caption {
+  padding: 32px;
+  background: var(--deep-blue);
+  color: var(--white);
+}
+
+.about-caption h3 {
+  margin-bottom: 15px;
+  font-family: var(--serif);
+  font-size: 38px;
+  font-weight: 400;
+}
+
+.about-caption p {
+  color: rgba(255,255,255,.65);
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   GOLDEN HOUR VIDEO SECTION
+===================================================== */
+
+.golden-hour {
+  position: relative;
+  min-height: 820px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: var(--white);
+}
+
+.golden-hour-video {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: goldenZoom 18s ease-in-out infinite alternate;
+}
+
+@keyframes goldenZoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.07);
+  }
+}
+
+.golden-hour-overlay {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 25, 36, .78),
+      rgba(2, 25, 36, .13)
+    ),
+    linear-gradient(
+      180deg,
+      rgba(244, 185, 58, .1),
+      rgba(2, 25, 36, .5)
+    );
+}
+
+.golden-hour-content {
+  position: relative;
+  z-index: 2;
+  width: min(1320px, calc(100% - 80px));
+  margin: auto;
+}
+
+.golden-hour h2 {
+  max-width: 900px;
+  font-family: var(--serif);
+  font-size: clamp(70px, 11vw, 160px);
+  font-weight: 400;
+  line-height: .84;
+  letter-spacing: -.07em;
+}
+
+.golden-hour h2 em {
+  color: var(--yellow);
+  font-style: italic;
+}
+
+.golden-hour p {
+  max-width: 500px;
+  margin-top: 35px;
+  color: rgba(255,255,255,.75);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   EXPERIENCES SECTION
+===================================================== */
+
+.experiences {
+  padding: 150px 0;
+  background: var(--cream);
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 40px;
+  margin-bottom: 65px;
+}
+
+.section-heading h2 {
+  max-width: 700px;
+  font-family: var(--serif);
+  font-size: clamp(60px, 8vw, 115px);
+  font-weight: 400;
+  line-height: .88;
+  letter-spacing: -.06em;
+}
+
+.section-heading h2 em {
+  color: var(--blue);
+  font-style: italic;
+}
+
+.section-heading p {
+  max-width: 300px;
+  color: #77736a;
+  line-height: 1.7;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 18px;
+}
+
+.experience-card {
+  position: relative;
+  min-height: 450px;
+  overflow: hidden;
+  color: var(--white);
+}
+
+.experience-card:nth-child(1) {
+  grid-column: span 7;
+}
+
+.experience-card:nth-child(2) {
+  grid-column: span 5;
+}
+
+.experience-card:nth-child(3) {
+  grid-column: span 5;
+}
+
+.experience-card:nth-child(4) {
+  grid-column: span 7;
+}
+
+.experience-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s ease;
+}
+
+.experience-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(2, 25, 36, .82),
+    transparent 70%
+  );
+}
+
+.experience-card:hover img {
+  transform: scale(1.08);
+}
+
+.experience-content {
+  position: absolute;
+  z-index: 2;
+  right: 30px;
+  bottom: 30px;
+  left: 30px;
+}
+
+.experience-content h3 {
+  margin-bottom: 10px;
+  font-family: var(--serif);
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.experience-content p {
+  color: rgba(255,255,255,.72);
+  line-height: 1.6;
+}
+
+
+/* =====================================================
+   ROOMS PREVIEW
+===================================================== */
+
+.rooms-preview {
+  padding: 150px 0;
+  background: var(--deep-blue);
+  color: var(--white);
+}
+
+.rooms-preview-heading {
+  margin-bottom: 60px;
+}
+
+.rooms-preview-heading h2 {
+  font-family: var(--serif);
+  font-size: clamp(60px, 8vw, 110px);
+  font-weight: 400;
+  line-height: .88;
+  letter-spacing: -.06em;
+}
+
+.rooms-preview-heading h2 em {
+  color: var(--yellow);
+  font-style: italic;
+}
+
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.room-card {
+  overflow: hidden;
+  background: rgba(255,255,255,.06);
+}
+
+.room-image {
+  height: 430px;
+  overflow: hidden;
+}
+
+.room-image img {
+  height: 100%;
+  transition: transform 1s ease;
+}
+
+.room-card:hover .room-image img {
+  transform: scale(1.08);
+}
+
+.room-info {
+  padding: 28px;
+}
+
+.room-info h3 {
+  margin-bottom: 12px;
+  font-family: var(--serif);
+  font-size: 34px;
+  font-weight: 400;
+}
+
+.room-info p {
+  color: rgba(255,255,255,.62);
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   FULL WIDTH CTA
+===================================================== */
+
+.final-cta {
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+
+  background:
+    linear-gradient(
+      rgba(2, 25, 36, .45),
+      rgba(2, 25, 36, .82)
+    ),
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2400&q=95")
+    center / cover;
+}
+
+.final-cta h2 {
+  max-width: 900px;
+  margin: auto;
+  font-family: var(--serif);
+  font-size: clamp(65px, 9vw, 135px);
+  font-weight: 400;
+  line-height: .87;
+  letter-spacing: -.06em;
+}
+
+.final-cta h2 em {
+  color: var(--yellow);
+  font-style: italic;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+  padding: 70px 0 25px;
+  background: var(--dark);
+  color: var(--white);
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(255,255,255,.15);
+}
+
+.footer-description {
+  max-width: 320px;
+  margin-top: 15px;
+  color: rgba(255,255,255,.55);
+  line-height: 1.8;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  color: rgba(255,255,255,.65);
+  font-size: 12px;
+}
+
+.footer-links a:hover {
+  color: var(--yellow);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 25px;
+  color: rgba(255,255,255,.4);
+  font-size: 10px;
+}
+
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+
+@media (max-width: 950px) {
+
+  .container {
+    width: calc(100% - 50px);
+  }
+
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-main-image {
+    height: 550px;
+  }
+
+  .about-small-image {
+    height: 420px;
+  }
+
+  .rooms-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .room-image {
+    height: 500px;
+  }
+
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+@media (max-width: 650px) {
+
+  .container {
+    width: calc(100% - 32px);
+  }
+
+  .site-header {
+    padding-top: 14px;
+  }
+
+  .navbar {
+    height: 65px;
+    padding: 0 14px;
+  }
+
+  .logo {
+    font-size: 17px;
+  }
+
+  .nav-links {
+    gap: 13px;
+    font-size: 9px;
+  }
+
+  .nav-links a:nth-child(3),
+  .nav-links a:nth-child(4) {
+    display: none;
+  }
+
+  .book-button {
+    display: none;
+  }
+
+  .hero-content {
+    padding-top: 70px;
+  }
+
+  .hero h1 {
+    font-size: clamp(58px, 17vw, 90px);
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .golden-hour-content {
+    width: calc(100% - 32px);
+  }
+
+  .experience-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .experience-card {
+    min-height: 420px;
+  }
+
+  .room-image {
+    height: 400px;
+  }
+
+  .footer-top,
+  .footer-bottom {
+    flex-direction: column;
+    gap: 25px;
+  }
+}
+
+</style>
 </head>
 
 
 <body>
 
 
-  <!-- =====================================================
-       HEADER
-  ====================================================== -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
-  <header class="site-header">
+<header class="site-header">
 
-    <div class="container">
+  <div class="container">
 
-      <nav class="navbar">
+    <nav class="navbar">
 
+      <a href="index.html" class="logo">
+        SOLARA HOTEL
+      </a>
 
-        <!-- LOGO -->
+      <div class="nav-links">
 
-        <a
-          href="index.html"
-          class="logo"
-        >
+        <!-- Stay removed because it led to a 404 page -->
 
-          SOLARA HOTEL
-
+        <a href="experiences.html">
+          Experience
         </a>
 
-
-        <!-- NAVIGATION -->
-
-        <div class="nav-links">
-
-
-          <a href="rooms.html">
-            Stay
-          </a>
-
-
-          <a href="experiences.html">
-            Experience
-          </a>
-
-
-          <a href="about.html">
-            About
-          </a>
-
-
-          <a href="contact.html">
-            Contact
-          </a>
-
-
-        </div>
-
-
-        <!-- BOOKING BUTTON -->
-
-        <a
-          href="contact.html"
-          class="book-button"
-        >
-
-          Book Your Stay
-
+        <a href="about.html">
+          About
         </a>
 
+        <a href="contact.html">
+          Contact
+        </a>
 
-      </nav>
+      </div>
 
-    </div>
+      <a href="contact.html" class="book-button">
+        Book Your Stay
+      </a>
 
-  </header>
+    </nav>
 
+  </div>
 
-  <!-- =====================================================
-       HERO SECTION
-       YOUR ORIGINAL SOLARA VIDEO
-  ====================================================== -->
-
-  <section class="hero">
+</header>
 
 
-    <video
-      class="hero-video"
-      autoplay
-      muted
-      loop
-      playsinline
+<!-- =====================================================
+     HERO SECTION
+===================================================== -->
+
+<section class="hero">
+
+  <video
+    class="hero-video"
+    autoplay
+    muted
+    loop
+    playsinline
+  >
+
+    <source
+      src="https://cdn.shopify.com/videos/c/o/v/5517bd692618406dade5cb41a548fc17.mp4"
+      type="video/mp4"
     >
 
-      <source
-        src="https://cdn.shopify.com/videos/c/o/v/5517bd692618406dade5cb41a548fc17.mp4"
-        type="video/mp4"
-      >
+  </video>
 
-    </video>
+  <div class="hero-overlay"></div>
 
+  <div class="sun-glow"></div>
 
-    <div class="hero-overlay"></div>
+  <div class="container">
 
-
-    <div class="sun-glow"></div>
-
-
-    <div class="container">
-
-
-      <div class="hero-content">
-
-
-        <div class="eyebrow">
-
-          SOLARA HOTEL — WHERE SUNLIGHT MEETS THE SEA
-
-        </div>
-
-
-        <h1>
-
-          Where the sun
-
-          meets the
-
-          <em>
-            sea.
-          </em>
-
-        </h1>
-
-
-        <p class="hero-description">
-
-          A world-class escape shaped by golden light, endless horizons, and unforgettable moments.
-
-        </p>
-
-
-        <div class="hero-buttons">
-
-
-          <!-- WORKING ROOMS LINK -->
-
-          <a
-            href="rooms.html"
-            class="btn btn-gold"
-          >
-
-            Explore Rooms
-
-          </a>
-
-
-          <!-- WORKING ABOUT LINK -->
-
-          <a
-            href="about.html"
-            class="btn btn-glass"
-          >
-
-            Discover SOLARA
-
-          </a>
-
-
-        </div>
-
-
-      </div>
-
-
-    </div>
-
-
-    <div class="scroll-indicator">
-
-
-      <span>
-        Scroll to explore
-      </span>
-
-
-      <div class="scroll-line"></div>
-
-
-    </div>
-
-
-  </section>
-
-
-  <!-- =====================================================
-       INTRODUCTION
-  ====================================================== -->
-
-  <section class="intro">
-
-
-    <div class="container">
-
-
-      <div class="intro-grid">
-
-
-        <h2>
-
-          Life feels
-
-          different in
-
-          the
-
-          <em>
-            sunlight.
-          </em>
-
-        </h2>
-
-
-        <p class="intro-text">
-
-          SOLARA is more than a hotel.
-
-          It is a destination where architecture, nature, ocean, and sunlight come together.
-
-          From sunrise swims to long evenings beneath the stars, every detail is designed to make your escape unforgettable.
-
-        </p>
-
-
-      </div>
-
-
-    </div>
-
-
-  </section>
-
-
-  <!-- =====================================================
-       ABOUT VISUAL SECTION
-  ====================================================== -->
-
-  <section class="about-visual">
-
-
-    <div class="container">
-
-
-      <div class="about-grid">
-
-
-        <div class="about-main-image">
-
-
-          <img
-            src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=2200&q=95"
-            alt="Luxury hotel overlooking the sea"
-          >
-
-
-        </div>
-
-
-        <div class="about-side">
-
-
-          <div class="about-small-image">
-
-
-            <img
-              src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1600&q=95"
-              alt="Luxury resort pool"
-            >
-
-
-          </div>
-
-
-          <div class="about-caption">
-
-
-            <h3>
-              A world of its own.
-            </h3>
-
-
-            <p>
-
-              A destination built for those who believe the best moments are measured in sunlight, sea, and time.
-
-            </p>
-
-
-          </div>
-
-
-        </div>
-
-
-      </div>
-
-
-    </div>
-
-
-  </section>
-
-
-  <!-- =====================================================
-       GOLDEN HOUR
-       YOUR NEW GOLDEN HOUR VIDEO
-  ====================================================== -->
-
-  <section class="golden-hour">
-
-
-    <video
-      class="golden-hour-video"
-      autoplay
-      muted
-      loop
-      playsinline
-    >
-
-      <source
-        src="https://cdn.shopify.com/videos/c/o/v/ae0dee2a46324cd1973b89aed6066a88.mp4"
-        type="video/mp4"
-      >
-
-    </video>
-
-
-    <div class="golden-hour-overlay"></div>
-
-
-    <div class="golden-hour-content">
-
+    <div class="hero-content">
 
       <div class="eyebrow">
+        SOLARA HOTEL — WHERE SUNLIGHT MEETS THE SEA
+      </div>
 
-        THE MOMENT YOU WILL REMEMBER
+      <h1>
+        Where the sun
+        meets the
+        <em>sea.</em>
+      </h1>
+
+      <p class="hero-description">
+        A world-class escape shaped by golden light, endless horizons, and unforgettable moments.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="rooms.html" class="btn btn-gold">
+          Explore Rooms
+        </a>
+
+        <a href="about.html" class="btn btn-glass">
+          Discover SOLARA
+        </a>
 
       </div>
 
+    </div>
+
+  </div>
+
+  <div class="scroll-indicator">
+
+    <span>
+      Scroll to explore
+    </span>
+
+    <div class="scroll-line"></div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTRODUCTION
+===================================================== -->
+
+<section class="intro">
+
+  <div class="container">
+
+    <div class="intro-grid">
 
       <h2>
-
-        Chase the
-
-        <em>
-          light.
-        </em>
-
+        Life feels
+        different in
+        the
+        <em>sunlight.</em>
       </h2>
 
+      <p class="intro-text">
 
-      <p>
+        SOLARA is more than a hotel.
 
-        There is a moment every evening when the world becomes gold.
+        It is a destination where architecture, nature, ocean, and sunlight come together.
 
-        At SOLARA, we believe those moments are worth travelling for.
+        From sunrise swims to long evenings beneath the stars, every detail is designed to make your escape unforgettable.
 
       </p>
 
-
     </div>
 
+  </div>
 
-  </section>
+</section>
 
 
-  <!-- =====================================================
-       EXPERIENCES
-  ====================================================== -->
+<!-- =====================================================
+     ABOUT VISUAL SECTION
+===================================================== -->
 
-  <section class="experiences">
+<section class="about-visual">
 
+  <div class="container">
 
-    <div class="container">
+    <div class="about-grid">
 
+      <div class="about-main-image">
 
-      <div class="section-heading">
-
-
-        <h2>
-
-          Moments made
-
-          to be
-
-          <em>
-            remembered.
-          </em>
-
-        </h2>
-
-
-        <p>
-
-          From the ocean to the table, discover the experiences that make SOLARA more than a destination.
-
-        </p>
-
-
-      </div>
-
-
-      <div class="experience-grid">
-
-
-        <!-- OCEAN -->
-
-        <article class="experience-card">
-
-
-          <img
-            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=95"
-            alt="Ocean experience"
-          >
-
-
-          <div class="experience-content">
-
-
-            <h3>
-              Ocean
-            </h3>
-
-
-            <p>
-
-              Endless blue. Warm sand. Nowhere else to be.
-
-            </p>
-
-
-            <a
-              href="experiences.html"
-              class="experience-link"
-            >
-
-              Explore the ocean →
-
-            </a>
-
-
-          </div>
-
-
-        </article>
-
-
-        <!-- SPA -->
-
-        <article class="experience-card">
-
-
-          <img
-            src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1600&q=95"
-            alt="Luxury spa experience"
-          >
-
-
-          <div class="experience-content">
-
-
-            <h3>
-              Spa
-            </h3>
-
-
-            <p>
-
-              Time slows down here.
-
-            </p>
-
-
-            <a
-              href="experiences.html"
-              class="experience-link"
-            >
-
-              Discover wellness →
-
-            </a>
-
-
-          </div>
-
-
-        </article>
-
-
-        <!-- DINING -->
-
-        <article class="experience-card">
-
-
-          <img
-            src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1600&q=95"
-            alt="Fine dining experience"
-          >
-
-
-          <div class="experience-content">
-
-
-            <h3>
-              Dining
-            </h3>
-
-
-            <p>
-
-              Taste the place.
-
-            </p>
-
-
-            <!-- FIXED: NO taste.html 404 -->
-
-            <a
-              href="experiences.html"
-              class="experience-link"
-            >
-
-              Explore Taste →
-
-            </a>
-
-
-          </div>
-
-
-        </article>
-
-
-        <!-- SUNSET -->
-
-        <article class="experience-card">
-
-
-          <img
-            src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1800&q=95"
-            alt="Golden sunset experience"
-          >
-
-
-          <div class="experience-content">
-
-
-            <h3>
-              Sunset
-            </h3>
-
-
-            <p>
-
-              Every evening becomes gold.
-
-            </p>
-
-
-            <a
-              href="experiences.html"
-              class="experience-link"
-            >
-
-              Chase the light →
-
-            </a>
-
-
-          </div>
-
-
-        </article>
-
-
-      </div>
-
-
-    </div>
-
-
-  </section>
-
-
-  <!-- =====================================================
-       ROOMS PREVIEW
-  ====================================================== -->
-
-  <section class="rooms-preview">
-
-
-    <div class="container">
-
-
-      <div class="rooms-preview-heading">
-
-
-        <h2>
-
-          Stay somewhere
-
-          <em>
-            unforgettable.
-          </em>
-
-        </h2>
-
-
-        <!-- FIXED: WORKING LINK -->
-
-        <a
-          href="rooms.html"
-          class="rooms-link"
+        <img
+          src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=2200&q=95"
+          alt="Luxury hotel overlooking the sea"
         >
 
-          View all rooms →
-
-        </a>
-
-
       </div>
 
+      <div class="about-side">
 
-      <div class="rooms-grid">
+        <div class="about-small-image">
 
-
-        <!-- ROOM 1 -->
-
-        <article class="room-card">
-
-
-          <div class="room-image">
-
-
-            <img
-              src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=95"
-              alt="The Solara Suite"
-            >
-
-
-          </div>
-
-
-          <div class="room-info">
-
-
-            <h3>
-              The Solara Suite
-            </h3>
-
-
-            <p>
-
-              Expansive spaces, endless ocean views, and golden light.
-
-            </p>
-
-
-            <a href="rooms.html">
-
-              Explore Room →
-
-            </a>
-
-
-          </div>
-
-
-        </article>
-
-
-        <!-- ROOM 2 -->
-
-        <article class="room-card">
-
-
-          <div class="room-image">
-
-
-            <img
-              src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1800&q=95"
-              alt="Ocean Horizon Room"
-            >
-
-
-          </div>
-
-
-          <div class="room-info">
-
-
-            <h3>
-              Ocean Horizon Room
-            </h3>
-
-
-            <p>
-
-              Wake up to the sea and fall asleep beneath the stars.
-
-            </p>
-
-
-            <a href="rooms.html">
-
-              Explore Room →
-
-            </a>
-
-
-          </div>
-
-
-        </article>
-
-
-        <!-- ROOM 3 -->
-
-        <article class="room-card">
-
-
-          <div class="room-image">
-
-
-            <img
-              src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=95"
-              alt="Sun Garden Villa"
-            >
-
-
-          </div>
-
-
-          <div class="room-info">
-
-
-            <h3>
-              Sun Garden Villa
-            </h3>
-
-
-            <p>
-
-              A private sanctuary surrounded by nature and sunlight.
-
-            </p>
-
-
-            <a href="rooms.html">
-
-              Explore Room →
-
-            </a>
-
-
-          </div>
-
-
-        </article>
-
-
-      </div>
-
-
-    </div>
-
-
-  </section>
-
-
-  <!-- =====================================================
-       FINAL CTA
-  ====================================================== -->
-
-  <section class="final-cta">
-
-
-    <div class="container">
-
-
-      <div class="eyebrow">
-
-        YOUR NEXT ESCAPE
-
-      </div>
-
-
-      <h2>
-
-        Your golden hour
-
-        <em>
-          awaits.
-        </em>
-
-      </h2>
-
-
-      <!-- WORKING BOOKING LINK -->
-
-      <a
-        href="contact.html"
-        class="btn btn-gold"
-      >
-
-        Book Your Stay
-
-      </a>
-
-
-    </div>
-
-
-  </section>
-
-
-  <!-- =====================================================
-       FOOTER
-  ====================================================== -->
-
-  <footer>
-
-
-    <div class="container">
-
-
-      <div class="footer-top">
-
-
-        <div>
-
-
-          <a
-            href="index.html"
-            class="logo"
+          <img
+            src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1600&q=95"
+            alt="Luxury resort pool"
           >
 
-            SOLARA HOTEL
+        </div>
 
-          </a>
+        <div class="about-caption">
 
+          <h3>
+            A world of its own.
+          </h3>
 
-          <p class="footer-description">
-
-            Where sunlight meets the sea.
-
-            A world-class escape designed for unforgettable moments.
-
+          <p>
+            A destination built for those who believe the best moments are measured in sunlight, sea, and time.
           </p>
 
-
         </div>
 
-
-        <div class="footer-links">
-
-
-          <a href="index.html">
-            Home
-          </a>
-
-
-          <a href="rooms.html">
-            Stay
-          </a>
-
-
-          <a href="experiences.html">
-            Experience
-          </a>
-
-
-          <a href="about.html">
-            About
-          </a>
-
-
-          <a href="contact.html">
-            Contact
-          </a>
-
-
-        </div>
-
-
       </div>
-
-
-      <div class="footer-bottom">
-
-
-        <span>
-
-          © 2026 SOLARA HOTEL
-
-        </span>
-
-
-        <span>
-
-          Where sunlight meets the sea.
-
-        </span>
-
-
-      </div>
-
 
     </div>
 
+  </div>
 
-  </footer>
+</section>
 
+
+<!-- =====================================================
+     GOLDEN HOUR VIDEO SECTION
+===================================================== -->
+
+<section class="golden-hour">
+
+  <video
+    class="golden-hour-video"
+    autoplay
+    muted
+    loop
+    playsinline
+  >
+
+    <source
+      src="https://cdn.shopify.com/videos/c/o/v/ae0dee2a46324cd1973b89aed6066a88.mp4"
+      type="video/mp4"
+    >
+
+  </video>
+
+  <div class="golden-hour-overlay"></div>
+
+  <div class="golden-hour-content">
+
+    <div class="eyebrow">
+      THE MOMENT YOU WILL REMEMBER
+    </div>
+
+    <h2>
+      Chase the
+      <em>light.</em>
+    </h2>
+
+    <p>
+      There is a moment every evening when the world becomes gold.
+
+      At SOLARA, we believe those moments are worth travelling for.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     EXPERIENCES
+===================================================== -->
+
+<section class="experiences">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <h2>
+        Moments made
+        to be
+        <em>remembered.</em>
+      </h2>
+
+      <p>
+        From the ocean to the table, discover the experiences that make SOLARA more than a destination.
+      </p>
+
+    </div>
+
+    <div class="experience-grid">
+
+
+      <!-- OCEAN -->
+
+      <article class="experience-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=95"
+          alt="Ocean experience"
+        >
+
+        <div class="experience-content">
+
+          <h3>
+            Ocean
+          </h3>
+
+          <p>
+            Endless blue. Warm sand. Nowhere else to be.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- SPA -->
+
+      <article class="experience-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1600&q=95"
+          alt="Luxury spa experience"
+        >
+
+        <div class="experience-content">
+
+          <h3>
+            Spa
+          </h3>
+
+          <p>
+            Time slows down here.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- DINING -->
+
+      <article class="experience-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1600&q=95"
+          alt="Fine dining experience"
+        >
+
+        <div class="experience-content">
+
+          <h3>
+            Dining
+          </h3>
+
+          <p>
+            Taste the place.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- SUNSET -->
+
+      <article class="experience-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1800&q=95"
+          alt="Golden sunset experience"
+        >
+
+        <div class="experience-content">
+
+          <h3>
+            Sunset
+          </h3>
+
+          <p>
+            Every evening becomes gold.
+          </p>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     ROOMS PREVIEW
+===================================================== -->
+
+<section class="rooms-preview">
+
+  <div class="container">
+
+    <div class="rooms-preview-heading">
+
+      <h2>
+        Stay somewhere
+        <em>unforgettable.</em>
+      </h2>
+
+    </div>
+
+    <div class="rooms-grid">
+
+
+      <!-- ROOM 1 -->
+
+      <article class="room-card">
+
+        <div class="room-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=95"
+            alt="The Solara Suite"
+          >
+
+        </div>
+
+        <div class="room-info">
+
+          <h3>
+            The Solara Suite
+          </h3>
+
+          <p>
+            Expansive spaces, endless ocean views, and golden light.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- ROOM 2 -->
+
+      <article class="room-card">
+
+        <div class="room-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1800&q=95"
+            alt="Ocean Horizon Room"
+          >
+
+        </div>
+
+        <div class="room-info">
+
+          <h3>
+            Ocean Horizon Room
+          </h3>
+
+          <p>
+            Wake up to the sea and fall asleep beneath the stars.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- ROOM 3 -->
+
+      <article class="room-card">
+
+        <div class="room-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=95"
+            alt="Sun Garden Villa"
+          >
+
+        </div>
+
+        <div class="room-info">
+
+          <h3>
+            Sun Garden Villa
+          </h3>
+
+          <p>
+            A private sanctuary surrounded by nature and sunlight.
+          </p>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL CTA
+===================================================== -->
+
+<section class="final-cta">
+
+  <div class="container">
+
+    <div class="eyebrow">
+      YOUR NEXT ESCAPE
+    </div>
+
+    <h2>
+      Your golden hour
+      <em>awaits.</em>
+    </h2>
+
+    <a href="contact.html" class="btn btn-gold">
+      Book Your Stay
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-top">
+
+      <div>
+
+        <a href="index.html" class="logo">
+          SOLARA HOTEL
+        </a>
+
+        <p class="footer-description">
+          Where sunlight meets the sea.
+
+          A world-class escape designed for unforgettable moments.
+        </p>
+
+      </div>
+
+      <div class="footer-links">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="experiences.html">
+          Experience
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 SOLARA HOTEL
+      </span>
+
+      <span>
+        Where sunlight meets the sea.
+      </span>
+
+    </div>
+
+  </div>
+
+</footer>
 
 </body>
-
 </html>
