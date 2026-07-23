@@ -1,1 +1,1041 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SOLARA HOTEL — Rooms</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+
+  <style>
+
+    :root {
+
+      --yellow: #ffd96b;
+      --cream: #fff8e9;
+      --blue: #05617b;
+      --deep-blue: #022b3a;
+      --dark: #061d28;
+
+      --serif: "Playfair Display", serif;
+      --sans: "DM Sans", sans-serif;
+
+    }
+
+
+    * {
+
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+    }
+
+
+    body {
+
+      background: var(--cream);
+      color: var(--dark);
+      font-family: var(--sans);
+
+    }
+
+
+    a {
+
+      color: inherit;
+      text-decoration: none;
+
+    }
+
+
+    img {
+
+      display: block;
+      width: 100%;
+      object-fit: cover;
+
+    }
+
+
+    .container {
+
+      width: min(1300px, calc(100% - 80px));
+      margin: auto;
+
+    }
+
+
+    /* HEADER */
+
+    header {
+
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      width: 100%;
+      padding-top: 22px;
+
+    }
+
+
+    nav {
+
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 25px;
+      color: white;
+      border: 1px solid rgba(255,255,255,.35);
+      background: rgba(3,31,43,.35);
+      backdrop-filter: blur(20px);
+
+    }
+
+
+    .logo {
+
+      font-family: var(--serif);
+      font-size: 25px;
+      letter-spacing: .1em;
+
+    }
+
+
+    .nav-links {
+
+      display: flex;
+      gap: 38px;
+      font-size: 12px;
+
+    }
+
+
+    .nav-links a:hover {
+
+      color: var(--yellow);
+
+    }
+
+
+    .book-button {
+
+      padding: 14px 21px;
+      border: 1px solid white;
+      font-size: 10px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+
+    }
+
+
+    .book-button:hover {
+
+      background: var(--yellow);
+      color: var(--dark);
+
+    }
+
+
+    /* HERO */
+
+    .rooms-hero {
+
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+      color: white;
+
+      background:
+
+        linear-gradient(
+          90deg,
+          rgba(2,31,43,.75),
+          rgba(2,31,43,.15)
+        ),
+
+        url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2200&q=95")
+
+        center / cover;
+
+    }
+
+
+    .eyebrow {
+
+      margin-bottom: 22px;
+      color: var(--yellow);
+      font-size: 10px;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+
+    }
+
+
+    h1 {
+
+      max-width: 900px;
+      font-family: var(--serif);
+      font-size: clamp(65px, 10vw, 140px);
+      font-weight: 400;
+      line-height: .9;
+      letter-spacing: -.07em;
+
+    }
+
+
+    h1 em {
+
+      color: var(--yellow);
+
+    }
+
+
+    /* ROOMS */
+
+    .rooms-section {
+
+      padding: 140px 0;
+
+    }
+
+
+    .section-heading {
+
+      margin-bottom: 60px;
+
+    }
+
+
+    .section-heading h2 {
+
+      font-family: var(--serif);
+      font-size: clamp(55px, 7vw, 100px);
+      font-weight: 400;
+      line-height: .9;
+
+    }
+
+
+    .section-heading em {
+
+      color: var(--blue);
+
+    }
+
+
+    .rooms-grid {
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+
+    }
+
+
+    .room-card {
+
+      position: relative;
+      min-height: 650px;
+      overflow: hidden;
+      color: white;
+
+    }
+
+
+    .room-card:first-child {
+
+      grid-column: span 2;
+
+    }
+
+
+    .room-card img {
+
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      transition: transform 1s ease;
+
+    }
+
+
+    .room-card:hover img {
+
+      transform: scale(1.08);
+
+    }
+
+
+    .room-card::after {
+
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(2,31,43,.95),
+        transparent 70%
+      );
+
+    }
+
+
+    .room-content {
+
+      position: absolute;
+      z-index: 2;
+      right: 40px;
+      bottom: 40px;
+      left: 40px;
+
+    }
+
+
+    .room-content h2 {
+
+      margin-bottom: 15px;
+      font-family: var(--serif);
+      font-size: clamp(40px, 5vw, 70px);
+      font-weight: 400;
+
+    }
+
+
+    .room-content p {
+
+      max-width: 500px;
+      margin-bottom: 20px;
+      color: rgba(255,255,255,.75);
+      line-height: 1.8;
+
+    }
+
+
+    .room-info {
+
+      display: flex;
+      gap: 25px;
+      margin-bottom: 25px;
+      color: rgba(255,255,255,.7);
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+
+    }
+
+
+    .explore {
+
+      color: var(--yellow);
+      font-size: 10px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+
+    }
+
+
+    /* BENEFITS */
+
+    .benefits {
+
+      padding: 120px 0;
+      background: var(--deep-blue);
+      color: white;
+
+    }
+
+
+    .benefits h2 {
+
+      margin-bottom: 60px;
+      text-align: center;
+      font-family: var(--serif);
+      font-size: clamp(50px, 7vw, 90px);
+      font-weight: 400;
+
+    }
+
+
+    .benefits h2 em {
+
+      color: var(--yellow);
+
+    }
+
+
+    .benefits-grid {
+
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+
+    }
+
+
+    .benefit {
+
+      padding: 35px 25px;
+      border: 1px solid rgba(255,255,255,.2);
+      transition: .4s ease;
+
+    }
+
+
+    .benefit:hover {
+
+      transform: translateY(-8px);
+      border-color: var(--yellow);
+
+    }
+
+
+    .benefit h3 {
+
+      margin-bottom: 15px;
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 400;
+
+    }
+
+
+    .benefit p {
+
+      color: rgba(255,255,255,.6);
+      line-height: 1.7;
+
+    }
+
+
+    /* CTA */
+
+    .cta {
+
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+
+      background:
+
+        linear-gradient(
+          rgba(2,31,43,.45),
+          rgba(2,31,43,.8)
+        ),
+
+        url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2200&q=95")
+
+        center / cover;
+
+    }
+
+
+    .cta h2 {
+
+      margin-bottom: 35px;
+      font-family: var(--serif);
+      font-size: clamp(60px, 9vw, 120px);
+      font-weight: 400;
+      line-height: .9;
+
+    }
+
+
+    .cta h2 em {
+
+      color: var(--yellow);
+
+    }
+
+
+    .cta a {
+
+      display: inline-block;
+      padding: 18px 30px;
+      background: var(--yellow);
+      color: var(--dark);
+      font-size: 10px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+
+    }
+
+
+    /* FOOTER */
+
+    footer {
+
+      padding: 70px 0 25px;
+      background: var(--dark);
+      color: white;
+
+    }
+
+
+    .footer-top {
+
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 50px;
+      border-bottom: 1px solid rgba(255,255,255,.15);
+
+    }
+
+
+    .footer-links {
+
+      display: flex;
+      gap: 25px;
+      font-size: 12px;
+
+    }
+
+
+    .footer-links a:hover {
+
+      color: var(--yellow);
+
+    }
+
+
+    .footer-bottom {
+
+      display: flex;
+      justify-content: space-between;
+      padding-top: 25px;
+      color: rgba(255,255,255,.4);
+      font-size: 10px;
+
+    }
+
+
+    @media (max-width: 800px) {
+
+      .container {
+
+        width: calc(100% - 40px);
+
+      }
+
+
+      .nav-links a:nth-child(3),
+      .nav-links a:nth-child(4) {
+
+        display: none;
+
+      }
+
+
+      .book-button {
+
+        display: none;
+
+      }
+
+
+      .rooms-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .room-card:first-child {
+
+        grid-column: auto;
+
+      }
+
+
+      .benefits-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+      }
+
+    }
+
+
+    @media (max-width: 550px) {
+
+      .nav-links {
+
+        gap: 12px;
+        font-size: 9px;
+
+      }
+
+
+      .logo {
+
+        font-size: 17px;
+
+      }
+
+
+      .room-card {
+
+        min-height: 550px;
+
+      }
+
+
+      .benefits-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .footer-top,
+      .footer-bottom {
+
+        flex-direction: column;
+        gap: 25px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <header>
+
+    <div class="container">
+
+      <nav>
+
+        <a href="index.html" class="logo">
+          SOLARA HOTEL
+        </a>
+
+
+        <div class="nav-links">
+
+          <a href="rooms.html">
+            Stay
+          </a>
+
+          <a href="experiences.html">
+            Experience
+          </a>
+
+          <a href="about.html">
+            About
+          </a>
+
+          <a href="contact.html">
+            Contact
+          </a>
+
+        </div>
+
+
+        <a href="contact.html" class="book-button">
+          Book Your Stay
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <section class="rooms-hero">
+
+    <div class="container">
+
+      <div>
+
+        <div class="eyebrow">
+          Stay in the light
+        </div>
+
+
+        <h1>
+
+          Your room.
+
+          <em>
+            Your horizon.
+          </em>
+
+        </h1>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="rooms-section">
+
+    <div class="container">
+
+
+      <div class="section-heading">
+
+        <div class="eyebrow">
+          The SOLARA collection
+        </div>
+
+
+        <h2>
+
+          Find your
+
+          <em>
+            escape.
+          </em>
+
+        </h2>
+
+      </div>
+
+
+      <div class="rooms-grid">
+
+
+        <article class="room-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2200&q=95"
+            alt="The Solara Suite"
+          >
+
+
+          <div class="room-content">
+
+            <h2>
+              The Solara Suite
+            </h2>
+
+
+            <p>
+
+              Our signature suite with expansive interiors,
+              spectacular ocean views, and unforgettable comfort.
+
+            </p>
+
+
+            <div class="room-info">
+
+              <span>
+                85 m²
+              </span>
+
+              <span>
+                2 Guests
+              </span>
+
+              <span>
+                Ocean View
+              </span>
+
+            </div>
+
+
+            <a
+              href="contact.html"
+              class="explore"
+            >
+
+              Explore Room →
+
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <article class="room-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1600&q=95"
+            alt="Ocean Horizon Room"
+          >
+
+
+          <div class="room-content">
+
+            <h2>
+              Ocean Horizon Room
+            </h2>
+
+
+            <p>
+
+              Wake up to endless blue horizons and golden morning light.
+
+            </p>
+
+
+            <div class="room-info">
+
+              <span>
+                48 m²
+              </span>
+
+              <span>
+                2 Guests
+              </span>
+
+            </div>
+
+
+            <a
+              href="contact.html"
+              class="explore"
+            >
+
+              Explore Room →
+
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <article class="room-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=95"
+            alt="Sun Garden Villa"
+          >
+
+
+          <div class="room-content">
+
+            <h2>
+              Sun Garden Villa
+            </h2>
+
+
+            <p>
+
+              A private sanctuary surrounded by nature, light, and calm.
+
+            </p>
+
+
+            <div class="room-info">
+
+              <span>
+                110 m²
+              </span>
+
+              <span>
+                4 Guests
+              </span>
+
+            </div>
+
+
+            <a
+              href="contact.html"
+              class="explore"
+            >
+
+              Explore Room →
+
+            </a>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="benefits">
+
+    <div class="container">
+
+
+      <h2>
+
+        Every stay,
+
+        <em>
+          elevated.
+        </em>
+
+      </h2>
+
+
+      <div class="benefits-grid">
+
+
+        <div class="benefit">
+
+          <h3>
+            Ocean Views
+          </h3>
+
+          <p>
+            Wake up to uninterrupted views of the sea.
+          </p>
+
+        </div>
+
+
+        <div class="benefit">
+
+          <h3>
+            Thoughtful Design
+          </h3>
+
+          <p>
+            Spaces created around comfort, light, and beauty.
+          </p>
+
+        </div>
+
+
+        <div class="benefit">
+
+          <h3>
+            Personal Service
+          </h3>
+
+          <p>
+            Every detail designed around your experience.
+          </p>
+
+        </div>
+
+
+        <div class="benefit">
+
+          <h3>
+            Golden Moments
+          </h3>
+
+          <p>
+            The best memories are made in the right light.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="cta">
+
+    <div>
+
+      <h2>
+
+        Your golden hour
+
+        <em>
+          awaits.
+        </em>
+
+      </h2>
+
+
+      <a href="contact.html">
+
+        Book Your Stay
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-top">
+
+        <a href="index.html" class="logo">
+          SOLARA HOTEL
+        </a>
+
+
+        <div class="footer-links">
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="rooms.html">
+            Rooms
+          </a>
+
+          <a href="experiences.html">
+            Experience
+          </a>
+
+          <a href="about.html">
+            About
+          </a>
+
+          <a href="contact.html">
+            Contact
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2026 SOLARA HOTEL
+        </span>
+
+        <span>
+          Where sunlight meets the sea.
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+</body>
+
+</html>
