@@ -1,1 +1,1592 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Experiences | SOLARA HOTEL</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+
+  <style>
+
+    /* =====================================================
+       GLOBAL STYLES
+    ===================================================== */
+
+    :root {
+
+      --gold: #f4c85b;
+      --yellow: #ffd96b;
+      --cream: #fff8e9;
+      --blue: #05617b;
+      --deep-blue: #022b3a;
+      --dark: #061d28;
+      --white: #ffffff;
+
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+
+    }
+
+
+    * {
+
+      margin: 0;
+
+      padding: 0;
+
+      box-sizing: border-box;
+
+    }
+
+
+    html {
+
+      scroll-behavior: smooth;
+
+    }
+
+
+    body {
+
+      overflow-x: hidden;
+
+      background: var(--cream);
+
+      color: var(--dark);
+
+      font-family: var(--sans);
+
+    }
+
+
+    a {
+
+      color: inherit;
+
+      text-decoration: none;
+
+    }
+
+
+    img {
+
+      display: block;
+
+      width: 100%;
+
+      object-fit: cover;
+
+    }
+
+
+    .container {
+
+      width: min(1300px, calc(100% - 80px));
+
+      margin: auto;
+
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    .site-header {
+
+      position: absolute;
+
+      z-index: 20;
+
+      top: 0;
+
+      left: 0;
+
+      width: 100%;
+
+      padding-top: 22px;
+
+    }
+
+
+    .navbar {
+
+      height: 76px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      padding: 0 25px;
+
+      color: white;
+
+      border: 1px solid rgba(255,255,255,.35);
+
+      background: rgba(3,31,43,.35);
+
+      backdrop-filter: blur(20px);
+
+    }
+
+
+    .logo {
+
+      font-family: var(--serif);
+
+      font-size: 25px;
+
+      letter-spacing: .1em;
+
+      white-space: nowrap;
+
+      transition: color .3s ease;
+
+    }
+
+
+    .logo:hover {
+
+      color: var(--yellow);
+
+    }
+
+
+    .nav-links {
+
+      display: flex;
+
+      gap: 38px;
+
+      font-size: 12px;
+
+    }
+
+
+    .nav-links a {
+
+      position: relative;
+
+    }
+
+
+    .nav-links a::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+
+      bottom: -8px;
+
+      width: 0;
+
+      height: 2px;
+
+      background: var(--yellow);
+
+      transition: width .3s ease;
+
+    }
+
+
+    .nav-links a:hover::after {
+
+      width: 100%;
+
+    }
+
+
+    .book-button {
+
+      padding: 14px 21px;
+
+      border: 1px solid rgba(255,255,255,.8);
+
+      font-size: 10px;
+
+      letter-spacing: .16em;
+
+      text-transform: uppercase;
+
+      transition: all .3s ease;
+
+    }
+
+
+    .book-button:hover {
+
+      background: var(--yellow);
+
+      color: var(--dark);
+
+      border-color: var(--yellow);
+
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .experience-hero {
+
+      min-height: 720px;
+
+      display: flex;
+
+      align-items: center;
+
+      color: white;
+
+      background:
+
+        linear-gradient(
+
+          90deg,
+
+          rgba(2,31,43,.76),
+
+          rgba(2,31,43,.16)
+
+        ),
+
+        url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2400&q=95")
+
+        center / cover;
+
+    }
+
+
+    .eyebrow {
+
+      margin-bottom: 22px;
+
+      color: var(--yellow);
+
+      font-size: 10px;
+
+      font-weight: 600;
+
+      letter-spacing: .28em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .experience-hero h1 {
+
+      max-width: 1000px;
+
+      font-family: var(--serif);
+
+      font-size: clamp(70px, 11vw, 155px);
+
+      font-weight: 400;
+
+      line-height: .86;
+
+      letter-spacing: -.07em;
+
+    }
+
+
+    .experience-hero h1 em {
+
+      color: var(--yellow);
+
+      font-style: italic;
+
+    }
+
+
+    .hero-description {
+
+      max-width: 470px;
+
+      margin-top: 35px;
+
+      color: rgba(255,255,255,.75);
+
+      line-height: 1.8;
+
+    }
+
+
+    /* =====================================================
+       INTRODUCTION
+    ===================================================== */
+
+    .intro {
+
+      padding: 150px 0;
+
+    }
+
+
+    .intro-grid {
+
+      display: grid;
+
+      grid-template-columns: .8fr 1.2fr;
+
+      gap: 100px;
+
+      align-items: end;
+
+    }
+
+
+    .intro h2 {
+
+      font-family: var(--serif);
+
+      font-size: clamp(55px, 7vw, 100px);
+
+      font-weight: 400;
+
+      line-height: .9;
+
+      letter-spacing: -.06em;
+
+    }
+
+
+    .intro h2 em {
+
+      color: var(--blue);
+
+      font-style: italic;
+
+    }
+
+
+    .intro-text {
+
+      max-width: 550px;
+
+      color: #6b6860;
+
+      font-size: 17px;
+
+      line-height: 1.9;
+
+    }
+
+
+    /* =====================================================
+       EXPERIENCE CARDS
+    ===================================================== */
+
+    .experiences {
+
+      padding: 0 0 150px;
+
+    }
+
+
+    .experience-grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(12, 1fr);
+
+      gap: 20px;
+
+    }
+
+
+    .experience-card {
+
+      position: relative;
+
+      min-height: 580px;
+
+      overflow: hidden;
+
+      color: white;
+
+      cursor: pointer;
+
+    }
+
+
+    .experience-card:nth-child(1) {
+
+      grid-column: span 7;
+
+    }
+
+
+    .experience-card:nth-child(2) {
+
+      grid-column: span 5;
+
+    }
+
+
+    .experience-card:nth-child(3) {
+
+      grid-column: span 5;
+
+    }
+
+
+    .experience-card:nth-child(4) {
+
+      grid-column: span 7;
+
+    }
+
+
+    .experience-card:nth-child(5) {
+
+      grid-column: span 12;
+
+      min-height: 650px;
+
+    }
+
+
+    .experience-card img {
+
+      position: absolute;
+
+      inset: 0;
+
+      width: 100%;
+
+      height: 100%;
+
+      transition: transform 1s cubic-bezier(.2,.8,.2,1);
+
+    }
+
+
+    .experience-card::after {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+
+        linear-gradient(
+
+          to top,
+
+          rgba(2,20,28,.85),
+
+          rgba(2,20,28,.05) 70%
+
+        );
+
+      transition: background .5s ease;
+
+    }
+
+
+    .experience-card:hover img {
+
+      transform: scale(1.08);
+
+    }
+
+
+    .experience-card:hover::after {
+
+      background:
+
+        linear-gradient(
+
+          to top,
+
+          rgba(2,20,28,.95),
+
+          rgba(2,20,28,.12) 80%
+
+        );
+
+    }
+
+
+    .experience-content {
+
+      position: absolute;
+
+      z-index: 2;
+
+      left: 35px;
+
+      right: 35px;
+
+      bottom: 35px;
+
+    }
+
+
+    .experience-number {
+
+      margin-bottom: 15px;
+
+      color: var(--yellow);
+
+      font-size: 11px;
+
+      letter-spacing: .2em;
+
+    }
+
+
+    .experience-content h3 {
+
+      margin-bottom: 15px;
+
+      font-family: var(--serif);
+
+      font-size: clamp(42px, 5vw, 75px);
+
+      font-weight: 400;
+
+      line-height: .9;
+
+    }
+
+
+    .experience-content p {
+
+      max-width: 420px;
+
+      color: rgba(255,255,255,.72);
+
+      line-height: 1.7;
+
+    }
+
+
+    .experience-link {
+
+      display: inline-block;
+
+      margin-top: 25px;
+
+      padding-bottom: 8px;
+
+      border-bottom: 1px solid var(--yellow);
+
+      color: var(--yellow);
+
+      font-size: 10px;
+
+      letter-spacing: .15em;
+
+      text-transform: uppercase;
+
+      opacity: 0;
+
+      transform: translateY(15px);
+
+      transition: all .4s ease;
+
+    }
+
+
+    .experience-card:hover .experience-link {
+
+      opacity: 1;
+
+      transform: translateY(0);
+
+    }
+
+
+    /* =====================================================
+       GOLDEN HOUR SECTION
+    ===================================================== */
+
+    .golden-hour {
+
+      min-height: 800px;
+
+      display: flex;
+
+      align-items: center;
+
+      color: white;
+
+      background:
+
+        linear-gradient(
+
+          90deg,
+
+          rgba(2,25,36,.82),
+
+          rgba(2,25,36,.15)
+
+        ),
+
+        url("https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=2400&q=95")
+
+        center / cover;
+
+    }
+
+
+    .golden-hour-content {
+
+      max-width: 750px;
+
+    }
+
+
+    .golden-hour h2 {
+
+      margin-bottom: 30px;
+
+      font-family: var(--serif);
+
+      font-size: clamp(70px, 10vw, 150px);
+
+      font-weight: 400;
+
+      line-height: .85;
+
+      letter-spacing: -.07em;
+
+    }
+
+
+    .golden-hour h2 em {
+
+      color: var(--yellow);
+
+      font-style: italic;
+
+    }
+
+
+    .golden-hour p {
+
+      max-width: 470px;
+
+      color: rgba(255,255,255,.75);
+
+      font-size: 17px;
+
+      line-height: 1.8;
+
+    }
+
+
+    /* =====================================================
+       CTA
+    ===================================================== */
+
+    .cta {
+
+      padding: 150px 0;
+
+      text-align: center;
+
+      background: var(--yellow);
+
+    }
+
+
+    .cta h2 {
+
+      max-width: 900px;
+
+      margin: auto;
+
+      font-family: var(--serif);
+
+      font-size: clamp(60px, 8vw, 120px);
+
+      font-weight: 400;
+
+      line-height: .9;
+
+      letter-spacing: -.06em;
+
+    }
+
+
+    .cta h2 em {
+
+      color: var(--blue);
+
+      font-style: italic;
+
+    }
+
+
+    .cta-button {
+
+      display: inline-block;
+
+      margin-top: 45px;
+
+      padding: 18px 30px;
+
+      background: var(--dark);
+
+      color: white;
+
+      font-size: 10px;
+
+      font-weight: 600;
+
+      letter-spacing: .16em;
+
+      text-transform: uppercase;
+
+      transition: all .3s ease;
+
+    }
+
+
+    .cta-button:hover {
+
+      background: var(--blue);
+
+      transform: translateY(-5px);
+
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    footer {
+
+      padding: 70px 0 25px;
+
+      background: var(--dark);
+
+      color: white;
+
+    }
+
+
+    .footer-top {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 40px;
+
+      padding-bottom: 50px;
+
+      border-bottom: 1px solid rgba(255,255,255,.15);
+
+    }
+
+
+    .footer-description {
+
+      max-width: 300px;
+
+      margin-top: 15px;
+
+      color: rgba(255,255,255,.55);
+
+      line-height: 1.8;
+
+    }
+
+
+    .footer-links {
+
+      display: flex;
+
+      gap: 25px;
+
+      color: rgba(255,255,255,.65);
+
+      font-size: 12px;
+
+    }
+
+
+    .footer-links a:hover {
+
+      color: var(--yellow);
+
+    }
+
+
+    .footer-bottom {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      padding-top: 25px;
+
+      color: rgba(255,255,255,.4);
+
+      font-size: 10px;
+
+    }
+
+
+    /* =====================================================
+       RESPONSIVE
+    ===================================================== */
+
+    @media (max-width: 900px) {
+
+      .container {
+
+        width: calc(100% - 45px);
+
+      }
+
+
+      .intro-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+      }
+
+
+      .experience-card:nth-child(1),
+
+      .experience-card:nth-child(2),
+
+      .experience-card:nth-child(3),
+
+      .experience-card:nth-child(4),
+
+      .experience-card:nth-child(5) {
+
+        grid-column: span 12;
+
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .container {
+
+        width: calc(100% - 32px);
+
+      }
+
+
+      .navbar {
+
+        height: 65px;
+
+        padding: 0 14px;
+
+      }
+
+
+      .logo {
+
+        font-size: 17px;
+
+      }
+
+
+      .nav-links {
+
+        gap: 13px;
+
+        font-size: 9px;
+
+      }
+
+
+      .nav-links a:nth-child(3),
+
+      .nav-links a:nth-child(4) {
+
+        display: none;
+
+      }
+
+
+      .book-button {
+
+        display: none;
+
+      }
+
+
+      .experience-card {
+
+        min-height: 470px;
+
+      }
+
+
+      .experience-card:nth-child(5) {
+
+        min-height: 500px;
+
+      }
+
+
+      .experience-content {
+
+        left: 24px;
+
+        right: 24px;
+
+        bottom: 24px;
+
+      }
+
+
+      .experience-link {
+
+        opacity: 1;
+
+        transform: none;
+
+      }
+
+
+      .footer-top,
+
+      .footer-bottom {
+
+        flex-direction: column;
+
+        gap: 25px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       HEADER
+  ===================================================== -->
+
+  <header class="site-header">
+
+    <div class="container">
+
+      <nav class="navbar">
+
+
+        <a
+          href="index.html"
+          class="logo"
+        >
+
+          SOLARA HOTEL
+
+        </a>
+
+
+        <div class="nav-links">
+
+
+          <a href="rooms.html">
+            Stay
+          </a>
+
+
+          <a href="experiences.html">
+            Experience
+          </a>
+
+
+          <a href="about.html">
+            About
+          </a>
+
+
+          <a href="contact.html">
+            Contact
+          </a>
+
+
+        </div>
+
+
+        <a
+          href="contact.html"
+          class="book-button"
+        >
+
+          Book Your Stay
+
+        </a>
+
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       HERO
+  ===================================================== -->
+
+  <section class="experience-hero">
+
+
+    <div class="container">
+
+
+      <div class="eyebrow">
+
+        The SOLARA experience
+
+      </div>
+
+
+      <h1>
+
+        Live beyond
+
+        <em>
+          ordinary.
+        </em>
+
+      </h1>
+
+
+      <p class="hero-description">
+
+        At SOLARA, every day is an invitation to slow down, explore further, and experience the world through sunlight, sea, taste, and discovery.
+
+      </p>
+
+
+    </div>
+
+
+  </section>
+
+
+  <!-- =====================================================
+       INTRO
+  ===================================================== -->
+
+  <section class="intro">
+
+
+    <div class="container">
+
+
+      <div class="intro-grid">
+
+
+        <h2>
+
+          Every moment
+
+          becomes
+
+          <em>
+            a memory.
+          </em>
+
+        </h2>
+
+
+        <p class="intro-text">
+
+          From the first swim of the morning to dinner beneath a sky filled with stars, SOLARA is designed around experiences that stay with you long after you leave.
+
+          Discover the ocean.
+
+          Follow the coastline.
+
+          Taste the local culture.
+
+          Or simply do absolutely nothing.
+
+        </p>
+
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+  <!-- =====================================================
+       EXPERIENCE CARDS
+  ===================================================== -->
+
+  <section class="experiences">
+
+
+    <div class="container">
+
+
+      <div class="experience-grid">
+
+
+        <!-- OCEAN -->
+
+        <article class="experience-card">
+
+
+          <img
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=95"
+            alt="Ocean experience"
+          >
+
+
+          <div class="experience-content">
+
+
+            <div class="experience-number">
+              01 — OCEAN
+            </div>
+
+
+            <h3>
+              Into the blue.
+            </h3>
+
+
+            <p>
+
+              Endless water, warm sand, and the feeling of having nowhere else to be.
+
+            </p>
+
+
+            <a
+              href="contact.html"
+              class="experience-link"
+            >
+
+              Discover the ocean →
+
+            </a>
+
+
+          </div>
+
+
+        </article>
+
+
+        <!-- SPA -->
+
+        <article class="experience-card">
+
+
+          <img
+            src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1600&q=95"
+            alt="Luxury spa"
+          >
+
+
+          <div class="experience-content">
+
+
+            <div class="experience-number">
+              02 — WELLNESS
+            </div>
+
+
+            <h3>
+              Slow down.
+            </h3>
+
+
+            <p>
+
+              Restore your body and quiet your mind in a world created for stillness.
+
+            </p>
+
+
+            <a
+              href="contact.html"
+              class="experience-link"
+            >
+
+              Discover wellness →
+
+            </a>
+
+
+          </div>
+
+
+        </article>
+
+
+        <!-- DINING -->
+
+        <article class="experience-card">
+
+
+          <img
+            src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1600&q=95"
+            alt="Luxury dining experience"
+          >
+
+
+          <div class="experience-content">
+
+
+            <div class="experience-number">
+              03 — DINING
+            </div>
+
+
+            <h3>
+              Taste the place.
+            </h3>
+
+
+            <p>
+
+              Fresh ingredients, local flavours, and long evenings around the table.
+
+            </p>
+
+
+            <a
+              href="contact.html"
+              class="experience-link"
+            >
+
+              Discover dining →
+
+            </a>
+
+
+          </div>
+
+
+        </article>
+
+
+        <!-- SUNSET -->
+
+        <article class="experience-card">
+
+
+          <img
+            src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1800&q=95"
+            alt="Golden sunset"
+          >
+
+
+          <div class="experience-content">
+
+
+            <div class="experience-number">
+              04 — SUNSET
+            </div>
+
+
+            <h3>
+              Chase the light.
+            </h3>
+
+
+            <p>
+
+              Every evening brings a new colour to the horizon.
+
+            </p>
+
+
+            <a
+              href="contact.html"
+              class="experience-link"
+            >
+
+              Find your golden hour →
+
+            </a>
+
+
+          </div>
+
+
+        </article>
+
+
+        <!-- EXPLORATION -->
+
+        <article class="experience-card">
+
+
+          <img
+            src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=2200&q=95"
+            alt="Travel and exploration"
+          >
+
+
+          <div class="experience-content">
+
+
+            <div class="experience-number">
+              05 — EXPLORATION
+            </div>
+
+
+            <h3>
+              Go further.
+            </h3>
+
+
+            <p>
+
+              Discover hidden coastlines, local villages, unforgettable landscapes, and the stories that make this place unique.
+
+            </p>
+
+
+            <a
+              href="contact.html"
+              class="experience-link"
+            >
+
+              Begin your journey →
+
+            </a>
+
+
+          </div>
+
+
+        </article>
+
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+  <!-- =====================================================
+       GOLDEN HOUR
+  ===================================================== -->
+
+  <section class="golden-hour">
+
+
+    <div class="container">
+
+
+      <div class="golden-hour-content">
+
+
+        <div class="eyebrow">
+
+          The moment you will remember
+
+        </div>
+
+
+        <h2>
+
+          Chase the
+
+          <em>
+            light.
+          </em>
+
+        </h2>
+
+
+        <p>
+
+          There is a moment every evening when the world becomes gold.
+
+          At SOLARA, we believe those moments are worth travelling for.
+
+        </p>
+
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+  <!-- =====================================================
+       CTA
+  ===================================================== -->
+
+  <section class="cta">
+
+
+    <div class="container">
+
+
+      <h2>
+
+        Your next
+
+        <em>
+          unforgettable
+        </em>
+
+        moment is waiting.
+
+      </h2>
+
+
+      <a
+        href="contact.html"
+        class="cta-button"
+      >
+
+        Book Your Stay
+
+      </a>
+
+
+    </div>
+
+
+  </section>
+
+
+  <!-- =====================================================
+       FOOTER
+  ===================================================== -->
+
+  <footer>
+
+
+    <div class="container">
+
+
+      <div class="footer-top">
+
+
+        <div>
+
+
+          <a
+            href="index.html"
+            class="logo"
+          >
+
+            SOLARA HOTEL
+
+          </a>
+
+
+          <p class="footer-description">
+
+            Where sunlight meets the sea.
+
+            A world-class escape designed for unforgettable moments.
+
+          </p>
+
+
+        </div>
+
+
+        <div class="footer-links">
+
+
+          <a href="index.html">
+            Home
+          </a>
+
+
+          <a href="rooms.html">
+            Rooms
+          </a>
+
+
+          <a href="experiences.html">
+            Experience
+          </a>
+
+
+          <a href="about.html">
+            About
+          </a>
+
+
+          <a href="contact.html">
+            Contact
+          </a>
+
+
+        </div>
+
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+
+        <span>
+          © 2026 SOLARA HOTEL
+        </span>
+
+
+        <span>
+          Where sunlight meets the sea.
+        </span>
+
+
+      </div>
+
+
+    </div>
+
+
+  </footer>
+
+
+</body>
+
+</html>
