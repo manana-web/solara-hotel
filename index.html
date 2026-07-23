@@ -14,6 +14,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
     rel="stylesheet"
@@ -26,6 +28,7 @@
     ====================================================== */
 
     :root {
+
       --gold: #f3bd45;
       --yellow: #ffd96b;
       --cream: #fff8e9;
@@ -38,39 +41,70 @@
 
       --serif: "Playfair Display", Georgia, serif;
       --sans: "DM Sans", Arial, sans-serif;
+
     }
 
     * {
+
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+
     }
 
     html {
+
       scroll-behavior: smooth;
+
     }
 
     body {
+
       overflow-x: hidden;
       background: var(--cream);
       color: var(--dark);
       font-family: var(--sans);
+
     }
 
     a {
+
       color: inherit;
       text-decoration: none;
+
     }
 
     img {
+
       display: block;
       width: 100%;
       object-fit: cover;
+
     }
 
     .container {
+
       width: min(1320px, calc(100% - 80px));
       margin: auto;
+
+    }
+
+
+    /* =====================================================
+       REMOVE ALL DOT INDICATORS
+    ====================================================== */
+
+    .dots,
+    .dot,
+    .slider-dots,
+    .pagination-dots,
+    .carousel-dots,
+    .swiper-pagination,
+    [class*="dot"],
+    [class*="dots"] {
+
+      display: none !important;
+
     }
 
 
@@ -79,86 +113,124 @@
     ====================================================== */
 
     .site-header {
+
       position: absolute;
       z-index: 30;
       top: 0;
       left: 0;
       width: 100%;
       padding-top: 24px;
+
     }
 
     .navbar {
+
       min-height: 78px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 25px;
+
       padding: 0 26px;
+
       color: var(--white);
+
       border: 1px solid rgba(255,255,255,.35);
+
       background: rgba(2, 31, 43, .34);
+
       backdrop-filter: blur(22px);
       -webkit-backdrop-filter: blur(22px);
+
     }
 
     .logo {
+
       font-family: var(--serif);
       font-size: 25px;
       letter-spacing: .1em;
       white-space: nowrap;
+
       transition: color .3s ease;
+
     }
 
     .logo:hover {
+
       color: var(--yellow);
+
     }
 
     .nav-links {
+
       display: flex;
       align-items: center;
       gap: 38px;
+
       font-size: 12px;
+
     }
 
     .nav-links a {
+
       position: relative;
+
       transition: color .3s ease;
+
     }
 
     .nav-links a::after {
+
       content: "";
+
       position: absolute;
+
       left: 0;
       bottom: -9px;
+
       width: 0;
       height: 2px;
+
       background: var(--yellow);
+
       transition: width .3s ease;
+
     }
 
     .nav-links a:hover {
+
       color: var(--yellow);
+
     }
 
     .nav-links a:hover::after {
+
       width: 100%;
+
     }
 
     .book-button {
+
       padding: 14px 22px;
+
       border: 1px solid rgba(255,255,255,.85);
+
       font-size: 10px;
       letter-spacing: .16em;
       text-transform: uppercase;
+
       transition: all .3s ease;
-      white-space: nowrap;
+
     }
 
     .book-button:hover {
+
       background: var(--yellow);
       color: var(--dark);
       border-color: var(--yellow);
+
       transform: translateY(-2px);
+
     }
 
 
@@ -167,207 +239,335 @@
     ====================================================== */
 
     .hero {
+
       position: relative;
+
       min-height: 100vh;
+
       display: flex;
       align-items: center;
+
       overflow: hidden;
+
       color: var(--white);
+
     }
 
     .hero-video {
+
       position: absolute;
+
       z-index: 0;
+
       inset: 0;
+
       width: 100%;
       height: 100%;
+
       object-fit: cover;
+
       animation: heroZoom 18s ease-in-out infinite alternate;
+
     }
 
     @keyframes heroZoom {
+
       from {
+
         transform: scale(1);
+
       }
 
       to {
+
         transform: scale(1.08);
+
       }
+
     }
 
     .hero-overlay {
+
       position: absolute;
+
       z-index: 1;
+
       inset: 0;
 
       background:
+
         linear-gradient(
+
           90deg,
+
           rgba(2, 26, 38, .72),
+
           rgba(2, 26, 38, .16) 70%,
+
           rgba(2, 26, 38, .2)
+
         ),
+
         linear-gradient(
+
           180deg,
+
           rgba(2, 26, 38, .3),
+
           transparent 40%,
+
           rgba(2, 26, 38, .55)
+
         );
+
     }
 
     .sun-glow {
+
       position: absolute;
+
       z-index: 2;
+
       top: 20%;
       right: 10%;
+
       width: 300px;
       height: 300px;
+
       border-radius: 50%;
+
       background: rgba(255, 210, 91, .28);
+
       filter: blur(70px);
+
       animation: glowMove 8s ease-in-out infinite alternate;
+
       pointer-events: none;
+
     }
 
     @keyframes glowMove {
+
       from {
+
         transform: translate(0, 0) scale(1);
         opacity: .5;
+
       }
 
       to {
+
         transform: translate(-100px, 50px) scale(1.35);
         opacity: .9;
+
       }
+
     }
 
     .hero-content {
+
       position: relative;
+
       z-index: 3;
+
       padding-top: 100px;
+
       animation: heroText 1.2s ease forwards;
+
     }
 
     @keyframes heroText {
+
       from {
+
         opacity: 0;
         transform: translateY(35px);
+
       }
 
       to {
+
         opacity: 1;
         transform: translateY(0);
+
       }
+
     }
 
     .eyebrow {
+
       margin-bottom: 24px;
+
       color: var(--yellow);
+
       font-size: 10px;
       font-weight: 600;
+
       letter-spacing: .3em;
+
       text-transform: uppercase;
+
     }
 
     .hero h1 {
+
       max-width: 1000px;
+
       font-family: var(--serif);
+
       font-size: clamp(68px, 10vw, 150px);
+
       font-weight: 400;
+
       line-height: .86;
+
       letter-spacing: -.07em;
+
     }
 
     .hero h1 em {
+
       color: var(--yellow);
       font-style: italic;
+
     }
 
     .hero-description {
+
       max-width: 500px;
+
       margin-top: 35px;
+
       color: rgba(255,255,255,.78);
+
       font-size: 16px;
+
       line-height: 1.8;
+
     }
 
     .hero-buttons {
+
       display: flex;
+
       gap: 15px;
+
       margin-top: 40px;
+
       flex-wrap: wrap;
+
     }
 
     .btn {
+
       display: inline-flex;
+
       align-items: center;
       justify-content: center;
+
       padding: 17px 26px;
+
       font-size: 10px;
       font-weight: 600;
+
       letter-spacing: .15em;
+
       text-transform: uppercase;
+
       transition: all .35s ease;
+
     }
 
     .btn-gold {
+
       background: var(--yellow);
       color: var(--dark);
+
     }
 
     .btn-gold:hover {
+
       background: var(--white);
+
       transform: translateY(-5px);
+
     }
 
     .btn-glass {
+
       border: 1px solid rgba(255,255,255,.7);
+
       background: rgba(255,255,255,.08);
+
       backdrop-filter: blur(10px);
+
     }
 
     .btn-glass:hover {
+
       background: var(--white);
       color: var(--dark);
+
       transform: translateY(-5px);
+
     }
 
     .scroll-indicator {
+
       position: absolute;
+
       z-index: 4;
-      bottom: 25px;
+
+      bottom: 30px;
       left: 50%;
+
       display: flex;
       flex-direction: column;
       align-items: center;
+
       gap: 12px;
+
       color: rgba(255,255,255,.7);
+
       font-size: 9px;
+
       letter-spacing: .2em;
+
       text-transform: uppercase;
+
       transform: translateX(-50%);
-      white-space: nowrap;
+
     }
 
     .scroll-line {
+
       width: 1px;
       height: 50px;
+
       background: rgba(255,255,255,.7);
+
       animation: scrollLine 2s ease-in-out infinite;
+
     }
 
     @keyframes scrollLine {
+
       0%, 100% {
+
         transform: scaleY(.5);
         transform-origin: top;
         opacity: .4;
+
       }
 
       50% {
+
         transform: scaleY(1);
         transform-origin: top;
         opacity: 1;
+
       }
+
     }
 
 
@@ -376,35 +576,57 @@
     ====================================================== */
 
     .intro {
+
       padding: 150px 0;
+
       background: var(--cream);
+
     }
 
     .intro-grid {
+
       display: grid;
+
       grid-template-columns: .85fr 1.15fr;
+
       gap: 100px;
+
       align-items: end;
+
     }
 
     .intro h2 {
+
       font-family: var(--serif);
+
       font-size: clamp(55px, 7vw, 105px);
+
       font-weight: 400;
+
       line-height: .9;
+
       letter-spacing: -.06em;
+
     }
 
     .intro h2 em {
+
       color: var(--blue);
+
       font-style: italic;
+
     }
 
     .intro-text {
+
       max-width: 560px;
+
       color: #6d685f;
+
       font-size: 17px;
+
       line-height: 1.9;
+
     }
 
 
@@ -413,66 +635,105 @@
     ====================================================== */
 
     .about-visual {
+
       padding-bottom: 150px;
+
     }
 
     .about-grid {
+
       display: grid;
+
       grid-template-columns: 1.2fr .8fr;
+
       gap: 22px;
+
       align-items: end;
+
     }
 
     .about-main-image {
+
       height: 700px;
+
       overflow: hidden;
+
     }
 
     .about-main-image img {
+
       height: 100%;
+
       transition: transform 1s ease;
+
     }
 
     .about-main-image:hover img {
+
       transform: scale(1.06);
+
     }
 
     .about-side {
+
       display: flex;
+
       flex-direction: column;
+
       gap: 22px;
+
     }
 
     .about-small-image {
+
       height: 390px;
+
       overflow: hidden;
+
     }
 
     .about-small-image img {
+
       height: 100%;
+
       transition: transform 1s ease;
+
     }
 
     .about-small-image:hover img {
+
       transform: scale(1.08);
+
     }
 
     .about-caption {
+
       padding: 32px;
+
       background: var(--deep-blue);
+
       color: var(--white);
+
     }
 
     .about-caption h3 {
+
       margin-bottom: 15px;
+
       font-family: var(--serif);
+
       font-size: 38px;
+
       font-weight: 400;
+
     }
 
     .about-caption p {
+
       color: rgba(255,255,255,.65);
+
       line-height: 1.8;
+
     }
 
 
@@ -481,79 +742,134 @@
     ====================================================== */
 
     .golden-hour {
+
       position: relative;
+
       min-height: 820px;
+
       display: flex;
+
       align-items: center;
+
       overflow: hidden;
+
       color: var(--white);
+
     }
 
     .golden-hour-video {
+
       position: absolute;
+
       z-index: 0;
+
       inset: 0;
+
       width: 100%;
       height: 100%;
+
       object-fit: cover;
+
       animation: goldenZoom 18s ease-in-out infinite alternate;
+
     }
 
     @keyframes goldenZoom {
+
       from {
+
         transform: scale(1);
+
       }
 
       to {
+
         transform: scale(1.07);
+
       }
+
     }
 
     .golden-hour-overlay {
+
       position: absolute;
+
       z-index: 1;
+
       inset: 0;
 
       background:
+
         linear-gradient(
+
           90deg,
+
           rgba(2, 25, 36, .78),
+
           rgba(2, 25, 36, .13)
+
         ),
+
         linear-gradient(
+
           180deg,
+
           rgba(244, 185, 58, .1),
+
           rgba(2, 25, 36, .5)
+
         );
+
     }
 
     .golden-hour-content {
+
       position: relative;
+
       z-index: 2;
+
       width: min(1320px, calc(100% - 80px));
+
       margin: auto;
+
     }
 
     .golden-hour h2 {
+
       max-width: 900px;
+
       font-family: var(--serif);
+
       font-size: clamp(70px, 11vw, 160px);
+
       font-weight: 400;
+
       line-height: .84;
+
       letter-spacing: -.07em;
+
     }
 
     .golden-hour h2 em {
+
       color: var(--yellow);
+
       font-style: italic;
+
     }
 
     .golden-hour p {
+
       max-width: 500px;
+
       margin-top: 35px;
+
       color: rgba(255,255,255,.75);
+
       font-size: 17px;
+
       line-height: 1.8;
+
     }
 
 
@@ -562,108 +878,176 @@
     ====================================================== */
 
     .experiences {
+
       padding: 150px 0;
+
       background: var(--cream);
+
     }
 
     .section-heading {
+
       display: flex;
+
       justify-content: space-between;
+
       align-items: end;
+
       gap: 40px;
+
       margin-bottom: 65px;
+
     }
 
     .section-heading h2 {
+
       max-width: 700px;
+
       font-family: var(--serif);
+
       font-size: clamp(60px, 8vw, 115px);
+
       font-weight: 400;
+
       line-height: .88;
+
       letter-spacing: -.06em;
+
     }
 
     .section-heading h2 em {
+
       color: var(--blue);
+
       font-style: italic;
+
     }
 
     .section-heading p {
+
       max-width: 300px;
+
       color: #77736a;
+
       line-height: 1.7;
+
     }
 
     .experience-grid {
+
       display: grid;
+
       grid-template-columns: repeat(12, 1fr);
+
       gap: 18px;
+
     }
 
     .experience-card {
+
       position: relative;
+
       min-height: 450px;
+
       overflow: hidden;
+
       color: var(--white);
+
     }
 
     .experience-card:nth-child(1) {
+
       grid-column: span 7;
+
     }
 
     .experience-card:nth-child(2) {
+
       grid-column: span 5;
+
     }
 
     .experience-card:nth-child(3) {
+
       grid-column: span 5;
+
     }
 
     .experience-card:nth-child(4) {
+
       grid-column: span 7;
+
     }
 
     .experience-card img {
+
       position: absolute;
+
       inset: 0;
+
       width: 100%;
       height: 100%;
+
       transition: transform 1s ease;
+
     }
 
     .experience-card::after {
+
       content: "";
+
       position: absolute;
+
       inset: 0;
+
       background: linear-gradient(
+
         to top,
+
         rgba(2, 25, 36, .82),
+
         transparent 70%
+
       );
+
     }
 
     .experience-card:hover img {
+
       transform: scale(1.08);
+
     }
 
     .experience-content {
+
       position: absolute;
+
       z-index: 2;
+
       right: 30px;
       bottom: 30px;
       left: 30px;
+
     }
 
     .experience-content h3 {
+
       margin-bottom: 10px;
+
       font-family: var(--serif);
+
       font-size: 48px;
+
       font-weight: 400;
+
     }
 
     .experience-content p {
+
       color: rgba(255,255,255,.72);
+
       line-height: 1.6;
+
     }
 
 
@@ -672,80 +1056,131 @@
     ====================================================== */
 
     .rooms-preview {
+
       padding: 150px 0;
+
       background: var(--deep-blue);
+
       color: var(--white);
+
     }
 
     .rooms-preview-heading {
+
       display: flex;
+
       justify-content: space-between;
+
       align-items: end;
+
       margin-bottom: 60px;
+
     }
 
     .rooms-preview-heading h2 {
+
       font-family: var(--serif);
+
       font-size: clamp(60px, 8vw, 110px);
+
       font-weight: 400;
+
       line-height: .88;
+
       letter-spacing: -.06em;
+
     }
 
     .rooms-preview-heading h2 em {
+
       color: var(--yellow);
+
       font-style: italic;
+
     }
 
     .rooms-link {
+
       padding-bottom: 9px;
+
       border-bottom: 1px solid var(--yellow);
+
       color: var(--yellow);
+
       font-size: 10px;
+
       letter-spacing: .15em;
+
       text-transform: uppercase;
+
     }
 
     .rooms-grid {
+
       display: grid;
+
       grid-template-columns: repeat(3, 1fr);
+
       gap: 18px;
+
     }
 
     .room-card {
+
       overflow: hidden;
+
       background: rgba(255,255,255,.06);
+
     }
 
     .room-image {
+
       height: 430px;
+
       overflow: hidden;
+
     }
 
     .room-image img {
+
       height: 100%;
+
       transition: transform 1s ease;
+
     }
 
     .room-card:hover .room-image img {
+
       transform: scale(1.08);
+
     }
 
     .room-info {
+
       padding: 28px;
+
     }
 
     .room-info h3 {
+
       margin-bottom: 12px;
+
       font-family: var(--serif);
+
       font-size: 34px;
+
       font-weight: 400;
+
     }
 
     .room-info p {
+
       margin-bottom: 20px;
+
       color: rgba(255,255,255,.62);
+
       line-height: 1.7;
+
     }
 
 
@@ -754,35 +1189,59 @@
     ====================================================== */
 
     .final-cta {
+
       min-height: 700px;
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
       text-align: center;
+
       color: var(--white);
 
       background:
+
         linear-gradient(
+
           rgba(2, 25, 36, .45),
+
           rgba(2, 25, 36, .82)
+
         ),
+
         url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2400&q=95")
+
         center / cover;
+
     }
 
     .final-cta h2 {
+
       max-width: 900px;
+
       margin: auto;
+
       font-family: var(--serif);
+
       font-size: clamp(65px, 9vw, 135px);
+
       font-weight: 400;
+
       line-height: .87;
+
       letter-spacing: -.06em;
+
     }
 
     .final-cta h2 em {
+
       color: var(--yellow);
+
       font-style: italic;
+
     }
 
 
@@ -791,314 +1250,493 @@
     ====================================================== */
 
     footer {
+
       padding: 70px 0 25px;
+
       background: var(--dark);
+
       color: var(--white);
+
     }
 
     .footer-top {
+
       display: flex;
+
       justify-content: space-between;
+
       gap: 40px;
+
       padding-bottom: 50px;
+
       border-bottom: 1px solid rgba(255,255,255,.15);
+
     }
 
     .footer-description {
+
       max-width: 320px;
+
       margin-top: 15px;
+
       color: rgba(255,255,255,.55);
+
       line-height: 1.8;
+
     }
 
     .footer-links {
+
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 25px;
+
       color: rgba(255,255,255,.65);
+
       font-size: 12px;
+
     }
 
     .footer-links a:hover {
+
       color: var(--yellow);
+
     }
 
     .footer-bottom {
+
       display: flex;
+
       justify-content: space-between;
+
       padding-top: 25px;
+
       color: rgba(255,255,255,.4);
+
       font-size: 10px;
+
     }
 
 
     /* =====================================================
-       TABLET RESPONSIVE
+       TABLET RESPONSIVE DESIGN
     ====================================================== */
 
     @media (max-width: 950px) {
 
       .container {
+
         width: calc(100% - 50px);
+
       }
 
       .intro-grid {
+
         grid-template-columns: 1fr;
+
         gap: 40px;
+
       }
 
       .about-grid {
+
         grid-template-columns: 1fr;
+
       }
 
       .about-main-image {
+
         height: 550px;
+
       }
 
       .about-small-image {
+
         height: 420px;
+
       }
 
       .rooms-grid {
+
         grid-template-columns: 1fr;
+
       }
 
       .room-image {
+
         height: 500px;
+
       }
 
       .section-heading {
+
         flex-direction: column;
+
         align-items: flex-start;
+
       }
 
     }
 
 
     /* =====================================================
-       MOBILE RESPONSIVE
+       MOBILE RESPONSIVE DESIGN
     ====================================================== */
 
     @media (max-width: 650px) {
 
       .container {
-        width: calc(100% - 28px);
+
+        width: calc(100% - 32px);
+
       }
 
       .site-header {
+
         padding-top: 12px;
+
       }
 
       .navbar {
-        min-height: 64px;
-        padding: 0 12px;
-        gap: 10px;
+
+        min-height: 62px;
+
+        padding: 0 10px;
+
+        gap: 8px;
+
       }
 
       .logo {
-        font-size: 15px;
-        letter-spacing: .07em;
+
+        font-size: 14px;
+
+        letter-spacing: .05em;
+
       }
 
-      /*
-        IMPORTANT:
-        All four navigation links remain visible on mobile.
-        This fixes the missing Experience and Contact links.
-      */
-
       .nav-links {
+
         display: flex;
+
         align-items: center;
+
         justify-content: center;
-        gap: 9px;
-        font-size: 8px;
+
+        gap: 8px;
+
         flex: 1;
+
+        font-size: 7px;
+
+        white-space: nowrap;
+
       }
 
       .nav-links a {
-        white-space: nowrap;
+
+        display: block !important;
+
       }
 
       .nav-links a::after {
-        display: none;
+
+        bottom: -5px;
+
+        height: 1px;
+
       }
 
       .book-button {
+
         display: none;
+
       }
 
       .hero {
+
         min-height: 100svh;
+
       }
 
       .hero-content {
-        padding-top: 90px;
+
+        padding-top: 125px;
+
         padding-bottom: 150px;
+
       }
 
       .eyebrow {
+
+        margin-bottom: 18px;
+
         font-size: 8px;
-        letter-spacing: .18em;
-        line-height: 1.6;
+
+        letter-spacing: .2em;
+
       }
 
       .hero h1 {
-        font-size: clamp(56px, 16vw, 88px);
+
+        font-size: clamp(52px, 16vw, 86px);
+
         line-height: .9;
+
       }
 
       .hero-description {
+
         margin-top: 25px;
+
         font-size: 14px;
+
         line-height: 1.7;
+
       }
 
       .hero-buttons {
+
         flex-direction: column;
-        align-items: stretch;
-        gap: 10px;
+
+        align-items: flex-start;
+
+        gap: 12px;
+
         margin-top: 30px;
+
       }
 
       .btn {
-        width: 100%;
-        max-width: 280px;
+
+        width: auto;
+
+        min-width: 210px;
+
+        padding: 15px 20px;
+
       }
 
-      /*
-        Scroll indicator is now safely separated
-        from the CTA buttons.
-      */
-
       .scroll-indicator {
-        bottom: 18px;
-        gap: 8px;
+
+        bottom: 22px;
+
         font-size: 7px;
-        letter-spacing: .13em;
+
+        gap: 8px;
+
       }
 
       .scroll-line {
-        height: 32px;
+
+        height: 35px;
+
       }
 
       .intro {
+
         padding: 90px 0;
+
       }
 
       .intro h2 {
-        font-size: clamp(50px, 14vw, 80px);
+
+        font-size: clamp(48px, 15vw, 78px);
+
       }
 
       .intro-text {
+
         font-size: 15px;
+
       }
 
       .about-visual {
+
         padding-bottom: 90px;
+
       }
 
       .about-main-image {
-        height: 430px;
+
+        height: 440px;
+
       }
 
       .about-small-image {
+
         height: 300px;
+
       }
 
       .about-caption {
+
         padding: 25px;
+
       }
 
       .about-caption h3 {
+
         font-size: 32px;
+
       }
 
       .golden-hour {
-        min-height: 680px;
+
+        min-height: 650px;
+
       }
 
       .golden-hour-content {
-        width: calc(100% - 28px);
+
+        width: calc(100% - 32px);
+
       }
 
       .golden-hour h2 {
-        font-size: clamp(65px, 18vw, 100px);
+
+        font-size: clamp(60px, 18vw, 100px);
+
       }
 
       .golden-hour p {
+
         font-size: 15px;
+
       }
 
       .experiences {
+
         padding: 90px 0;
+
       }
 
       .section-heading {
+
         margin-bottom: 40px;
+
       }
 
       .section-heading h2 {
-        font-size: clamp(52px, 14vw, 85px);
+
+        font-size: clamp(52px, 15vw, 85px);
+
       }
 
       .experience-grid {
+
         display: flex;
+
         flex-direction: column;
+
       }
 
       .experience-card {
+
         min-height: 360px;
+
       }
 
       .experience-content {
+
         right: 22px;
         bottom: 22px;
         left: 22px;
+
       }
 
       .experience-content h3 {
+
         font-size: 40px;
+
       }
 
       .rooms-preview {
+
         padding: 90px 0;
+
       }
 
       .rooms-preview-heading {
+
         flex-direction: column;
+
         align-items: flex-start;
+
         gap: 25px;
-        margin-bottom: 40px;
+
       }
 
       .rooms-preview-heading h2 {
-        font-size: clamp(52px, 14vw, 85px);
+
+        font-size: clamp(52px, 15vw, 85px);
+
+      }
+
+      .rooms-grid {
+
+        grid-template-columns: 1fr;
+
       }
 
       .room-image {
-        height: 380px;
+
+        height: 400px;
+
       }
 
       .room-info {
+
         padding: 24px;
+
+      }
+
+      .room-info h3 {
+
+        font-size: 30px;
+
       }
 
       .final-cta {
-        min-height: 580px;
+
+        min-height: 560px;
+
       }
 
       .final-cta h2 {
-        font-size: clamp(58px, 16vw, 90px);
+
+        font-size: clamp(55px, 16vw, 90px);
+
       }
 
-      .footer-top,
-      .footer-bottom {
+      footer {
+
+        padding: 55px 0 25px;
+
+      }
+
+      .footer-top {
+
         flex-direction: column;
-        gap: 25px;
+
+        gap: 35px;
+
       }
 
       .footer-links {
+
         gap: 18px;
+
+      }
+
+      .footer-bottom {
+
+        flex-direction: column;
+
+        gap: 15px;
+
       }
 
     }
@@ -1125,11 +1763,11 @@
           href="index.html"
           class="logo"
         >
+
           SOLARA HOTEL
+
         </a>
 
-
-        <!-- ALL FOUR LINKS REMAIN VISIBLE ON MOBILE -->
 
         <div class="nav-links">
 
@@ -1156,7 +1794,9 @@
           href="contact.html"
           class="book-button"
         >
+
           Book Your Stay
+
         </a>
 
       </nav>
@@ -1187,27 +1827,42 @@
 
     </video>
 
+
     <div class="hero-overlay"></div>
 
     <div class="sun-glow"></div>
+
 
     <div class="container">
 
       <div class="hero-content">
 
         <div class="eyebrow">
+
           SOLARA HOTEL — WHERE SUNLIGHT MEETS THE SEA
+
         </div>
 
+
         <h1>
+
           Where the sun
+
           meets the
-          <em>sea.</em>
+
+          <em>
+            sea.
+          </em>
+
         </h1>
 
+
         <p class="hero-description">
+
           A world-class escape shaped by golden light, endless horizons, and unforgettable moments.
+
         </p>
+
 
         <div class="hero-buttons">
 
@@ -1215,14 +1870,19 @@
             href="rooms.html"
             class="btn btn-gold"
           >
+
             Explore Rooms
+
           </a>
+
 
           <a
             href="about.html"
             class="btn btn-glass"
           >
+
             Discover SOLARA
+
           </a>
 
         </div>
@@ -1231,8 +1891,6 @@
 
     </div>
 
-
-    <!-- SCROLL INDICATOR -->
 
     <div class="scroll-indicator">
 
@@ -1258,16 +1916,28 @@
       <div class="intro-grid">
 
         <h2>
+
           Life feels
+
           different in
+
           the
-          <em>sunlight.</em>
+
+          <em>
+            sunlight.
+          </em>
+
         </h2>
 
+
         <p class="intro-text">
+
           SOLARA is more than a hotel.
+
           It is a destination where architecture, nature, ocean, and sunlight come together.
+
           From sunrise swims to long evenings beneath the stars, every detail is designed to make your escape unforgettable.
+
         </p>
 
       </div>
@@ -1296,6 +1966,7 @@
 
         </div>
 
+
         <div class="about-side">
 
           <div class="about-small-image">
@@ -1307,14 +1978,18 @@
 
           </div>
 
+
           <div class="about-caption">
 
             <h3>
               A world of its own.
             </h3>
 
+
             <p>
+
               A destination built for those who believe the best moments are measured in sunlight, sea, and time.
+
             </p>
 
           </div>
@@ -1349,22 +2024,36 @@
 
     </video>
 
+
     <div class="golden-hour-overlay"></div>
+
 
     <div class="golden-hour-content">
 
       <div class="eyebrow">
+
         THE MOMENT YOU WILL REMEMBER
+
       </div>
 
+
       <h2>
+
         Chase the
-        <em>light.</em>
+
+        <em>
+          light.
+        </em>
+
       </h2>
 
+
       <p>
+
         There is a moment every evening when the world becomes gold.
+
         At SOLARA, we believe those moments are worth travelling for.
+
       </p>
 
     </div>
@@ -1383,13 +2072,22 @@
       <div class="section-heading">
 
         <h2>
+
           Moments made
+
           to be
-          <em>remembered.</em>
+
+          <em>
+            remembered.
+          </em>
+
         </h2>
 
+
         <p>
+
           From the ocean to the table, discover the experiences that make SOLARA more than a destination.
+
         </p>
 
       </div>
@@ -1407,14 +2105,18 @@
             alt="Ocean experience"
           >
 
+
           <div class="experience-content">
 
             <h3>
               Ocean
             </h3>
 
+
             <p>
+
               Endless blue. Warm sand. Nowhere else to be.
+
             </p>
 
           </div>
@@ -1431,14 +2133,18 @@
             alt="Luxury spa experience"
           >
 
+
           <div class="experience-content">
 
             <h3>
               Spa
             </h3>
 
+
             <p>
+
               Time slows down here.
+
             </p>
 
           </div>
@@ -1455,14 +2161,18 @@
             alt="Fine dining experience"
           >
 
+
           <div class="experience-content">
 
             <h3>
               Dining
             </h3>
 
+
             <p>
+
               Taste the place.
+
             </p>
 
           </div>
@@ -1479,14 +2189,18 @@
             alt="Golden sunset experience"
           >
 
+
           <div class="experience-content">
 
             <h3>
               Sunset
             </h3>
 
+
             <p>
+
               Every evening becomes gold.
+
             </p>
 
           </div>
@@ -1512,15 +2226,23 @@
       <div class="rooms-preview-heading">
 
         <h2>
+
           Stay somewhere
-          <em>unforgettable.</em>
+
+          <em>
+            unforgettable.
+          </em>
+
         </h2>
+
 
         <a
           href="rooms.html"
           class="rooms-link"
         >
-          View all rooms
+
+          View all rooms →
+
         </a>
 
       </div>
@@ -1542,14 +2264,18 @@
 
           </div>
 
+
           <div class="room-info">
 
             <h3>
               The Solara Suite
             </h3>
 
+
             <p>
+
               Expansive spaces, endless ocean views, and golden light.
+
             </p>
 
           </div>
@@ -1570,14 +2296,18 @@
 
           </div>
 
+
           <div class="room-info">
 
             <h3>
               Ocean Horizon Room
             </h3>
 
+
             <p>
+
               Wake up to the sea and fall asleep beneath the stars.
+
             </p>
 
           </div>
@@ -1598,14 +2328,18 @@
 
           </div>
 
+
           <div class="room-info">
 
             <h3>
               Sun Garden Villa
             </h3>
 
+
             <p>
+
               A private sanctuary surrounded by nature and sunlight.
+
             </p>
 
           </div>
@@ -1629,19 +2363,30 @@
     <div class="container">
 
       <div class="eyebrow">
+
         YOUR NEXT ESCAPE
+
       </div>
 
+
       <h2>
+
         Your golden hour
-        <em>awaits.</em>
+
+        <em>
+          awaits.
+        </em>
+
       </h2>
+
 
       <a
         href="contact.html"
         class="btn btn-gold"
       >
+
         Book Your Stay
+
       </a>
 
     </div>
@@ -1665,12 +2410,18 @@
             href="index.html"
             class="logo"
           >
+
             SOLARA HOTEL
+
           </a>
 
+
           <p class="footer-description">
+
             Where sunlight meets the sea.
+
             A world-class escape designed for unforgettable moments.
+
           </p>
 
         </div>
@@ -1706,11 +2457,16 @@
       <div class="footer-bottom">
 
         <span>
+
           © 2026 SOLARA HOTEL
+
         </span>
 
+
         <span>
+
           Where sunlight meets the sea.
+
         </span>
 
       </div>
