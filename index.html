@@ -47,25 +47,26 @@
 
 
     * {
+
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+
     }
 
 
     html {
+
       scroll-behavior: smooth;
+
     }
 
 
     body {
 
       overflow-x: hidden;
-
       background: var(--cream);
-
       color: var(--dark);
-
       font-family: var(--sans);
 
     }
@@ -74,7 +75,6 @@
     a {
 
       color: inherit;
-
       text-decoration: none;
 
     }
@@ -83,9 +83,7 @@
     img {
 
       display: block;
-
       width: 100%;
-
       object-fit: cover;
 
     }
@@ -94,7 +92,6 @@
     .container {
 
       width: min(1320px, calc(100% - 80px));
-
       margin: auto;
 
     }
@@ -106,30 +103,25 @@
 
     .site-header {
 
-      position: fixed;
-
-      z-index: 9999;
-
+      position: absolute;
+      z-index: 30;
       top: 0;
-
       left: 0;
-
       width: 100%;
-
-      padding-top: 14px;
+      padding-top: 24px;
 
     }
 
 
     .navbar {
 
-      height: 78px;
+      min-height: 78px;
 
       display: flex;
-
       align-items: center;
-
       justify-content: space-between;
+
+      gap: 25px;
 
       padding: 0 26px;
 
@@ -137,18 +129,15 @@
 
       border: 1px solid rgba(255,255,255,.35);
 
-      background: rgba(2, 31, 43, .45);
+      background: rgba(2, 31, 43, .34);
 
       backdrop-filter: blur(22px);
-
       -webkit-backdrop-filter: blur(22px);
 
     }
 
 
     .logo {
-
-      flex-shrink: 0;
 
       font-family: var(--serif);
 
@@ -159,6 +148,8 @@
       white-space: nowrap;
 
       transition: color .3s ease;
+
+      flex-shrink: 0;
 
     }
 
@@ -176,9 +167,13 @@
 
       align-items: center;
 
+      justify-content: center;
+
       gap: 38px;
 
       font-size: 12px;
+
+      flex: 1;
 
     }
 
@@ -231,8 +226,6 @@
 
     .book-button {
 
-      flex-shrink: 0;
-
       padding: 14px 22px;
 
       border: 1px solid rgba(255,255,255,.85);
@@ -242,6 +235,8 @@
       letter-spacing: .16em;
 
       text-transform: uppercase;
+
+      white-space: nowrap;
 
       transition: all .3s ease;
 
@@ -304,11 +299,15 @@
     @keyframes heroZoom {
 
       from {
+
         transform: scale(1);
+
       }
 
       to {
+
         transform: scale(1.08);
+
       }
 
     }
@@ -594,6 +593,8 @@
       text-transform: uppercase;
 
       transform: translateX(-50%);
+
+      white-space: nowrap;
 
     }
 
@@ -1210,23 +1211,6 @@
     }
 
 
-    .rooms-link {
-
-      padding-bottom: 9px;
-
-      border-bottom: 1px solid var(--yellow);
-
-      color: var(--yellow);
-
-      font-size: 10px;
-
-      letter-spacing: .15em;
-
-      text-transform: uppercase;
-
-    }
-
-
     .rooms-grid {
 
       display: grid;
@@ -1294,24 +1278,9 @@
 
     .room-info p {
 
-      margin-bottom: 20px;
-
       color: rgba(255,255,255,.62);
 
       line-height: 1.7;
-
-    }
-
-
-    .room-info a {
-
-      color: var(--yellow);
-
-      font-size: 10px;
-
-      letter-spacing: .14em;
-
-      text-transform: uppercase;
 
     }
 
@@ -1437,6 +1406,13 @@
     }
 
 
+    .footer-links a {
+
+      transition: color .3s ease;
+
+    }
+
+
     .footer-links a:hover {
 
       color: var(--yellow);
@@ -1460,7 +1436,7 @@
 
 
     /* =====================================================
-       TABLET
+       TABLET RESPONSIVE DESIGN
     ====================================================== */
 
     @media (max-width: 950px) {
@@ -1528,9 +1504,7 @@
 
 
     /* =====================================================
-       MOBILE
-       IMPORTANT:
-       ALL FOUR LINKS REMAIN VISIBLE
+       MOBILE RESPONSIVE DESIGN
     ====================================================== */
 
     @media (max-width: 650px) {
@@ -1538,114 +1512,86 @@
 
       .container {
 
-        width: calc(100% - 20px);
+        width: calc(100% - 32px);
 
       }
 
 
-      /* =========================
-         MOBILE HEADER
-      ========================== */
+      /* MOBILE HEADER */
 
       .site-header {
 
-        position: fixed;
-
-        z-index: 9999;
-
-        top: 0;
-
-        left: 0;
-
-        width: 100%;
-
-        padding-top: 8px;
+        padding-top: 14px;
 
       }
 
 
       .navbar {
 
-        width: 100%;
+        min-height: 65px;
 
-        height: 58px;
+        height: auto;
 
-        display: flex;
+        padding: 12px 10px;
 
-        align-items: center;
-
-        justify-content: space-between;
-
-        padding: 0 8px;
-
-        gap: 6px;
+        gap: 10px;
 
       }
 
 
       .logo {
 
-        flex-shrink: 0;
+        font-size: 14px;
 
-        font-size: 11px;
-
-        letter-spacing: .03em;
-
-        white-space: nowrap;
+        letter-spacing: .04em;
 
       }
 
 
       /* IMPORTANT:
-         DO NOT HIDE ANY NAVIGATION LINKS
+         ALL FOUR NAVIGATION LINKS STAY VISIBLE
       */
 
       .nav-links {
 
-        display: flex !important;
+        display: flex;
 
         align-items: center;
 
-        justify-content: center;
+        justify-content: flex-end;
 
-        gap: 8px;
+        gap: 9px;
 
         flex: 1;
 
         min-width: 0;
 
-        visibility: visible !important;
+        font-size: 8px;
 
-        opacity: 1 !important;
+        white-space: nowrap;
 
       }
 
 
       .nav-links a {
 
-        display: block !important;
-
-        visibility: visible !important;
-
-        opacity: 1 !important;
-
-        white-space: nowrap;
-
-        font-size: 7px;
+        display: inline-block !important;
 
       }
 
 
-      .nav-links a::after {
+      .nav-links a:nth-child(1),
 
-        bottom: -5px;
+      .nav-links a:nth-child(2),
 
-        height: 1px;
+      .nav-links a:nth-child(3),
+
+      .nav-links a:nth-child(4) {
+
+        display: inline-block !important;
 
       }
 
-
-      /* ONLY HIDE BOOK BUTTON */
 
       .book-button {
 
@@ -1654,13 +1600,20 @@
       }
 
 
-      /* =========================
-         HERO
-      ========================== */
+      /* HERO */
+
+      .hero {
+
+        min-height: 100svh;
+
+      }
+
 
       .hero-content {
 
-        padding-top: 110px;
+        padding-top: 100px;
+
+        padding-bottom: 120px;
 
       }
 
@@ -1672,11 +1625,22 @@
       }
 
 
+      .hero-description {
+
+        font-size: 14px;
+
+        line-height: 1.7;
+
+      }
+
+
       .hero-buttons {
 
         flex-direction: column;
 
         align-items: flex-start;
+
+        gap: 12px;
 
       }
 
@@ -1690,29 +1654,108 @@
       }
 
 
-      /* =========================
-         SCROLL INDICATOR
-      ========================== */
+      /* SCROLL INDICATOR */
 
       .scroll-indicator {
 
-        bottom: 15px;
+        bottom: 22px;
 
-        font-size: 7px;
+        font-size: 8px;
 
       }
 
 
       .scroll-line {
 
-        height: 30px;
+        height: 35px;
 
       }
 
 
-      /* =========================
-         GOLDEN HOUR
-      ========================== */
+      /* INTRODUCTION */
+
+      .intro {
+
+        padding: 90px 0;
+
+      }
+
+
+      .intro-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+      }
+
+
+      .intro h2 {
+
+        font-size: clamp(52px, 15vw, 80px);
+
+      }
+
+
+      .intro-text {
+
+        font-size: 15px;
+
+      }
+
+
+      /* ABOUT */
+
+      .about-visual {
+
+        padding-bottom: 90px;
+
+      }
+
+
+      .about-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .about-main-image {
+
+        height: 480px;
+
+      }
+
+
+      .about-small-image {
+
+        height: 330px;
+
+      }
+
+
+      .about-caption {
+
+        padding: 25px;
+
+      }
+
+
+      .about-caption h3 {
+
+        font-size: 32px;
+
+      }
+
+
+      /* GOLDEN HOUR */
+
+      .golden-hour {
+
+        min-height: 650px;
+
+      }
+
 
       .golden-hour-content {
 
@@ -1721,9 +1764,48 @@
       }
 
 
-      /* =========================
-         EXPERIENCES
-      ========================== */
+      .golden-hour h2 {
+
+        font-size: clamp(65px, 18vw, 100px);
+
+      }
+
+
+      .golden-hour p {
+
+        font-size: 15px;
+
+      }
+
+
+      /* EXPERIENCES */
+
+      .experiences {
+
+        padding: 90px 0;
+
+      }
+
+
+      .section-heading {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 25px;
+
+        margin-bottom: 40px;
+
+      }
+
+
+      .section-heading h2 {
+
+        font-size: clamp(55px, 16vw, 90px);
+
+      }
+
 
       .experience-grid {
 
@@ -1731,19 +1813,44 @@
 
         flex-direction: column;
 
+        gap: 15px;
+
       }
 
 
       .experience-card {
 
-        min-height: 420px;
+        min-height: 400px;
 
       }
 
 
-      /* =========================
-         ROOMS
-      ========================== */
+      .experience-content {
+
+        right: 22px;
+
+        bottom: 22px;
+
+        left: 22px;
+
+      }
+
+
+      .experience-content h3 {
+
+        font-size: 42px;
+
+      }
+
+
+      /* ROOMS */
+
+      .rooms-preview {
+
+        padding: 90px 0;
+
+      }
+
 
       .rooms-preview-heading {
 
@@ -1751,7 +1858,25 @@
 
         align-items: flex-start;
 
-        gap: 30px;
+        gap: 25px;
+
+        margin-bottom: 40px;
+
+      }
+
+
+      .rooms-preview-heading h2 {
+
+        font-size: clamp(55px, 16vw, 90px);
+
+      }
+
+
+      .rooms-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
 
       }
 
@@ -1763,9 +1888,25 @@
       }
 
 
-      /* =========================
-         FOOTER
-      ========================== */
+      /* FINAL CTA */
+
+      .final-cta {
+
+        min-height: 600px;
+
+        padding: 80px 0;
+
+      }
+
+
+      .final-cta h2 {
+
+        font-size: clamp(58px, 17vw, 95px);
+
+      }
+
+
+      /* FOOTER */
 
       .footer-top,
 
@@ -1774,6 +1915,13 @@
         flex-direction: column;
 
         gap: 25px;
+
+      }
+
+
+      .footer-links {
+
+        gap: 18px;
 
       }
 
@@ -1787,7 +1935,6 @@
 
   <!-- =====================================================
        HEADER
-       SAME HEADER SHOULD BE USED ON ALL PAGES
   ====================================================== -->
 
   <header class="site-header">
@@ -1808,26 +1955,36 @@
     </a>
 
 
+    <!-- ALL FOUR LINKS REMAIN VISIBLE ON MOBILE -->
+
     <div class="nav-links">
 
 
       <a href="rooms.html">
+
         Stay
+
       </a>
 
 
       <a href="experiences.html">
+
         Experience
+
       </a>
 
 
       <a href="about.html">
+
         About
+
       </a>
 
 
       <a href="contact.html">
+
         Contact
+
       </a>
 
 
@@ -1900,7 +2057,9 @@
       meets the
 
       <em>
+
         sea.
+
       </em>
 
     </h1>
@@ -1941,6 +2100,7 @@
 
   </div>
 
+
 </div>
 
 
@@ -1948,7 +2108,9 @@
 
 
   <span>
+
     Scroll to explore
+
   </span>
 
 
@@ -1982,7 +2144,9 @@
       the
 
       <em>
+
         sunlight.
+
       </em>
 
     </h2>
@@ -2051,7 +2215,9 @@
 
 
         <h3>
+
           A world of its own.
+
         </h3>
 
 
@@ -2077,7 +2243,7 @@
   </section>
 
   <!-- =====================================================
-       GOLDEN HOUR
+       GOLDEN HOUR VIDEO
   ====================================================== -->
 
   <section class="golden-hour">
@@ -2117,7 +2283,9 @@
     Chase the
 
     <em>
+
       light.
+
     </em>
 
   </h2>
@@ -2157,7 +2325,9 @@
       to be
 
       <em>
+
         remembered.
+
       </em>
 
     </h2>
@@ -2189,7 +2359,9 @@
 
 
         <h3>
+
           Ocean
+
         </h3>
 
 
@@ -2219,7 +2391,9 @@
 
 
         <h3>
+
           Spa
+
         </h3>
 
 
@@ -2249,7 +2423,9 @@
 
 
         <h3>
+
           Dining
+
         </h3>
 
 
@@ -2279,7 +2455,9 @@
 
 
         <h3>
+
           Sunset
+
         </h3>
 
 
@@ -2322,20 +2500,12 @@
       Stay somewhere
 
       <em>
+
         unforgettable.
+
       </em>
 
     </h2>
-
-
-    <a
-      href="rooms.html"
-      class="rooms-link"
-    >
-
-      View all rooms →
-
-    </a>
 
 
   </div>
@@ -2363,7 +2533,9 @@
 
 
         <h3>
+
           The Solara Suite
+
         </h3>
 
 
@@ -2372,13 +2544,6 @@
           Expansive spaces, endless ocean views, and golden light.
 
         </p>
-
-
-        <a href="rooms.html">
-
-          Explore Room →
-
-        </a>
 
 
       </div>
@@ -2406,7 +2571,9 @@
 
 
         <h3>
+
           Ocean Horizon Room
+
         </h3>
 
 
@@ -2415,13 +2582,6 @@
           Wake up to the sea and fall asleep beneath the stars.
 
         </p>
-
-
-        <a href="rooms.html">
-
-          Explore Room →
-
-        </a>
 
 
       </div>
@@ -2449,7 +2609,9 @@
 
 
         <h3>
+
           Sun Garden Villa
+
         </h3>
 
 
@@ -2458,13 +2620,6 @@
           A private sanctuary surrounded by nature and sunlight.
 
         </p>
-
-
-        <a href="rooms.html">
-
-          Explore Room →
-
-        </a>
 
 
       </div>
@@ -2503,7 +2658,9 @@
     Your golden hour
 
     <em>
+
       awaits.
+
     </em>
 
   </h2>
@@ -2566,27 +2723,37 @@
 
 
       <a href="index.html">
+
         Home
+
       </a>
 
 
       <a href="rooms.html">
+
         Stay
+
       </a>
 
 
       <a href="experiences.html">
+
         Experience
+
       </a>
 
 
       <a href="about.html">
+
         About
+
       </a>
 
 
       <a href="contact.html">
+
         Contact
+
       </a>
 
 
