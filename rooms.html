@@ -113,9 +113,32 @@
       .nav-links, .book-button { display: none; }
       .menu-toggle { display: flex; }
       
-      .rooms-hero { min-height: 550px; }
-      h1 { font-size: clamp(48px, 14vw, 75px); }
-      .room-card { min-height: 500px; }
+      /* Հիմնական ուղղումը հուշում եմ այստեղ */
+      .rooms-grid { 
+        grid-template-columns: 1fr;
+        justify-items: center;
+      }
+      .room-card {
+        min-height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .room-image {
+        width: 100%;
+        max-width: 90%;
+      }
+      .room-content {
+        right: 20px;
+        left: 20px;
+        text-align: center;
+      }
+      .room-content h2 {
+        text-align: center;
+      }
+      .room-info {
+        justify-content: center;
+      }
       .benefits-grid { grid-template-columns: 1fr; }
       .footer-top, .footer-bottom { flex-direction: column; gap: 25px; }
     }
