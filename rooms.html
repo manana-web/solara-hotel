@@ -56,17 +56,22 @@
     h1 { max-width: 900px; font-family: var(--serif); font-size: clamp(60px, 9vw, 130px); font-weight: 400; line-height: .9; letter-spacing: -.05em; }
     h1 em { color: var(--yellow); }
 
-    /* ROOMS */
+    /* ROOMS SECTION */
     .rooms-section { padding: 120px 0; }
     .section-heading { margin-bottom: 50px; }
     .section-heading h2 { font-family: var(--serif); font-size: clamp(48px, 6vw, 90px); font-weight: 400; line-height: .95; }
     .section-heading em { color: var(--blue); }
+    
     .rooms-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
     .room-card { position: relative; min-height: 600px; overflow: hidden; color: white; }
     .room-card:first-child { grid-column: span 2; }
-    .room-card img { position: absolute; inset: 0; height: 100%; transition: transform 1s ease; }
-    .room-card:hover img { transform: scale(1.06); }
-    .room-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(2,31,43,.95), transparent 70%); }
+    
+    .room-image-wrapper { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+    .room-image-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s ease; }
+    .room-card:hover .room-image-wrapper img { transform: scale(1.06); }
+    
+    .room-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(2,31,43,.95), transparent 70%); pointer-events: none; }
+    
     .room-content { position: absolute; z-index: 2; right: 35px; bottom: 35px; left: 35px; }
     .room-content h2 { margin-bottom: 15px; font-family: var(--serif); font-size: clamp(36px, 5vw, 60px); font-weight: 400; }
     .room-content p { max-width: 500px; margin-bottom: 20px; color: rgba(255,255,255,.75); line-height: 1.7; }
@@ -105,42 +110,38 @@
       .room-card:first-child { grid-column: auto; }
       .benefits-grid { grid-template-columns: 1fr 1fr; }
     }
+    
     @media (max-width: 650px) {
-      .container { width: 100%; padding: 0 20px; }
+      /* ՀԻՄՆԱԿԱՆ ՈՒՂՂՒՄՆԵՐԸ ԱՅՍՏԵՂ ԵՆ */
+      .container { width: 100%; padding: 0; } /* Հեռացնում ենք side padding-ը */
+      
       .site-header { padding: 15px 0; }
       nav.navbar { padding: 0 20px; min-height: 60px; }
       .logo { font-size: 20px; }
       .nav-links, .book-button { display: none; }
       .menu-toggle { display: flex; }
       
-      /* Հիմնական ուղղումը հուշում եմ այստեղ */
-      .rooms-grid { 
-        grid-template-columns: 1fr;
-        justify-items: center;
-      }
-      .room-card {
-        min-height: 500px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .room-image {
+      .rooms-hero { min-height: 550px; }
+      h1 { font-size: clamp(48px, 14vw, 75px); }
+      
+      /* Սենյակների քարտերը լցնում են ամբողջ էկրանը */
+      .rooms-section { padding: 80px 0; }
+      .section-heading { padding: 0 20px; margin-bottom: 40px; }
+      
+      .room-card { 
+        min-height: 70vh; /* Բարրությունը էկրանի 70%-ն է */
         width: 100%;
-        max-width: 90%;
+        margin-bottom: 20px;
       }
+      
       .room-content {
         right: 20px;
         left: 20px;
-        text-align: center;
+        bottom: 30px;
       }
-      .room-content h2 {
-        text-align: center;
-      }
-      .room-info {
-        justify-content: center;
-      }
-      .benefits-grid { grid-template-columns: 1fr; }
-      .footer-top, .footer-bottom { flex-direction: column; gap: 25px; }
+      
+      .benefits-grid { grid-template-columns: 1fr; padding: 0 20px; }
+      .footer-top, .footer-bottom { flex-direction: column; gap: 25px; padding: 0 20px; }
     }
   </style>
 </head>
@@ -188,8 +189,12 @@
         <h2>Find your <em>escape.</em></h2>
       </div>
       <div class="rooms-grid">
+        
+        <!-- Room 1 -->
         <article class="room-card">
-          <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2200&q=95" alt="The Solara Suite">
+          <div class="room-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2200&q=95" alt="The Solara Suite">
+          </div>
           <div class="room-content">
             <h2>The Solara Suite</h2>
             <p>Our signature suite with expansive interiors, spectacular ocean views, and unforgettable comfort.</p>
@@ -199,8 +204,12 @@
             <a href="contact.html" class="explore">Explore Room →</a>
           </div>
         </article>
+
+        <!-- Room 2 -->
         <article class="room-card">
-          <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1600&q=95" alt="Ocean Horizon Room">
+          <div class="room-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1600&q=95" alt="Ocean Horizon Room">
+          </div>
           <div class="room-content">
             <h2>Ocean Horizon Room</h2>
             <p>Wake up to endless blue horizons and golden morning light.</p>
@@ -210,8 +219,12 @@
             <a href="contact.html" class="explore">Explore Room →</a>
           </div>
         </article>
+
+        <!-- Room 3 -->
         <article class="room-card">
-          <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=95" alt="Sun Garden Villa">
+          <div class="room-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=95" alt="Sun Garden Villa">
+          </div>
           <div class="room-content">
             <h2>Sun Garden Villa</h2>
             <p>A private sanctuary surrounded by nature, light, and calm.</p>
@@ -221,6 +234,7 @@
             <a href="contact.html" class="explore">Explore Room →</a>
           </div>
         </article>
+
       </div>
     </div>
   </section>
